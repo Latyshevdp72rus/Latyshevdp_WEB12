@@ -3,6 +3,15 @@ from django.db import models
 
 
 class Stand(models.Model):
+    stand_name = models.CharField(
+        max_length=50,
+        verbose_name="Заголовок стэнда: "
+    )
+    stand_description = models.TextField(
+        verbose_name="Описание стэнда",
+        null=True,
+        blank=True
+    )
     sportsman_id = models.ForeignKey(
         'Sportsman',
         on_delete=models.CASCADE,
@@ -19,7 +28,6 @@ class Stand(models.Model):
         null=True,
         blank=True
     )
-
     medal_id = models.ForeignKey(
         'Medal',
         on_delete=models.CASCADE,
@@ -34,8 +42,8 @@ class Stand(models.Model):
         blank=True
     )
 
-    # def __str__(self):
-    #     return self.sportsman_name
+    def __str__(self):
+        return self.stand_name
 
     class Meta:
         verbose_name = 'Стенд'
@@ -106,7 +114,17 @@ class ViewOlimp(models.Model):
 
 
 class ViewSports(models.Model):
-    pass
+   view_sport_name = models.CharField(
+        max_length=50,
+        verbose_name="Наименование вида спорта: "
+    )
+
+   def __str__(self):
+        return self.view_sport_name
+
+   class Meta:
+        verbose_name = 'Вид спорта'
+        verbose_name_plural = 'Вид спорта'
 
 
 class Trener(models.Model):
