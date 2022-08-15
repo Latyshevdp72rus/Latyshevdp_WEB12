@@ -3,6 +3,7 @@ from django.db import models
 
 
 class Stand(models.Model):
+
     sportsman_id = models.ForeignKey(
         'Sportsman',
         on_delete=models.CASCADE,
@@ -27,14 +28,6 @@ class Stand(models.Model):
         null=True,
         blank=True
     )
-    trener_id = models.ForeignKey(
-        'Trener',
-        on_delete=models.CASCADE,
-        related_name='Trener_Stand',
-        verbose_name="trener_id",
-        null=True,
-        blank=True
-    )
     medal_id = models.ForeignKey(
         'Medal',
         on_delete=models.CASCADE,
@@ -49,15 +42,46 @@ class Stand(models.Model):
         blank=True
     )
 
+    def __str__(self):
+        return self.sportsman_name
+
     class Meta:
         verbose_name = 'Стенд'
-        verbose_name_plural = 'Стенд'
+        verbose_name_plural = 'Стенды'
+
 
 class Sportsman(models.Model):
-    pass
+    sportsman_name = models.CharField(
+        max_length=50,
+        verbose_name="ФИО спортсмена: "
+    )
+    sportsman_country = models.CharField(
+        max_length=30,
+        verbose_name="Страна"
+    )
+    sportsman_birthday = models.DateField(
+        max_length=8,
+        verbose_name="Дата рождения"
+    )
+    sportsman_biogrpahy = models.TextField(
+        verbose_name="Описание книги",
+        null=True,
+        blank=True
+    )
+    sportsman_img = models.ImageField(
+        upload_to='media/phototrener/%y/%m/%d/',
+        verbose_name="Загрузить фото: ",
+        null=True,
+        blank=True
+    )
+
+    def __str__(self):
+        return self.sportsman_name
+
     class Meta:
         verbose_name = 'Спортсмен'
         verbose_name_plural = 'Спортсмены'
+
 
 class ViewOlimp(models.Model):
     pass
@@ -86,6 +110,10 @@ class Trener(models.Model):
         null=True,
         blank=True
     )
+
+    def __str__(self):
+        return self.trener_name
+
     class Meta:
         verbose_name = 'Тренер'
         verbose_name_plural = 'Тренеры'
@@ -102,7 +130,8 @@ class Club(models.Model):
         null=True,
         blank=True
     )
-
+    def __str__(self):
+        return self.club_name
     class Meta:
         verbose_name = 'Клуб'
         verbose_name_plural = 'Клубы'
@@ -113,6 +142,9 @@ class Medal(models.Model):
         max_length=15,
         verbose_name="Вид медали: "
     )
+
+    def __str__(self):
+        return self.medal_name
 
     class Meta:
         verbose_name = 'Медаль'
