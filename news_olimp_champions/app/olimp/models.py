@@ -7,32 +7,32 @@ class Stand(models.Model):
     sportsman_id = models.ForeignKey(
         'Sportsman',
         verbose_name="sportsman_id",
-        null=False,
-        blank=False
+        null=True,
+        blank=True
     )
     view_olimp_id = models.ForeignKey(
         'ViewOlimp',
         verbose_name="view_olimp_id",
-        null=False,
-        blank=False
+        null=True,
+        blank=True
     )
     view_sports_id = models.ForeignKey(
         'ViewSports',
         verbose_name="view_sports_id",
-        null=False,
-        blank=False
+        null=True,
+        blank=True
     )
     trener_id = models.ForeignKey(
         'Trener',
         verbose_name="trener_id",
-        null=False,
-        blank=False
+        null=True,
+        blank=True
     )
     medal_id = models.ForeignKey(
         'Medal',
         verbose_name="medal_id",
-        null=False,
-        blank=False
+        null=True,
+        blank=True
     )
     date_event = models.DateTimeField(
         verbose_name="Дата проведения олимпиады",
@@ -55,6 +55,12 @@ class ViewSports(models.Model):
 
 class Trener(models.Model):
     trener_name=''
+    trener_img = models.ImageField(
+        upload_to='media/phototrener/%y/%m/%d/',
+        verbose_name="Загрузить фото: ",
+        null=True,
+        blank=True
+    )
 
 
 
@@ -63,9 +69,9 @@ class Club(models.Model):
         max_length=30,
         verbose_name="Название клуба")
 
-    club_img =models.ImageField(
-        upload_to='media/%y/%m/%d/',
-        verbose_name="Загрузить",
+    club_img = models.ImageField(
+        upload_to='media/club/%y/%m/%d/',
+        verbose_name="Загрузить логотип: ",
         null=True,
         blank=True
     )
