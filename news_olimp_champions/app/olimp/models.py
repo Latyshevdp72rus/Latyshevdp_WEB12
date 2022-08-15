@@ -7,6 +7,7 @@ class Stand(models.Model):
     sportsman_id = models.ForeignKey(
         'Sportsman',
         on_delete=models.CASCADE,
+        related_name='',
         verbose_name="sportsman_id",
         null=True,
         blank=True
@@ -14,6 +15,7 @@ class Stand(models.Model):
     view_olimp_id = models.ForeignKey(
         'ViewOlimp',
         on_delete=models.CASCADE,
+        related_name='',
         verbose_name="view_olimp_id",
         null=True,
         blank=True
@@ -21,6 +23,7 @@ class Stand(models.Model):
     view_sports_id = models.ForeignKey(
         'ViewSports',
         on_delete=models.CASCADE,
+        related_name='',
         verbose_name="view_sports_id",
         null=True,
         blank=True
@@ -28,6 +31,7 @@ class Stand(models.Model):
     trener_id = models.ForeignKey(
         'Trener',
         on_delete=models.CASCADE,
+        related_name='',
         verbose_name="trener_id",
         null=True,
         blank=True
@@ -35,6 +39,7 @@ class Stand(models.Model):
     medal_id = models.ForeignKey(
         'Medal',
         on_delete=models.CASCADE,
+        related_name='',
         verbose_name="medal_id",
         null=True,
         blank=True
@@ -45,10 +50,15 @@ class Stand(models.Model):
         blank=True
     )
 
+    class Meta:
+        verbose_name = 'Стенд'
+        verbose_name_plural = 'Стенд'
 
 class Sportsman(models.Model):
     pass
-
+    class Meta:
+        verbose_name = 'Спортсмен'
+        verbose_name_plural = 'Спортсмена'
 
 class ViewOlimp(models.Model):
     pass
@@ -69,6 +79,7 @@ class Trener(models.Model):
     club_id = models.ForeignKey(
         'Club',
         on_delete=models.CASCADE,
+        related_name='',
         verbose_name="club_id",
         null=True,
         blank=True
