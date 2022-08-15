@@ -17,9 +17,10 @@ class ViewOlimp(models.Model):
 class ViewSports(models.Model):
     pass
 
-class Trener(models.Model):
+class Trener(models.Model)->None:
     pass
 
 
 class Club(models.Model):
+
     pass
