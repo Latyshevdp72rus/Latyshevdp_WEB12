@@ -3,7 +3,43 @@ from django.db import models
 
 
 class Stand(models.Model):
-    pass
+    stand_id = ''
+    sportsman_id = models.ForeignKey(
+        'Sportsman',
+        verbose_name="sportsman_id",
+        null=True,
+        blank=True
+    )
+    view_olimp_id = models.ForeignKey(
+        'ViewOlimp',
+        verbose_name="view_olimp_id",
+        null=True,
+        blank=True
+    )
+    view_sports_id = models.ForeignKey(
+        'ViewSports',
+        verbose_name="view_sports_id",
+        null=True,
+        blank=True
+    )
+    trener_id = models.ForeignKey(
+        'Trener',
+        verbose_name="trener_id",
+        null=True,
+        blank=True
+    )
+    medal_id = models.ForeignKey(
+        'Sportsman',
+        verbose_name="medal_id",
+        null=True,
+        blank=True
+    )
+    date_event = models.ForeignKey(
+        'Medal',
+        verbose_name="ID_Sportsman",
+        null=True,
+        blank=True
+    )
 
 
 class Sportsman(models.Model):
@@ -17,10 +53,13 @@ class ViewOlimp(models.Model):
 class ViewSports(models.Model):
     pass
 
-class Trener(models.Model)->None:
+
+class Trener(models.Model):
     pass
 
 
 class Club(models.Model):
+    pass
 
+class Medal(models.Model):
     pass
