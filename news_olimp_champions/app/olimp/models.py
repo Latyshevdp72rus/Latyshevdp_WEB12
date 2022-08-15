@@ -1,9 +1,8 @@
-from django.contrib import admin
+# from django.contrib import admin
 from django.db import models
 
 
 class Stand(models.Model):
-
     sportsman_id = models.ForeignKey(
         'Sportsman',
         on_delete=models.CASCADE,
@@ -20,14 +19,7 @@ class Stand(models.Model):
         null=True,
         blank=True
     )
-    view_sports_id = models.ForeignKey(
-        'ViewSports',
-        on_delete=models.CASCADE,
-        related_name='ViewSports_Stand',
-        verbose_name="view_sports_id",
-        null=True,
-        blank=True
-    )
+
     medal_id = models.ForeignKey(
         'Medal',
         on_delete=models.CASCADE,
@@ -42,8 +34,8 @@ class Stand(models.Model):
         blank=True
     )
 
-    def __str__(self):
-        return self.sportsman_name
+    # def __str__(self):
+    #     return self.sportsman_name
 
     class Meta:
         verbose_name = 'Стенд'
@@ -68,8 +60,24 @@ class Sportsman(models.Model):
         null=True,
         blank=True
     )
+    view_sports_id = models.ForeignKey(
+        'ViewSports',
+        on_delete=models.CASCADE,
+        related_name='ViewSports_Sportsman',
+        verbose_name="view_sports_id",
+        null=True,
+        blank=True
+    )
+    trener_id = models.ForeignKey(
+        'Trener',
+        on_delete=models.CASCADE,
+        related_name='Trener_Sportsman',
+        verbose_name="view_sports_id",
+        null=True,
+        blank=True
+    )
     sportsman_img = models.ImageField(
-        upload_to='media/phototrener/%y/%m/%d/',
+        upload_to='media/trener/%y/%m/%d/',
         verbose_name="Загрузить фото: ",
         null=True,
         blank=True
@@ -84,7 +92,17 @@ class Sportsman(models.Model):
 
 
 class ViewOlimp(models.Model):
-    pass
+    view_olimp_name = models.CharField(
+        max_length=50,
+        verbose_name="Наименование олимпийских игр: "
+    )
+
+    def __str__(self):
+        return self.view_olimp_name
+
+    class Meta:
+        verbose_name = 'Вид олимпийских игр'
+        verbose_name_plural = 'Вид олимпийских игр'
 
 
 class ViewSports(models.Model):
@@ -97,7 +115,7 @@ class Trener(models.Model):
         verbose_name="ФИО тренера: "
     )
     trener_img = models.ImageField(
-        upload_to='media/phototrener/%y/%m/%d/',
+        upload_to='media/trener/%y/%m/%d/',
         verbose_name="Загрузить фото: ",
         null=True,
         blank=True
@@ -130,8 +148,10 @@ class Club(models.Model):
         null=True,
         blank=True
     )
+
     def __str__(self):
         return self.club_name
+
     class Meta:
         verbose_name = 'Клуб'
         verbose_name_plural = 'Клубы'
