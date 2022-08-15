@@ -3,4 +3,5 @@ from django.apps import AppConfig
 
 class OlimpConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'olimp'
+    name = 'app.olimp'
+    verbose_name="ОЛИМП"
