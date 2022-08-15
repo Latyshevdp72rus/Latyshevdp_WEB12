@@ -3,11 +3,10 @@ from django.db import models
 
 
 class Stand(models.Model):
-    stand_id = ''
     sportsman_id = models.ForeignKey(
         'Sportsman',
         on_delete=models.CASCADE,
-        related_name='',
+        related_name='Sportsman_Stand',
         verbose_name="sportsman_id",
         null=True,
         blank=True
@@ -15,7 +14,7 @@ class Stand(models.Model):
     view_olimp_id = models.ForeignKey(
         'ViewOlimp',
         on_delete=models.CASCADE,
-        related_name='',
+        related_name='ViewOlimp_Stand',
         verbose_name="view_olimp_id",
         null=True,
         blank=True
@@ -23,7 +22,7 @@ class Stand(models.Model):
     view_sports_id = models.ForeignKey(
         'ViewSports',
         on_delete=models.CASCADE,
-        related_name='',
+        related_name='ViewSports_Stand',
         verbose_name="view_sports_id",
         null=True,
         blank=True
@@ -31,7 +30,7 @@ class Stand(models.Model):
     trener_id = models.ForeignKey(
         'Trener',
         on_delete=models.CASCADE,
-        related_name='',
+        related_name='Trener_Stand',
         verbose_name="trener_id",
         null=True,
         blank=True
@@ -39,7 +38,7 @@ class Stand(models.Model):
     medal_id = models.ForeignKey(
         'Medal',
         on_delete=models.CASCADE,
-        related_name='',
+        related_name='Medal_Stand',
         verbose_name="medal_id",
         null=True,
         blank=True
@@ -58,7 +57,7 @@ class Sportsman(models.Model):
     pass
     class Meta:
         verbose_name = 'Спортсмен'
-        verbose_name_plural = 'Спортсмена'
+        verbose_name_plural = 'Спортсмены'
 
 class ViewOlimp(models.Model):
     pass
@@ -69,7 +68,10 @@ class ViewSports(models.Model):
 
 
 class Trener(models.Model):
-    trener_name = ''
+    trener_name = models.CharField(
+        max_length=50,
+        verbose_name="ФИО тренера: "
+    )
     trener_img = models.ImageField(
         upload_to='media/phototrener/%y/%m/%d/',
         verbose_name="Загрузить фото: ",
@@ -79,17 +81,20 @@ class Trener(models.Model):
     club_id = models.ForeignKey(
         'Club',
         on_delete=models.CASCADE,
-        related_name='',
+        related_name='Club_Trener',
         verbose_name="club_id",
         null=True,
         blank=True
     )
+    class Meta:
+        verbose_name = 'Тренер'
+        verbose_name_plural = 'Тренеры'
 
 
 class Club(models.Model):
     club_name = models.CharField(
         max_length=30,
-        verbose_name="Название клуба"
+        verbose_name="Название клуба: "
     )
     club_img = models.ImageField(
         upload_to='media/club/%y/%m/%d/',
@@ -98,9 +103,17 @@ class Club(models.Model):
         blank=True
     )
 
+    class Meta:
+        verbose_name = 'Клуб'
+        verbose_name_plural = 'Клубы'
+
 
 class Medal(models.Model):
     medal_name = models.CharField(
         max_length=15,
-        verbose_name="Вид медали"
+        verbose_name="Вид медали: "
     )
+
+    class Meta:
+        verbose_name = 'Медаль'
+        verbose_name_plural = 'Медали'
