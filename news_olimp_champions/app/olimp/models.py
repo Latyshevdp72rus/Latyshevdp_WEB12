@@ -5,12 +5,12 @@ from django.db import models
 class Stand(models.Model):
     stand_name = models.CharField(
         max_length=50,
-        verbose_name="Заголовок стэнда",
+        verbose_name="Заголовок стенда",
         null=False,
         blank=False,
     )
     stand_description = models.TextField(
-        verbose_name="Описание стэнда",
+        verbose_name="Описание стенда",
         null=False,
         blank=False,
     )

@@ -4,10 +4,10 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.conf import settings
 from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal
+from app.olimp.forms import StandForm
+from django.urls import reverse_lazy
 
 
-# from django.urls import reverse_lazy
-# from app.books.forms import BookForm
 # from app.books.filters import BookFilter
 # from app.books.validators import validation_book_name
 
@@ -20,8 +20,8 @@ class StandList(FilterView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['stands'] = self.queryset
-        context['title'] = 'СТЭНД'
+        context["stands"] = self.queryset
+        context["title"] = "СТЭНД"
         return context
 
 
@@ -29,9 +29,12 @@ class StandDetail(DetailView):
     model = Stand
     context_object_name = "stands"
     template_name = "stand/stand_detail.html"
-    pk_url_kwarg = 'pk'
-
+    pk_url_kwarg = "pk"
 
 
 class StandCreateView(CreateView):
-    pass
+    model = Stand
+    model_form = StandForm
+    template_name = "stand/add_stand.html"
+    success_url = reverse_lazy("add_stand")
+    fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event"]
