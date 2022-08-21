@@ -15,7 +15,7 @@ class StandList(FilterView):
     model = Stand
     # filterset_class = StandFilter
     context_object_name = "stands"
-    template_name = "stands/stand_list.html"
+    template_name = "stand/stand_list.html"
     paginate_by = settings.OBJECTS_ON_PAGE
 
     def get_context_data(self, **kwargs):
@@ -28,7 +28,7 @@ class StandList(FilterView):
 class StandDetail(DetailView):
     model = Stand
     context_object_name = "stands"
-    template_name = "stands/stand_detail.html"
+    template_name = "stand/stand_detail.html"
     pk_url_kwarg = 'pk'
 
 
