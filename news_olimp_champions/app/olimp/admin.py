@@ -20,14 +20,23 @@ class ViewSportsAdmin(admin.ModelAdmin):
     search_fields = ('view_sport_name',)
     list_editable = ('view_sports_is_visible',)
     list_filter = ('view_sport_name', 'view_sports_is_visible',)
-
+    fieldsets = (
+        (None, {
+            'fields': ('view_sport_name',)
+        }),
+    )
 
 class TrenerAdmin(admin.ModelAdmin):
-    list_display = ('id', 'trener_name', 'trener_is_visible')
+    list_display = ('id', 'trener_name', 'trener_img', 'trener_is_visible')
     list_display_links = ('id', 'trener_name',)
     search_fields = ('trener_name',)
     list_editable = ('trener_is_visible',)
     list_filter = ('trener_name', 'trener_is_visible',)
+    fieldsets = (
+        (None, {
+            'fields': ('trener_name', 'trener_img')
+        }),
+    )
 
 
 class ClubAdmin(admin.ModelAdmin):
@@ -36,6 +45,11 @@ class ClubAdmin(admin.ModelAdmin):
     search_fields = ('club_name',)
     list_editable = ('club_is_visible',)
     list_filter = ('club_name', 'club_is_visible',)
+    fieldsets = (
+        (None, {
+            'fields': ('club_name', 'club_img',)
+        }),
+    )
 
 
 class MedalAdmin(admin.ModelAdmin):
@@ -44,6 +58,11 @@ class MedalAdmin(admin.ModelAdmin):
     search_fields = ('medal_name',)
     list_editable = ('medal_is_visible',)
     list_filter = ('medal_name', 'medal_is_visible',)
+    fieldsets = (
+        (None, {
+            'fields': ('medal_name','medal_is_visible')
+        }),
+    )
 
 
 admin.site.register(Stand, StandAdmin)
