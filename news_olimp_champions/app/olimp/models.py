@@ -9,16 +9,16 @@ class Stand(models.Model):
         null=False,
         blank=False,
     )
-    stand_description=models.TextField(
+    stand_description = models.TextField(
         verbose_name="Описание стэнда",
-        null=True,
-        blank=True,
+        null=False,
+        blank=False,
     )
     sportsman_id = models.ForeignKey(
         "Sportsman",
         on_delete=models.CASCADE,
         related_name="Sportsman_Stand",
-        verbose_name="sportsman_id",
+        verbose_name="Спортсмен",
         null=False,
         blank=False,
     )
@@ -26,7 +26,7 @@ class Stand(models.Model):
         "ViewOlimp",
         on_delete=models.CASCADE,
         related_name="ViewOlimp_Stand",
-        verbose_name="view_olimp_id",
+        verbose_name="Вид олимпийских игр",
         null=False,
         blank=False,
     )
@@ -34,12 +34,12 @@ class Stand(models.Model):
         "Medal",
         on_delete=models.CASCADE,
         related_name="Medal_Stand",
-        verbose_name="medal_id",
+        verbose_name="Медаль",
         null=False,
         blank=False,
     )
-    date_event = models.DateTimeField(
-        verbose_name="Дата проведения олимпиады",
+    date_event = models.DateField(
+        verbose_name="Дата олимпиады",
         null=True,
         blank=False,
     )
@@ -86,7 +86,7 @@ class Sportsman(models.Model):
         "ViewSports",
         on_delete=models.CASCADE,
         related_name="ViewSports_Sportsman",
-        verbose_name="view_sports_id",
+        verbose_name="Вид спорта",
         null=False,
         blank=False,
     )
@@ -94,7 +94,7 @@ class Sportsman(models.Model):
         "Trener",
         on_delete=models.CASCADE,
         related_name="Trener_Sportsman",
-        verbose_name="trener_id",
+        verbose_name="Тренер",
         null=False,
         blank=False,
     )
@@ -179,7 +179,7 @@ class Trener(models.Model):
         "Club",
         on_delete=models.CASCADE,
         related_name="Club_Trener",
-        verbose_name="club_id",
+        verbose_name="Клуб",
         null=False,
         blank=False,
     )
