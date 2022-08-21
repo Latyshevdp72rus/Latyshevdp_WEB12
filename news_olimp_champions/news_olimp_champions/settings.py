@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_filters',
-    'app.olimp.apps.OlimpConfig'
+    'app.olimp.apps.OlimpConfig',
+    'app.user.apps.UserConfig',
+
 ]
 
 MIDDLEWARE = [
