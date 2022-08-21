@@ -1,4 +1,4 @@
-# from django.contrib import admin
+from django.contrib import admin
 from django.db import models
 
 
@@ -40,6 +40,10 @@ class Stand(models.Model):
         verbose_name="Дата проведения олимпиады",
         null=True,
         blank=True
+    )
+    stand_is_visible = models.BooleanField(
+        default=False,
+        verbose_name="Удалить"
     )
 
     def __str__(self):
@@ -90,6 +94,10 @@ class Sportsman(models.Model):
         null=True,
         blank=True
     )
+    sportsman_is_visible = models.BooleanField(
+        default=False,
+        verbose_name="Удалить"
+    )
 
     def __str__(self):
         return self.sportsman_name
@@ -103,6 +111,10 @@ class ViewOlimp(models.Model):
     view_olimp_name = models.CharField(
         max_length=50,
         verbose_name="Наименование олимпийских игр: "
+    )
+    view_olimp_is_visble = models.BooleanField(
+        default=False,
+        verbose_name="Удалить"
     )
 
     def __str__(self):
@@ -118,7 +130,10 @@ class ViewSports(models.Model):
         max_length=50,
         verbose_name="Наименование вида спорта: "
     )
-
+   view_sports_is_visible = models.BooleanField(
+       default=False,
+       verbose_name="Удалить"
+   )
    def __str__(self):
         return self.view_sport_name
 
@@ -146,13 +161,17 @@ class Trener(models.Model):
         null=True,
         blank=True
     )
+    trener_is_visible = models.BooleanField(
+        default=False,
+        verbose_name="Удалить"
+    )
 
     def __str__(self):
         return self.trener_name
 
     class Meta:
         verbose_name = 'Тренер'
-        verbose_name_plural = 'Тренеры'
+        verbose_name_plural = 'Тренера'
 
 
 class Club(models.Model):
@@ -165,6 +184,10 @@ class Club(models.Model):
         verbose_name="Загрузить логотип: ",
         null=True,
         blank=True
+    )
+    club_is_visible = models.BooleanField(
+        default=False,
+        verbose_name="Удалить"
     )
 
     def __str__(self):
@@ -180,7 +203,10 @@ class Medal(models.Model):
         max_length=15,
         verbose_name="Вид медали: "
     )
-
+    medal_is_visible = models.BooleanField(
+        default=False,
+        verbose_name="Удалить"
+    )
     def __str__(self):
         return self.medal_name
 
