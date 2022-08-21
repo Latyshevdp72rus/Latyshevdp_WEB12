@@ -99,7 +99,7 @@ class Sportsman(models.Model):
         blank=False,
     )
     sportsman_img = models.ImageField(
-        upload_to="media/trener/%y/%m/%d/",
+        upload_to="media/sportsman/%y/%m/%d/",
         verbose_name="Загрузить фото",
         null=False,
         blank=False,

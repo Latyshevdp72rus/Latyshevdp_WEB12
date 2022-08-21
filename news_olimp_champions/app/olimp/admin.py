@@ -69,7 +69,7 @@ class ViewSportsAdmin(admin.ModelAdmin):
 
 
 class TrenerAdmin(admin.ModelAdmin):
-    list_display = ("id", "trener_name", "trener_img", "trener_is_visible")
+    list_display = ("id", "trener_name", "trener_is_visible")
     list_display_links = ("id", "trener_name",)
     search_fields = ("trener_name",)
     list_editable = ("trener_is_visible",)
@@ -86,7 +86,7 @@ class TrenerAdmin(admin.ModelAdmin):
 
 
 class ClubAdmin(admin.ModelAdmin):
-    list_display = ("id", "club_name", "club_img", "club_is_visible")
+    list_display = ("id", "club_name", "club_is_visible")
     list_display_links = ("id", "club_name",)
     search_fields = ("club_name",)
     list_editable = ("club_is_visible",)
