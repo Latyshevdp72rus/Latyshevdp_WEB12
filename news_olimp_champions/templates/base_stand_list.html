@@ -1,0 +1,29 @@
+{% load static %}
+{% include "inc/_header.html" %}
+
+
+<div class="stand_list">
+{% for stand in page_obj %}
+    {{ stand.stand_name }} {{ stand.stand_description }}  {{ stand.view_olimp_id }} <a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a> {{ stand.medal_id }}  {{ stand.date_event }}
+{% endfor %}
+</div>
+
+</div>
+    <div>
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; Первый</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
+        {% endif %}
+
+        <span>
+            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Следующий</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
+        {% endif %}
+    </div>
+</div>
+
+{% include "inc/_footer.html" %}
