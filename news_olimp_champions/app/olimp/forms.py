@@ -13,7 +13,7 @@ class StandForm(forms.Form):
         required=True,
         min_length=10,
         max_length=30,
-        label='Заголовок',
+        label="Заголовок",
         # validators=[validation_book_name],
         widget=forms.TextInput()
         # attrs = {"class": "librarys_text"}
@@ -22,14 +22,14 @@ class StandForm(forms.Form):
         required=True,
         min_length=10,
         max_length=100,
-        label='Описание',
+        label="Описание",
         # validators=[validation_book_name],
         widget=forms.TextInput()
         # attrs = {"class": "librarys_text"}
     )
     date_event = forms.DateField(
         required=True,
-        label='Дата олимпиады',
+        label="Дата олимпиады",
         # validators=[validation_book_name],
         widget=forms.SelectDateWidget(),
         # attrs = {"class": "librarys_text"}
@@ -44,14 +44,14 @@ class StandForm(forms.Form):
         model = Stand
         fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event"]
         widgets = {
-            "stand_name": '',
-            "stand_description": '',
-            "sportsman_id": '',
-            "view_olimp_id": '',
-            "medal_id": '',
-            "date_event": '',
+            "stand_name": "",
+            "stand_description": "",
+            "sportsman_id": "",
+            "view_olimp_id": "",
+            "medal_id": "",
+            "date_event": "",
         }
 
-        # 'book_name': forms.TextInput(attrs={"class": "librarys_text"}),
-        # 'description': forms.Textarea(attrs={"class": "librarys_textarea"}),
-        # 'author': forms.Select(attrs={"class": "librarys_textarea"  })
+        # "book_name": forms.TextInput(attrs={"class": "librarys_text"}),
+        # "description": forms.Textarea(attrs={"class": "librarys_textarea"}),
+        # "author": forms.Select(attrs={"class": "librarys_textarea"  })
