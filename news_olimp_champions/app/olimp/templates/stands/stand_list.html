@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Новости олимпийских игр</title>
+    <link rel="stylesheet" href="style/main.css" >
 </head>
 <body>
+{% for stand in page_obj %}
 
+  {{ stand.stand_name }} {{ stand.stand_description }}  {{ stand.view_olimp_id }} <a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a> {{ stand.medal_id }}  {{ stand.date_event }}
+
+{% endfor %}
 </body>
 </html>
