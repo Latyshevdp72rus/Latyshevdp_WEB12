@@ -5,45 +5,49 @@ from django.db import models
 class Stand(models.Model):
     stand_name = models.CharField(
         max_length=50,
-        verbose_name="Заголовок стэнда: "
+        verbose_name="Заголовок стэнда",
+        null=False,
+        blank=False,
     )
-    stand_description = models.TextField(
-        verbose_name="Описание стэнда: ",
+    stand_description=models.TextField(
+        verbose_name="Описание стэнда",
         null=True,
-        blank=True
+        blank=True,
     )
     sportsman_id = models.ForeignKey(
         "Sportsman",
         on_delete=models.CASCADE,
         related_name="Sportsman_Stand",
-        verbose_name="sportsman_id: ",
-        null=True,
-        blank=True
+        verbose_name="sportsman_id",
+        null=False,
+        blank=False,
     )
     view_olimp_id = models.ForeignKey(
         "ViewOlimp",
         on_delete=models.CASCADE,
         related_name="ViewOlimp_Stand",
-        verbose_name="view_olimp_id: ",
-        null=True,
-        blank=True
+        verbose_name="view_olimp_id",
+        null=False,
+        blank=False,
     )
     medal_id = models.ForeignKey(
         "Medal",
         on_delete=models.CASCADE,
         related_name="Medal_Stand",
-        verbose_name="medal_id: ",
-        null=True,
-        blank=True
+        verbose_name="medal_id",
+        null=False,
+        blank=False,
     )
     date_event = models.DateTimeField(
         verbose_name="Дата проведения олимпиады",
         null=True,
-        blank=True
+        blank=False,
     )
     stand_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрыть запись: "
+        verbose_name="Скрытая запись",
+        null=True,
+        blank=True,
     )
 
     def __str__(self):
@@ -57,64 +61,76 @@ class Stand(models.Model):
 class Sportsman(models.Model):
     sportsman_name = models.CharField(
         max_length=50,
-        verbose_name="ФИО спортсмена: "
+        verbose_name="ФИО спортсмена",
+        null=False,
+        blank=False,
     )
     sportsman_country = models.CharField(
         max_length=30,
-        verbose_name="Страна: "
+        verbose_name="Страна",
+        null=False,
+        blank=False,
     )
     sportsman_birthday = models.DateField(
         max_length=8,
-        verbose_name="Дата рождения"
+        verbose_name="Дата рождения",
+        null=False,
+        blank=False,
     )
     sportsman_biogrpahy = models.TextField(
-        verbose_name="Описание книги: ",
+        verbose_name="Биография",
         null=True,
-        blank=True
+        blank=True,
     )
     view_sports_id = models.ForeignKey(
         "ViewSports",
         on_delete=models.CASCADE,
         related_name="ViewSports_Sportsman",
-        verbose_name="view_sports_id: ",
-        null=True,
-        blank=True
+        verbose_name="view_sports_id",
+        null=False,
+        blank=False,
     )
     trener_id = models.ForeignKey(
         "Trener",
         on_delete=models.CASCADE,
         related_name="Trener_Sportsman",
-        verbose_name="view_sports_id: ",
-        null=True,
-        blank=True
+        verbose_name="trener_id",
+        null=False,
+        blank=False,
     )
     sportsman_img = models.ImageField(
         upload_to="media/trener/%y/%m/%d/",
-        verbose_name="Загрузить фото: ",
-        null=True,
-        blank=True
+        verbose_name="Загрузить фото",
+        null=False,
+        blank=False,
     )
     sportsman_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрыть запись: "
+        verbose_name="Скрытая запись",
+        null=True,
+        blank=True,
     )
 
     def __str__(self):
         return self.sportsman_name
 
     class Meta:
-        verbose_name = "СПОРТСМЕН"
+        verbose_name = "СПОРТСМЕНА"
         verbose_name_plural = "СПОРТСМЕНЫ"
 
 
 class ViewOlimp(models.Model):
     view_olimp_name = models.CharField(
         max_length=50,
-        verbose_name="Наименование олимпийских игр: "
+        verbose_name="Наименование олимпийских игр",
+         null=False,
+         blank=False,
     )
-    view_olimp_is_visble = models.BooleanField(
+    view_olimp_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрыть запись: "
+        verbose_name="Скрытая запись",
+        null=True,
+        blank=True,
     )
 
     def __str__(self):
@@ -122,17 +138,21 @@ class ViewOlimp(models.Model):
 
     class Meta:
         verbose_name = "ВИД ОЛИМПИЙСКИХ ИГР"
-        verbose_name_plural = "ВИД ОЛИМПИЙСКИХ ИГР"
+        verbose_name_plural = "ВИДЫ ОЛИМПИЙСКИХ ИГР"
 
 
 class ViewSports(models.Model):
    view_sport_name = models.CharField(
-        max_length=50,
-        verbose_name="Наименование вида спорта: "
+       max_length=50,
+       verbose_name="Наименование вида спорта",
+       null=False,
+       blank=False,
     )
    view_sports_is_visible = models.BooleanField(
        default=False,
-       verbose_name="Скрыть запись: "
+       verbose_name="Скрытая запись",
+       null=True,
+       blank=True,
    )
    def __str__(self):
         return self.view_sport_name
@@ -145,25 +165,29 @@ class ViewSports(models.Model):
 class Trener(models.Model):
     trener_name = models.CharField(
         max_length=50,
-        verbose_name="ФИО тренера: "
+        verbose_name="ФИО тренера",
+        null=False,
+        blank=False,
     )
     trener_img = models.ImageField(
         upload_to="media/trener/%y/%m/%d/",
-        verbose_name="Загрузить фото: ",
-        null=True,
-        blank=True
+        verbose_name="Загрузить фото",
+        null=False,
+        blank=False,
     )
     club_id = models.ForeignKey(
         "Club",
         on_delete=models.CASCADE,
         related_name="Club_Trener",
-        verbose_name="club_id: ",
-        null=True,
-        blank=True
+        verbose_name="club_id",
+        null=False,
+        blank=False,
     )
     trener_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрыть запись: "
+        verbose_name="Скрытая запись",
+        null=True,
+        blank=True,
     )
 
     def __str__(self):
@@ -177,17 +201,21 @@ class Trener(models.Model):
 class Club(models.Model):
     club_name = models.CharField(
         max_length=30,
-        verbose_name="Название клуба: "
+        verbose_name="Название клуба",
+        null=False,
+        blank=False,
     )
     club_img = models.ImageField(
         upload_to="media/club/%y/%m/%d/",
-        verbose_name="Загрузить логотип: ",
-        null=True,
-        blank=True
+        verbose_name="Загрузить логотип",
+        null=False,
+        blank=False,
     )
     club_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрыть запись: "
+        verbose_name="Скрытая запись",
+        null=True,
+        blank=True,
     )
 
     def __str__(self):
@@ -200,12 +228,16 @@ class Club(models.Model):
 
 class Medal(models.Model):
     medal_name = models.CharField(
-        max_length=15,
-        verbose_name="Вид медали: "
+        max_length=20,
+        verbose_name="Вид медали",
+        null=False,
+        blank=False,
     )
     medal_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрыть запись: "
+        verbose_name="Скрытая запись",
+        null=True,
+        blank=True,
     )
     def __str__(self):
         return self.medal_name
