@@ -4,13 +4,14 @@ from django.db import models
 
 class Stand(models.Model):
     stand_name = models.CharField(
-        max_length=50,
-        verbose_name="Заголовок стенда",
+        max_length=20,
+        verbose_name="Заголовок записи",
         null=False,
         blank=False,
     )
     stand_description = models.TextField(
-        verbose_name="Описание стенда",
+        verbose_name="Описание записи",
+        max_length=100,
         null=False,
         blank=False,
     )

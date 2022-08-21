@@ -4,7 +4,7 @@
 
 <div class="stand_list">
 {% for stand in page_obj %}
-    {{ stand.stand_name }} {{ stand.stand_description }}  {{ stand.view_olimp_id }} <a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a> {{ stand.medal_id }}  {{ stand.date_event }}
+    {{ stand.stand_name }} {{ stand.stand_description }}  {{ stand.view_olimp_id }} <a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a> {{ stand.medal_id }}  {{ stand.date_event }}<br>
 {% endfor %}
 </div>
 

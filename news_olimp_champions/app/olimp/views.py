@@ -21,7 +21,7 @@ class StandList(FilterView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["stands"] = self.queryset
-        context["title"] = "СТЭНД"
+        context["title"] = "Стенд"
         return context
 
 
@@ -35,6 +35,6 @@ class StandDetail(DetailView):
 class StandCreateView(CreateView):
     model = Stand
     model_form = StandForm
-    template_name = "stand/add_stand.html"
+    template_name = "stand/stand_add.html"
     success_url = reverse_lazy("add_stand")
     fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event"]
