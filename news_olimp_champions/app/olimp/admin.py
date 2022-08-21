@@ -7,11 +7,36 @@ class StandAdmin(admin.ModelAdmin):
 
 
 class SportsmanAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('id', 'sportsman_name', 'sportsman_country', 'sportsman_birthday', 'sportsman_biogrpahy',
+                    'view_sports_id', 'trener_id', 'sportsman_img', 'sportsman_is_visible')
+    list_display_links = ('id', 'sportsman_name', 'sportsman_country',)
+    search_fields = ('sportsman_name', 'sportsman_country',)
+    list_editable = ('sportsman_is_visible',)
+    list_filter = ('sportsman_name', 'sportsman_country', 'sportsman_is_visible',)
+    ordering = ("id",)
+    fieldsets = (
+        ("Основные сведения", {
+            'fields': ('sportsman_name', 'sportsman_country', 'sportsman_birthday', 'sportsman_biogrpahy',
+                       'sportsman_img', 'sportsman_is_visible')
+        }),
+        ("Прочие сведения", {
+            'fields': ('view_sports_id', 'trener_id')
+        }),
+    )
 
 
 class ViewOlimpAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('id', 'view_olimp_name', 'view_olimp_is_visible')
+    list_display_links = ('id', 'view_olimp_name',)
+    search_fields = ('view_olimp_name',)
+    list_editable = ('view_olimp_is_visible',)
+    list_filter = ('view_olimp_name', 'view_olimp_is_visible',)
+    ordering = ("id",)
+    fieldsets = (
+        ("Основные сведения", {
+            'fields': ('view_olimp_name', 'view_olimp_is_visible',)
+        }),
+    )
 
 
 class ViewSportsAdmin(admin.ModelAdmin):
@@ -20,9 +45,10 @@ class ViewSportsAdmin(admin.ModelAdmin):
     search_fields = ('view_sport_name',)
     list_editable = ('view_sports_is_visible',)
     list_filter = ('view_sport_name', 'view_sports_is_visible',)
+    ordering = ("id",)
     fieldsets = (
-        (None, {
-            'fields': ('view_sport_name','view_sports_is_visible',)
+        ("Основные сведения", {
+            'fields': ('view_sport_name', 'view_sports_is_visible',)
         }),
     )
 
@@ -33,9 +59,10 @@ class TrenerAdmin(admin.ModelAdmin):
     search_fields = ('trener_name',)
     list_editable = ('trener_is_visible',)
     list_filter = ('trener_name', 'trener_is_visible',)
+    ordering = ("id",)
     fieldsets = (
-        (None, {
-            'fields': ('trener_name', 'trener_img','trener_is_visible',)
+        ("Основные сведения", {
+            'fields': ('trener_name', 'trener_img', 'trener_is_visible',)
         }),
     )
 
@@ -46,8 +73,9 @@ class ClubAdmin(admin.ModelAdmin):
     search_fields = ('club_name',)
     list_editable = ('club_is_visible',)
     list_filter = ('club_name', 'club_is_visible',)
+    ordering = ("id",)
     fieldsets = (
-        (None, {
+        ("Основные сведения", {
             'fields': ('club_name', 'club_img', 'club_is_visible',)
         }),
     )
@@ -59,8 +87,9 @@ class MedalAdmin(admin.ModelAdmin):
     search_fields = ('medal_name',)
     list_editable = ('medal_is_visible',)
     list_filter = ('medal_name', 'medal_is_visible',)
+    ordering = ("id",)
     fieldsets = (
-        (None, {
+        ("Основные сведения", {
             'fields': ('medal_name', 'medal_is_visible',)
         }),
     )
