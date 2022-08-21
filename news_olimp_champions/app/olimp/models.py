@@ -51,7 +51,7 @@ class Stand(models.Model):
 
     class Meta:
         verbose_name = "СТЕНД"
-        verbose_name_plural = "СТЕНДЫ"
+        verbose_name_plural = "СТЕНД"
 
 
 class Sportsman(models.Model):
@@ -170,8 +170,8 @@ class Trener(models.Model):
         return self.trener_name
 
     class Meta:
-        verbose_name = "ТРЕНЕР"
-        verbose_name_plural = "ТРЕНЕРА"
+        verbose_name = "ТРЕНЕРА"
+        verbose_name_plural = "ТРЕНЕРЫ"
 
 
 class Club(models.Model):

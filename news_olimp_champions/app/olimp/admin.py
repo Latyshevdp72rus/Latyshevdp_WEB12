@@ -35,7 +35,7 @@ class TrenerAdmin(admin.ModelAdmin):
     list_filter = ('trener_name', 'trener_is_visible',)
     fieldsets = (
         (None, {
-            'fields': ('trener_name', 'trener_img' 'trener_is_visible',)
+            'fields': ('trener_name', 'trener_img','trener_is_visible',)
         }),
     )
 
