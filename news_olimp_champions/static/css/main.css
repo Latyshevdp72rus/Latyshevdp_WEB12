@@ -1,4 +1,58 @@
-.stand_list {
-   border: 1px solid red;
-   color:red;
+body{
+    margin:0px;
+    padding:0px;
+    background-image: url("../img/background.jpg");
+    background-repeat: repeat;
+}
+
+#navbar {
+  margin: 0px;
+  padding-right:10px;
+  background-color: #303b44;
+  width:100%
+}
+
+header{
+  display: flex;
+  justify-content: space-around
+}
+
+
+#navbar ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+#navbar li {
+    background-color: #303b44;
+    color:white;
+    padding:5px;
+}
+
+#navbar a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+#navbar a:hover {
+  color: orange;
+  font-weight: bold;
+}
+
+.field{
+ background:#f8f7f7;
+ border: 1px solid #e9e8e8;
+ border-radius:4px;
+ width:35%;
+ margin:auto;
+ padding:15px;
+ height:80%;
+}
+
+.form_field{
+padding-right:100px;
+ text-align:right;
 }

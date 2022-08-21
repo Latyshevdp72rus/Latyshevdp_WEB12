@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.admin import widgets
 from app.olimp.models import Stand
+# from django.contrib.admin.widgets import AdminDateWidget
 
 
 # from app.olimp.validators import validation_book_name
@@ -30,7 +31,7 @@ class StandForm(forms.Form):
         required=True,
         label='Дата олимпиады',
         # validators=[validation_book_name],
-        widget=forms.TextInput()
+        widget=forms.SelectDateWidget(),
         # attrs = {"class": "librarys_text"}
     )
 
