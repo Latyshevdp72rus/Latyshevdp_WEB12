@@ -22,9 +22,10 @@ class ViewSportsAdmin(admin.ModelAdmin):
     list_filter = ('view_sport_name', 'view_sports_is_visible',)
     fieldsets = (
         (None, {
-            'fields': ('view_sport_name',)
+            'fields': ('view_sport_name','view_sports_is_visible',)
         }),
     )
+
 
 class TrenerAdmin(admin.ModelAdmin):
     list_display = ('id', 'trener_name', 'trener_img', 'trener_is_visible')
@@ -34,7 +35,7 @@ class TrenerAdmin(admin.ModelAdmin):
     list_filter = ('trener_name', 'trener_is_visible',)
     fieldsets = (
         (None, {
-            'fields': ('trener_name', 'trener_img')
+            'fields': ('trener_name', 'trener_img' 'trener_is_visible',)
         }),
     )
 
@@ -47,7 +48,7 @@ class ClubAdmin(admin.ModelAdmin):
     list_filter = ('club_name', 'club_is_visible',)
     fieldsets = (
         (None, {
-            'fields': ('club_name', 'club_img',)
+            'fields': ('club_name', 'club_img', 'club_is_visible',)
         }),
     )
 
@@ -60,7 +61,7 @@ class MedalAdmin(admin.ModelAdmin):
     list_filter = ('medal_name', 'medal_is_visible',)
     fieldsets = (
         (None, {
-            'fields': ('medal_name','medal_is_visible')
+            'fields': ('medal_name', 'medal_is_visible',)
         }),
     )
 
