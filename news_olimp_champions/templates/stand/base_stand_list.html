@@ -2,15 +2,28 @@
 {% include "../inc/_header.html" %}
 
 
-<div class="stand_list">
-{% for stand in page_obj %}
-    {{ stand.stand_name }} {{ stand.stand_description }}  {{ stand.view_olimp_id }} <a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a> {{ stand.medal_id }}  {{ stand.date_event }}<br>
-{% endfor %}
-</div>
+<div class="field">
+    <div class="field_news">
+        <div class="news">
+            {% for stand in page_obj %}
+                <div class="redcords">
+                    <div class="photo_news">
+                        <img src="">
+                    </div>
+                    <div class="items_news">
+                        <h3>{{ stand.stand_name }}</h3>
+                        <p>{{ stand.stand_description }}</p>
+                        <p>{{ stand.view_olimp_id }}</p>
+                        <p><a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a></p>
+                        <p>{{ stand.medal_id }}  </p>
+                        <p>{{ stand.date_event }} </p>
+                    </div>
 
-</div>
-    <div>
-        {% if page_obj.has_previous %}
+                </div>
+                {% endfor %}
+        </div>
+        <div class="pagin">
+             {% if page_obj.has_previous %}
             <a href="?page=1">&laquo; Первый</a>
             <a href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
         {% endif %}
@@ -22,7 +35,11 @@
             <a href="?page={{ page_obj.next_page_number }}">Следующий</a>
             <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
         {% endif %}
+        </div>
     </div>
+
+
+
 </div>
 
 {% include "../inc/_footer.html" %}
