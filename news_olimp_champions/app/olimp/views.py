@@ -29,11 +29,6 @@ class StandDetail(DetailView):
     template_name = "stand/stand_detail.html"
     pk_url_kwarg = "pk"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["stands"] = self.queryset
-        context["title"] = "Биография спортсмена"
-        return context
 
 
 class StandCreateView(CreateView):

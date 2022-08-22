@@ -11,7 +11,7 @@ class StandForm(forms.Form):
         min_length=10,
         max_length=30,
         label="Заголовок",
-        validators=[validation_stand],
+        # validators=[validation_stand],
         widget=forms.TextInput(),
     )
     stand_description = forms.CharField(
