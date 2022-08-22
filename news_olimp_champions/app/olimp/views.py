@@ -6,10 +6,8 @@ from django.conf import settings
 from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal
 from app.olimp.forms import StandForm
 from django.urls import reverse_lazy
-
-
 # from app.books.filters import BookFilter
-# from app.books.validators import validation_book_name
+
 
 class StandList(FilterView):
     model = Stand
@@ -21,7 +19,7 @@ class StandList(FilterView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["stands"] = self.queryset
-        context["title"] = "Стенд"
+        context["title"] = "Новостной сайт «Олмипийские чемпионы»"
         return context
 
 
@@ -31,10 +29,23 @@ class StandDetail(DetailView):
     template_name = "stand/stand_detail.html"
     pk_url_kwarg = "pk"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["stands"] = self.queryset
+        context["title"] = "Биография спортсмена"
+        return context
+
 
 class StandCreateView(CreateView):
     model = Stand
     model_form = StandForm
+    context_object_name = "stands"
     template_name = "stand/stand_add.html"
     success_url = reverse_lazy("add_stand")
     fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event"]
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["stands"] = self.queryset
+        context["title"] = "Добавления спортсмена на стэнд"
+        return context

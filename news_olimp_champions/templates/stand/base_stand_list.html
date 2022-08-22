@@ -14,7 +14,6 @@
             <a href="?page=1">&laquo; Первый</a>
             <a href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
         {% endif %}
-
         <span>
             Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
         </span>
