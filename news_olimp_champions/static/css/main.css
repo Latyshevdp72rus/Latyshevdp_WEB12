@@ -41,7 +41,7 @@ header{
 
 #navbar li ul{
     list-style: none;
-   text-align: center;
+    text-align: left;
     padding: 0;
     margin: 0;
     width: 150px;
@@ -129,9 +129,8 @@ header{
 .photo_news{
     border: 1px solid #e9e8e8;
     margin:20px;
-    padding-right:150px;
-    padding-bottom:200px;
 
+    height:100%;
 }
 
 .items_news{
@@ -141,7 +140,10 @@ header{
     height:100%;
 
 }
-
+img{
+    width:150px;
+    height:200px;
+}
 .pagin{
     text-align:center;
 }

@@ -24,8 +24,8 @@ class StandList(FilterView):
 
 
 class StandDetail(DetailView):
-    model = Stand
-    context_object_name = "stands"
+    model = Sportsman
+    context_object_name = "spotsman"
     template_name = "stand/stand_detail.html"
     pk_url_kwarg = "pk"
 

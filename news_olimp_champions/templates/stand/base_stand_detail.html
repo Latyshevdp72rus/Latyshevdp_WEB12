@@ -1,21 +1,25 @@
 {% load static %}
 {% include "../inc/_header.html" %}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="field">
+    <div class="field_news">
+        <div class="news">
+                <div class="redcords">
+                    <div class="photo_news">
+                        <img src="/media/{{ spotsman.sportsman_img }}">
+                    </div>
+                    <div class="items_news">
+                             {{spotsman.sportsman_name}}
+<!--                        <h3>{{ stand.stand_name }}</h3>-->
+<!--                        <p>{{ stand.stand_description }}</p>-->
+<!--                        <p>{{ stand.view_olimp_id }}</p>-->
+<!--                        <p><strong>ФИО спортсмена: </strong><a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a></p>-->
+<!--                        <p><strong>Награда: </strong>{{ stand.medal_id }}  </p>-->
+<!--                        <p><strong>Дата события: </strong>{{ stand.date_event }} </p>-->
+                    </div>
 
-<div>
-   {{ stands.sportsman_id }}
+                </div>
+        </div>
+    </div>
 </div>
 
 {% include "../inc/_footer.html" %}
