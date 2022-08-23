@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.db import models
+from PIL import Image
 
 
 class Stand(models.Model):
@@ -113,6 +114,14 @@ class Sportsman(models.Model):
         blank=True,
     )
 
+    def save(self):
+        super().save()
+        sportsman_images = Image.open(self.sportsman_img.path)
+        if sportsman_images.height > 200 or sportsman_images.width > 150:
+            output_size = (150, 200)
+            sportsman_images.thumbnail(output_size)
+            sportsman_images.save(self.sportsman_img.path)
+
     def __str__(self):
         return self.sportsman_name
 
@@ -193,6 +202,14 @@ class Trener(models.Model):
         blank=True,
     )
 
+    def save(self):
+        super().save()
+        trener_images = Image.open(self.trener_img.path)
+        if trener_images.height > 200 or trener_images.width > 150:
+            output_size = (150, 200)
+            trener_images.thumbnail(output_size)
+            trener_images.save(self.trener_img.path)
+
     def __str__(self):
         return self.trener_name
 
@@ -221,6 +238,14 @@ class Club(models.Model):
         null=True,
         blank=True,
     )
+
+    def save(self):
+        super().save()
+        club_images = Image.open(self.club_img.path)
+        if club_images.height > 200 or club_images.width > 150:
+            output_size = (150, 200)
+            club_images.thumbnail(output_size)
+            club_images.save(self.club_img.path)
 
     def __str__(self):
         return self.club_name

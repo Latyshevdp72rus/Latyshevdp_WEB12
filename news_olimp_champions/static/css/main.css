@@ -1,30 +1,28 @@
-body{
-    margin:0px;
-    padding:0px;
+body {
+    margin: 0px;
+    padding: 0px;
     background-image: url("../img/background1.jpg");
     background-repeat: repeat;
-    font-family:  Verdana;
-    font-size:12;
-
+    font-family: Verdana;
+    font-size: 12;
 }
 
-header{
-background: #303b44;
+header {
+    background: #303b44;
 }
+
 #navbar {
     padding: 0;
     margin: 0;
-    font-family:  Verdana;
-
 }
 
-header{
+header {
     display: flex;
     justify-content: space-around;
 }
 
 
-#navbar  li {
+#navbar li {
     list-style: none;
     float: left;
     width: 150px;
@@ -32,14 +30,14 @@ header{
     padding: 0;
     margin: 0;
     background-color: #303b44;
-    color:white;
+    color: white;
     position: relative;
     padding-top: 12px;
     text-align: center;
 }
 
 
-#navbar li ul{
+#navbar li ul {
     list-style: none;
     text-align: left;
     padding: 0;
@@ -51,100 +49,104 @@ header{
     top: 42px;
 }
 
-#navbar li ul li{
+#navbar li ul li {
     float: none;
     height: 30px;
     margin: 0;
     width: 150px;
-
-    border-bottom:1px solid white;
-
+    border-bottom: 1px solid white;
     text-align: center;
-    background:  #303b44;
+    background: #303b44;
 }
 
 
-#navbar li a{
+#navbar li a {
     display: block;
     width: 150px;
     height: 30px;
     color: white;
     text-decoration: none;
-        }
+}
 
-#navbar li:hover ul{
-      display: block;
-      }
-  #navbar li:hover{
-          background: #4f5f6c;
-          }
-  #navbar li ul li ul{
-    left:150px;
+#navbar li:hover ul {
+    display: block;
+}
+
+#navbar li:hover {
+    background: #4f5f6c;
+}
+
+#navbar li ul li ul {
+    left: 150px;
     top: 0;
-  }
-  #navbar li ul li ul li{display: none;}
-  #navbar li ul li:hover ul li{display: block;}
+}
+
+#navbar li ul li ul li {
+    display: none;
+}
+
+#navbar li ul li:hover ul li {
+    display: block;
+}
 
 /**/
 
-.field{
-     background:#f8f7f7;
-     border: 1px solid #e9e8e8;
-     width:1164px;
-     height:100%;
-     margin-left:auto;
-     margin-right:auto;
+.field {
+    background: #f8f7f7;
+    border: 1px solid #e9e8e8;
+    width: 1164px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
-.field_news{
+.field_news {
     display: block;
-    width:744px;
-    height:inherit;
+    width: 744px;
+    height: inherit;
     padding-right: 30px;
     padding-left: 30px;
     border-right: 1px solid #e9e8e8;
 }
 
-.news{
-    margin:50px;
-
+.news {
+    margin: 50px;
 }
 
-.form_field{
-    padding-right:100px;
-    text-align:right;
+.form_field {
+    padding-right: 100px;
+    text-align: right;
 }
 
-.redcords{
-    display:flex;
-    align-items: center
-    position: relative;
+.redcords {
+    display: flex;
+    align-items: center position: relative;
     background: white;
     border: 3px solid #e9e8e8;
-    border-radius:10px;
-    margin-bottom:10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-.photo_news{
+.photo_news {
     border: 1px solid #e9e8e8;
-    margin:20px;
-
-    height:100%;
+    margin: 20px;
+    height: 100%;
 }
 
-.items_news{
+.items_news {
     margin-left: 50px;
-    margin:20px;
+    margin: 20px;
     width: 100%;
-    height:100%;
-
-}
-img{
-    width:150px;
-    height:200px;
-}
-.pagin{
-    text-align:center;
+    height: 100%;
 }
 
+img {
+    width: 150px;
+    height: 200px;
+}
+
+
+.pagin {
+    text-align: center;
+}
