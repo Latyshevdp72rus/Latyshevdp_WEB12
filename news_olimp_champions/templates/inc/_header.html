@@ -12,7 +12,6 @@
         <ul id="navbar" >
             <li><a  href="{% url 'stand_list_view' %}">Новости</a></li>
             {% if user.is_authenticated%}
-
                 <li><a  href="#">Добавить</a>
                     <ul>
                         <li><a  href="{% url 'add_stand' %}">Добавить новость</a></li>
@@ -21,9 +20,6 @@
                         <li><a  href="{% url 'add_stand' %}">Добавить Клуб</a></li>
                     </ul>
                 </li>
-
-
-
                 <li><a href="{% url 'logout' %}">Выход</a></li>
             {% else %}
                 <li><a href="{% url 'login' %}">Вход</a></li>

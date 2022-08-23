@@ -134,8 +134,8 @@ class ViewOlimp(models.Model):
     view_olimp_name = models.CharField(
         max_length=50,
         verbose_name="Наименование олимпийских игр",
-         null=False,
-         blank=False,
+        null=False,
+        blank=False,
     )
     view_olimp_is_visible = models.BooleanField(
         default=False,
@@ -153,22 +153,23 @@ class ViewOlimp(models.Model):
 
 
 class ViewSports(models.Model):
-   view_sport_name = models.CharField(
-       max_length=50,
-       verbose_name="Наименование вида спорта",
-       null=False,
-       blank=False,
+    view_sport_name = models.CharField(
+        max_length=50,
+        verbose_name="Наименование вида спорта",
+        null=False,
+        blank=False,
     )
-   view_sports_is_visible = models.BooleanField(
-       default=False,
-       verbose_name="Скрытая запись",
-       null=True,
-       blank=True,
-   )
-   def __str__(self):
+    view_sports_is_visible = models.BooleanField(
+        default=False,
+        verbose_name="Скрытая запись",
+        null=True,
+        blank=True,
+    )
+
+    def __str__(self):
         return self.view_sport_name
 
-   class Meta:
+    class Meta:
         verbose_name = "ВИД СПОРТА"
         verbose_name_plural = "ВИД СПОРТА"
 
@@ -268,6 +269,7 @@ class Medal(models.Model):
         null=True,
         blank=True,
     )
+
     def __str__(self):
         return self.medal_name
 

@@ -1,46 +1,46 @@
 {% load static %}
 {% include "../inc/_header.html" %}
 
-
-<div class="field">
-    <div class="field_news">
-        <div class="news">
-            {% for stand in page_obj %}
-                <div class="redcords">
-                    <div class="photo_news">
-                       <img src="/media/{{ stand.sportsman_id.sportsman_img }}">
+<div class="wrapper">
+    <div class="field">
+        <div class="field_news">
+            <div class="news">
+                {% for stand in page_obj %}
+                    <div class="redcords">
+                        <div class="photo_news">
+                           <img src="/media/{{ stand.sportsman_id.sportsman_img }}">
+                        </div>
+                        <div class="items_news">
+                            <h3>{{ stand.stand_name }}</h3>
+                            <p>{{ stand.stand_description }}</p>
+                            <p>{{ stand.view_olimp_id }}</p>
+                            <p><strong>ФИО спортсмена: </strong><a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a></p>
+                            <p><strong>Награда: </strong>{{ stand.medal_id }}  </p>
+                            <p><strong>Дата события: </strong>{{ stand.date_event }} </p>
+                        </div>
                     </div>
-                    <div class="items_news">
-                        <h3>{{ stand.stand_name }}</h3>
-                        <p>{{ stand.stand_description }}</p>
-                        <p>{{ stand.view_olimp_id }}</p>
-                        <p><strong>ФИО спортсмена: </strong><a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a></p>
-                        <p><strong>Награда: </strong>{{ stand.medal_id }}  </p>
-                        <p><strong>Дата события: </strong>{{ stand.date_event }} </p>
-
+                    {% endfor %}
+            </div>
+                    <div class="pagin">
+                             {% if page_obj.has_previous %}
+                                <a href="?page=1">&laquo; Первый</a>
+                                <a href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
+                             {% endif %}
+                    <span> Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }} </span>
+                            {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}">Следующий</a>
+                                <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
+                            {% endif %}
                     </div>
-
-                </div>
-                {% endfor %}
         </div>
-        <div class="pagin">
-             {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; Первый</a>
-            <a href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
-        {% endif %}
-        <span>
-            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
-        </span>
-
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">Следующий</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
-        {% endif %}
+        <div class="news">
+            <form method="get" class="setup_centr">
+                {{ filter.form.as_p }}
+                <button type="submit" Class="btn">Применить фильтр</button>
+            </form>
         </div>
     </div>
+</div>>
 
-
-
-</div>
 
 {% include "../inc/_footer.html" %}
