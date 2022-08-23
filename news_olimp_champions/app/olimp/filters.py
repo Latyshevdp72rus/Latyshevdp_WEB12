@@ -6,11 +6,12 @@ from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Cl
 class StandFilter(django_filters.FilterSet):
     stand_query = Stand.objects.all()
     stand_name = django_filters.CharFilter()
-    # sportsman_id = django_filters.ModelChoiceFilter()
+    medal_id = django_filters.ModelChoiceFilter(queryset=Medal.objects.all())
 
-    # date_event = django_filters.ModelChoiceFilter(queryset=Stand.objects.all())
+
+
 
     class Meta:
         model = Stand
-        fields = ['stand_name']
+        fields = ['stand_name','medal_id']
         # exclude = ['book_img']
