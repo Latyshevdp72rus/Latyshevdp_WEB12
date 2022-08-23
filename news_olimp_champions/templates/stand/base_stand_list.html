@@ -33,10 +33,14 @@
                             {% endif %}
                     </div>
         </div>
-        <div class="news">
+        <div class="news right-panel">
             <form method="get" class="setup_centr">
-                {{ filter.form.as_p }}
-                <button type="submit" Class="btn">Применить фильтр</button>
+                <fieldset>
+                     <legend>Фильтр новостей</legend>
+                         {{ filter.form.as_p }}
+                         <button type="submit" Class="btn">Применить фильтр</button>
+                </fieldset>
+                </legend>
             </form>
         </div>
     </div>

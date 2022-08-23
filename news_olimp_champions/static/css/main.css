@@ -95,13 +95,14 @@ header {
 
 .field {
     display:flex;
+
     background: #f8f7f7;
     border: 1px solid #e9e8e8;
     width: 1164px;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-
+     justify-content: center;
 
 }
 
@@ -121,9 +122,10 @@ header {
 .form_field {
     padding-right: 100px;
     text-align: right;
+
 }
 
-.redcords {
+.redcords, legend{
     display: flex;
     align-items: center position: relative;
     background: white;
@@ -153,4 +155,30 @@ img {
 
 .pagin {
     text-align: center;
+}
+
+.right-panel{
+    background: #f8f7f7;
+    border: 3px solid #e9e8e8;
+    border-radius: 10px;
+    margin:5px;
+    padding:10px;
+    height: 220px;
+    }
+fieldset{
+    border: 0px;
+    vertical-align:middle;
+}
+
+legend{
+   padding: 5px;
+   text-align:center;
+}
+
+.txt{
+text-align:right;
+}
+
+label{
+    white-space: pre;
 }

@@ -11,8 +11,8 @@ class StandForm(forms.Form):
         min_length=10,
         max_length=30,
         label="Заголовок",
-        # validators=[validation_stand],
-        widget=forms.TextInput(),
+        validators=[validation_stand],
+        widget=forms.TextInput(attrs={"class":"txt"})
     )
     stand_description = forms.CharField(
         required=True,
@@ -27,6 +27,12 @@ class StandForm(forms.Form):
         label="Дата олимпиады",
         # validators=[validation_book_name],
         widget=forms.SelectDateWidget(),
+    )
+    medal_id = forms.CharField(
+        required=True,
+        label="Дата олимпиады",
+        # validators=[validation_stand],
+        widget=forms.TextInput(attrs={"class": "txt"})
     )
 
     # date_event

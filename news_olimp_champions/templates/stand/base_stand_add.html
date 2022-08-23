@@ -2,14 +2,14 @@
 {% include "../inc/_header.html" %}
 
 
-<div>
+<div >
     <form action="" method="post" enctype="multipart/form-data">
             <div class="field">
                 <div class="form_field">
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="reset" Class="btn">Сброс </button>
                 <button type="submit" class="btn">Добавить </button>
+                <button type="reset" Class="btn">Сброс </button>
                 </div>
             </div>
     </form>
