@@ -101,9 +101,10 @@ class Sportsman(models.Model):
     )
     sportsman_img = models.ImageField(
         upload_to="media/sportsman/%y/%m/%d/",
+        default="media/default.png",
         verbose_name="Загрузить фото",
         null=False,
-        blank=False,
+        blank=True,
     )
     sportsman_is_visible = models.BooleanField(
         default=False,
@@ -172,9 +173,10 @@ class Trener(models.Model):
     )
     trener_img = models.ImageField(
         upload_to="media/trener/%y/%m/%d/",
+        default="media/default.png",
         verbose_name="Загрузить фото",
         null=False,
-        blank=False,
+        blank=True,
     )
     club_id = models.ForeignKey(
         "Club",
@@ -209,8 +211,9 @@ class Club(models.Model):
     club_img = models.ImageField(
         upload_to="media/club/%y/%m/%d/",
         verbose_name="Загрузить логотип",
+        default="media/default.png",
         null=False,
-        blank=False,
+        blank=True,
     )
     club_is_visible = models.BooleanField(
         default=False,
