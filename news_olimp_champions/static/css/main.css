@@ -30,7 +30,7 @@ header {
     height: 50px;
     padding: 0;
     margin: 0;
-    font-weight: bold;
+
     background: #303b44;
     color: white;
     position: relative;
@@ -69,14 +69,17 @@ header {
     padding-top: 15px;
     color: white;
     text-decoration: none;
+
 }
 
 #navbar li:hover ul {
     display: block;
+    font-weight: bold;
 }
 
 #navbar li:hover {
     background-color: hsl(350deg 88% 49%);
+    display: block;
     font-weight: bold;
 }
 
@@ -219,14 +222,14 @@ nav {
     color: white;
     border: 1px solid black;
     border-radius: 50px;
-    font-weight: bold;
+
     margin-top: 30px;
 }
 
 .btn:hover {
     cursor: pointer;
     background: red;
-
+    font-weight: bold;
 }
 
 .title_info_sportsman {

@@ -69,3 +69,19 @@ class SportsmanList(FilterView):
 
     def get_queryset(self):
         return Sportsman.objects.filter(sportsman_is_visible=False)
+
+
+class SportsmanCreateView(CreateView):
+    model = Sportsman
+    model_form = SportsmanForm
+    context_object_name = "sportsman"
+    template_name = "sportsman/sportsman_add.html"
+    success_url = reverse_lazy("add_sportsman")
+    fields = ["sportsman_name", "sportsman_country", "sportsman_birthday", "sportsman_biogrpahy", "view_sports_id", "trener_id","sportsman_img",]
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["sportsman"] = self.queryset
+        context["title"] = "Добавление спортсмена - «Олмипийские чемпионы»"
+        return context
+

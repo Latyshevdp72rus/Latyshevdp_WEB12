@@ -22,10 +22,10 @@
                     {%  if request.user.is_superuser %}
                         <li><a  href="#">ДОБАВИТЬ</a>
                             <ul>
-                                <li><a  href="{% url 'add_stand' %}">ДОБАВИТЬ НОВОСТЬ</a></li>
-                                <li><a  href="{% url 'add_stand' %}">ДОБАВИТЬ СПОРТСМЕНА</a></li>
-                                <li><a  href="{% url 'add_stand' %}">ДОБАВИТЬ ТРЕНЕРА</a></li>
-                                <li><a  href="{% url 'add_stand' %}">ДОБАВИТЬ КЛУБ</a></li>
+                                <li><a  href="{% url 'add_stand' %}">НОВОСТЬ</a></li>
+                                <li><a  href="{% url 'add_sportsman' %}">СПОРТСМЕНА</a></li>
+                                <li><a  href="{% url 'add_stand' %}">ТРЕНЕРА</a></li>
+                                <li><a  href="{% url 'add_stand' %}">КЛУБ</a></li>
                             </ul>
                         </li>
                     {% endif %}
