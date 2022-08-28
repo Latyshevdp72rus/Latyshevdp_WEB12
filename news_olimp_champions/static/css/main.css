@@ -73,7 +73,6 @@ header {
 
 #navbar li:hover ul {
     display: block;
-
 }
 
 #navbar li:hover {
@@ -219,7 +218,7 @@ nav {
     background: #303b44;
     color: white;
     border: 1px solid black;
-    border-radius: 3px;
+    border-radius: 50px;
     font-weight: bold;
     margin-top: 30px;
 }
