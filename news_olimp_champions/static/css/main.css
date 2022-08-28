@@ -8,12 +8,9 @@ body {
 }
 
 header {
-    position:fixed;
+    position: fixed;
     width: 100%;
-    /*background: hsl(350deg 100% 42%);*/
     background: #303b44;
-
-
 }
 
 #navbar {
@@ -26,7 +23,6 @@ header {
     justify-content: space-around;
 }
 
-
 #navbar li {
     list-style: none;
     float: left;
@@ -34,9 +30,7 @@ header {
     height: 30px;
     padding: 0;
     margin: 0;
-     font-weight:bold;
-    /*background: hsl(350deg 100% 42%);*/
-    /*background-color: #303b44;*/
+    font-weight: bold;
     background: #303b44;
     color: white;
     position: relative;
@@ -64,9 +58,7 @@ header {
     width: 150px;
     border-bottom: 1px solid white;
     text-align: center;
-  /*  background: hsl(350deg 100% 42%);*/
-    /*background: #303b44;*/
-     background: #303b44;
+    background: #303b44;
 }
 
 
@@ -84,9 +76,8 @@ header {
 }
 
 #navbar li:hover {
-    /*background: #4f5f6c;*/
     background-color: hsl(350deg 88% 49%);
-    font-weight:bolder;
+    font-weight: bolder;
 
 }
 
@@ -105,46 +96,45 @@ header {
 
 /**/
 
-
-
 .field {
-    display:flex;
-    justify-content: center;
+    display: flex;
+    justify-content: space-between;
     background: #f8f7f7;
     border: 1px solid #e9e8e8;
     width: 1164px;
     height: 100%;
-    /*margin-top:40px;*/
     margin-left: auto;
     margin-right: auto;
 }
 
 .field_news {
     display: block;
-    width: 744px;
+    width: 1000px;
     height: inherit;
-   /* padding-right: 30px;
-    padding-left: 30px;*/
     border-right: 1px solid #e9e8e8;
 }
 
 .news {
     margin: 50px;
+    margin-left:30px;
+    margin-right:30px;
 }
+
 
 .form_field {
     padding-right: 100px;
     text-align: right;
-
 }
 
-.redcords, legend{
+.redcords,
+legend {
     display: flex;
-    align-items: center position: relative;
+    position: relative;
     background: white;
     border: 3px solid #e9e8e8;
     border-radius: 10px;
     margin-bottom: 10px;
+    box-shadow: 0 0 8px rgb(0 0 0 / 50%);
 }
 
 .photo_news {
@@ -170,46 +160,61 @@ img {
     text-align: center;
 }
 
-.right-panel{
+.right-panel {
     background: #f8f7f7;
     border: 3px solid #e9e8e8;
     border-radius: 10px;
-    margin:5px;
-    padding:10px;
-    height: 250px;
+    margin: 50px;
+    margin-left:30px;
+    margin-right:30px;
+    padding: 10px;
+    height: 270px;
     margin-top: 50px;
-    }
-fieldset{
+    width: 300px;
+    box-shadow: 0 0 8px rgb(0 0 0 / 50%);
+}
+
+fieldset {
     border: 0px;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
-legend{
-   padding: 5px;
-   text-align:center;
+legend {
+    padding: 5px;
+    text-align: center;
 }
 
 
 
-label{
+label {
     white-space: pre;
 }
 
-.kolco {
-background-image: url("../img/kolca.png");
-background-repeat: repeat-x;
-width:100%;
-margin-top:-40px;
+p{
+	display: flex;
+	align-content: space-between;
+	flex-direction: column;
+}	
 
-
+nav {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
-nav{
-display:flex;align-items: stretch;justify-content: space-evenly;flex-wrap: wrap;
+.btn {
+    padding: 10px;
 }
 
-.btn{
-
-padding:10px;
-
+.title_info_sportsman{
+    display:flex;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid #e9e8e8;
 }
+
+.desc_info_sportsman{
+    width: 207px;
+
+

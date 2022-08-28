@@ -4,9 +4,9 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.conf import settings
 from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal
-from app.olimp.forms import StandForm
+from app.olimp.forms import StandForm, SportsmanForm
 from django.urls import reverse_lazy
-from app.olimp.filters import StandFilter
+from app.olimp.filters import StandFilter,SportsmanFilter
 
 
 class StandList(FilterView):
@@ -27,15 +27,15 @@ class StandList(FilterView):
 
 
 class StandDetail(DetailView):
-    model = Sportsman
-    context_object_name = "sportsman"
+    model = Stand
+    context_object_name = "stands"
     template_name = "stand/stand_detail.html"
     pk_url_kwarg = "pk"
 
     def get_context_data(self, **kwargs,):
         context = super().get_context_data(**kwargs)
         context["sportsman"] = self.queryset
-        context["title"] = "Биография спортсмена"
+        context["title"] = "Новостной сайт «Олмипийские чемпионы»"
         return context
 
 
@@ -52,3 +52,20 @@ class StandCreateView(CreateView):
         context["stands"] = self.queryset
         context["title"] = "Добавления спортсмена на стэнд"
         return context
+###########################################################
+
+class SportsmanList(FilterView):
+    model = Sportsman
+    filterset_class = SportsmanFilter
+    context_object_name = "sportsmans"
+    template_name = "sportsman/sportsman_list.html"
+    paginate_by = settings.OBJECTS_ON_PAGE
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["sportsmans"] = self.queryset
+        context["title"] = "Биография спортсмена"
+        return context
+
+    def get_queryset(self):
+        return Sportsman.objects.filter(sportsman_is_visible=False)

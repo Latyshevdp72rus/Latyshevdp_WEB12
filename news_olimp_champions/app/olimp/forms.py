@@ -43,3 +43,14 @@ class StandForm(forms.Form):
     class Meta:
         model = Stand
         fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event"]
+
+class SportsmanForm(forms.Form):
+    sportsman_query = Stand.objects.all()
+    sportsman_name = ''
+    sportsman_country = ''
+    sportsman_birthday = ''
+    sportsman_biogrpahy = ''
+    view_sports_id = ''
+    trener_id = ''
+    sportsman_img = ''
+    sportsman_is_visible = ''
