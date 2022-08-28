@@ -20,7 +20,9 @@ header {
     align-items: center;
     position: fixed;
     width: 100%;
-    background: #303b44;
+    background: #417690;
+
+
 }
 
 #navbar li {
@@ -31,7 +33,7 @@ header {
     padding: 0;
     margin: 0;
 
-    background: #303b44;
+    background: #417690;
     color: white;
     position: relative;
     text-align: center;
@@ -57,7 +59,7 @@ header {
     width: 150px;
     text-align: center;
     padding-bottom: 15px;
-    background: #303b44;
+    background: #417690;
 }
 
 
@@ -78,7 +80,7 @@ header {
 }
 
 #navbar li:hover {
-    background-color: hsl(350deg 88% 49%);
+    background:#4d8faf;
     display: block;
     font-weight: bold;
 }
@@ -128,7 +130,7 @@ header {
     text-align: right;
 }
 
-.redcords {
+.records {
     display: flex;
     align-items: flex-start;
     background: white;
@@ -218,18 +220,18 @@ nav {
     padding: 10px;
     width: 185px;
     margin-top: 10px;
-    background: #303b44;
+    background: #417690;
     color: white;
-    border: 1px solid black;
+    border: 1px solid #e9e8e8;
     border-radius: 50px;
-
     margin-top: 30px;
+    font-weight: bold;
 }
 
 .btn:hover {
     cursor: pointer;
-    background: red;
-    font-weight: bold;
+    background: #4d8faf;
+
 }
 
 .title_info_sportsman {
