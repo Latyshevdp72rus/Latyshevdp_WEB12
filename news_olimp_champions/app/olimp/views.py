@@ -35,7 +35,7 @@ class StandDetail(DetailView):
     def get_context_data(self, **kwargs,):
         context = super().get_context_data(**kwargs)
         context["sportsman"] = self.queryset
-        context["title"] = "Новостной сайт «Олмипийские чемпионы»"
+        context["title"] = "Новости - «Олмипийские чемпионы»"
         return context
 
 
@@ -50,7 +50,7 @@ class StandCreateView(CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["stands"] = self.queryset
-        context["title"] = "Добавления спортсмена на стэнд"
+        context["title"] = "Добавление новости - «Олмипийские чемпионы»"
         return context
 ###########################################################
 
@@ -64,7 +64,7 @@ class SportsmanList(FilterView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["sportsmans"] = self.queryset
-        context["title"] = "Биография спортсмена"
+        context["title"] = "Спортсмены - «Олмипийские чемпионы»"
         return context
 
     def get_queryset(self):

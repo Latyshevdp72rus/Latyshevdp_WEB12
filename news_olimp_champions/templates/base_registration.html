@@ -8,14 +8,15 @@
         <div style="width: 1165px;">
             <div style="margin-top: 50px;display: flex;flex-direction: column; ">
                 <div >
-                 <form action="" method="post" class="setup_centr">
+                 <form action="" method="post">
                      <fieldset >
                          <legend></legend>
                          <h3 style="text-align:center">Регистрация</h3>
                         {% csrf_token %}
                         {{ form.as_p }}
-                     <div style="text-align:center">
-                        <button type="submit" Class="btn">Зарегистрироваться</button>
+                        <div style="text-align:center">
+                        <button type="submit" class="btn">Зарегистрироваться</button>
+                        <button type="reset" class="btn">Сброс </button>
                      </div>
                  </fieldset>
                  </form>

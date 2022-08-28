@@ -16,28 +16,25 @@
     </a>
     </div>
         <ul id="navbar" >
-            <li><a href="{% url 'stand_list_view' %}">Новости</a></li>
-            <li><a href="{% url 'sportsman' %}">Спортсмены</a></li>
+            <li><a href="{% url 'stand_list_view' %}">НОВОСТИ</a></li>
+            <li><a href="{% url 'sportsman' %}">СПОРТСМЕНЫ</a></li>
             {% if user.is_authenticated %}
-
                     {%  if request.user.is_superuser %}
-
-                        <li><a  href="#">Добавить</a>
+                        <li><a  href="#">ДОБАВИТЬ</a>
                             <ul>
-                                <li><a  href="{% url 'add_stand' %}">Добавить новость</a></li>
-                                <li><a  href="{% url 'add_stand' %}">Добавить Cпортсмена</a></li>
-                                <li><a  href="{% url 'add_stand' %}">Добавить Тренера</a></li>
-                                <li><a  href="{% url 'add_stand' %}">Добавить Клуб</a></li>
-
+                                <li><a  href="{% url 'add_stand' %}">ДОБАВИТЬ НОВОСТЬ</a></li>
+                                <li><a  href="{% url 'add_stand' %}">ДОБАВИТЬ СПОРТСМЕНА</a></li>
+                                <li><a  href="{% url 'add_stand' %}">ДОБАВИТЬ ТРЕНЕРА</a></li>
+                                <li><a  href="{% url 'add_stand' %}">ДОБАВИТЬ КЛУБ</a></li>
                             </ul>
                         </li>
                     {% endif %}
-                 <li><a href="{% url 'logout' %}">Выход</a></li>
+                 <li><a href="{% url 'logout' %}">ВЫХОД</a></li>
                  <li>Вы вошли как {{user.username}} </li>
 
             {% else %}
-                <li><a href="{% url 'login' %}">Вход</a></li>
-                <li><a href="{% url 'register' %}">Регистрация</a></li>
+                <li><a href="{% url 'login' %}">ВХОД</a></li>
+                <li><a href="{% url 'register' %}">РЕГИСТРАЦИЯ</a></li>
 
             {% endif %}
 
