@@ -11,8 +11,7 @@
                    <img src="/media/{{ stand.sportsman_id.sportsman_img }}">
                 </div>
                 <div class="items_news">
-                    <strong>{{ stand.stand_name }}</strong><br>
-
+                    <strong><em>{{ stand.stand_name }}</em></strong><br>
                       <div  class="title_info_sportsman">
                            <div class="desc_info_sportsman">
                                <strong>Вид олимпийских игр: </strong>
@@ -63,7 +62,7 @@
         <div class="news right-panel">
             <div>
                 <form method="get" class="setup_centr">
-                    <p><strong>Фильтр спортсменов: </strong></p>
+                    <p><strong style="text-align:center;">Фильтр спортсменов: </strong></p>
                     {{ filter.form.as_p }}
                     <button type="submit" Class="btn">Применить фильтр</button>
                  </form>

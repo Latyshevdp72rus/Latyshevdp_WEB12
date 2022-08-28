@@ -3,21 +3,27 @@
 
 {% include "inc/_header.html" %}
 
-    <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-6">
-            <div class="single_service">
+
+<div class="wrapper">
+    <div class="field">
+        <div style="width: 1165px;">
+            <div style="margin-top: 50px;display: flex;flex-direction: column; ">
+                <div >
                  <form action="" method="post" class="setup_centr">
                      <fieldset >
-                         <legend style="text-align:center">Вход на сайт</legend>
-                         <br>
+                         <legend style="text-align:center"></legend>
+                         <h3 style="text-align:center">Вход на сайт</h3>
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <button type="reset" Class="btn">Сброс </button>
+                     <div style="text-align:center">
                         <button type="submit" Class="btn">Авторизоваться</button>
+                     </div>
                  </fieldset>
                  </form>
+                </div>
+             </div>
             </div>
         </div>
     </div>
-
+</div>
 {% include "inc/_footer.html" %}

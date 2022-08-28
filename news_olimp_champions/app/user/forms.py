@@ -25,24 +25,20 @@ class RegistrationForm(forms.Form):
         label="Имя:",
         widget=forms.TextInput(attrs={"class": "filter"})
     )
-
     last_name = forms.CharField(
         max_length=250,
         label="Фамилия:",
         widget=forms.TextInput(attrs={"class": "filter"})
     )
-
     email = forms.EmailField(
         label="Почта:",
         widget=forms.TextInput(attrs={"class": "filter"})
     )
-
     username = forms.CharField(
         max_length=20,
         label="Логин:",
         widget=forms.TextInput(attrs={"class": "filter"})
     )
-
     password = forms.CharField(
         max_length=16,
         label="Пароль",
