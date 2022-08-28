@@ -129,6 +129,7 @@ header {
 .redcords,
 legend {
     display: flex;
+    align-items: center;
     position: relative;
     background: white;
     border: 3px solid #e9e8e8;
@@ -151,8 +152,8 @@ legend {
 }
 
 img {
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 250px;
 }
 
 

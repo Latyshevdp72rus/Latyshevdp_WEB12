@@ -117,8 +117,8 @@ class Sportsman(models.Model):
     def save(self):
         super().save()
         sportsman_images = Image.open(self.sportsman_img.path)
-        if sportsman_images.height > 200 or sportsman_images.width > 150:
-            output_size = (150, 200)
+        if sportsman_images.height > 250 or sportsman_images.width > 200:
+            output_size = (200, 250)
             sportsman_images.thumbnail(output_size)
             sportsman_images.save(self.sportsman_img.path)
 
@@ -206,8 +206,8 @@ class Trener(models.Model):
     def save(self):
         super().save()
         trener_images = Image.open(self.trener_img.path)
-        if trener_images.height > 200 or trener_images.width > 150:
-            output_size = (150, 200)
+        if trener_images.height > 250 or trener_images.width > 200:
+            output_size = (200, 250)
             trener_images.thumbnail(output_size)
             trener_images.save(self.trener_img.path)
 
@@ -243,8 +243,8 @@ class Club(models.Model):
     def save(self):
         super().save()
         club_images = Image.open(self.club_img.path)
-        if club_images.height > 200 or club_images.width > 150:
-            output_size = (150, 200)
+        if club_images.height > 250 or club_images.width > 200:
+            output_size = (200, 250)
             club_images.thumbnail(output_size)
             club_images.save(self.club_img.path)
 
