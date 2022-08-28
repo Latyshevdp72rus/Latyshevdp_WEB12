@@ -108,7 +108,7 @@ header {
 }
 
 .field_news {
-    width: 1000px;
+    width: 800px;
     height: inherit;
     border-right: 1px solid #e9e8e8;
 }
@@ -125,15 +125,15 @@ header {
     text-align: right;
 }
 
-.redcords,
-legend {
+.redcords {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     background: white;
     border: 3px solid #e9e8e8;
     border-radius: 10px;
     margin-bottom: 10px;
     box-shadow: 0 0 8px rgb(0 0 0 / 50%);
+    width: 750px;
 }
 
 .photo_news {
@@ -164,8 +164,8 @@ img {
     border: 3px solid #e9e8e8;
     border-radius: 10px;
     margin: 50px;
-    margin-left:30px;
-    margin-right:30px;
+    margin-left:20px;
+    margin-right:20px;
     padding: 10px;
     height: 300px;
     margin-top: 50px;
@@ -209,13 +209,13 @@ nav {
 
 .title_info_sportsman{
     display:flex;
-    flex-wrap: wrap;
     align-items: baseline;
-    padding: 8px 10;
+    padding: 15px 10px;
     border-bottom: 1px solid #e9e8e8;
+    width: 430px;
 }
 
 .desc_info_sportsman{
-    width: 207px;
+    width: 150px;
 
 
