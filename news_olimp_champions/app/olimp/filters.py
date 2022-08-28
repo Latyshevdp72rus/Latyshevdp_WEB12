@@ -5,7 +5,10 @@ from django.contrib.admin import widgets
 
 class StandFilter(django_filters.FilterSet):
     stand_query = Stand.objects.all()
-    stand_name = django_filters.CharFilter(widget=forms.TextInput(attrs={"class":"txt"}))
+    stand_name = django_filters.ModelChoiceFilter(queryset=Stand.objects.all())
+
+
+        # django_filters.CharFilter(widget=forms.TextInput(attrs={"class":"txt"}))
     # stand_description"
     sportsman_id = django_filters.ModelChoiceFilter(queryset=Sportsman.objects.all())
     medal_id = django_filters.ModelChoiceFilter(queryset=Medal.objects.all())

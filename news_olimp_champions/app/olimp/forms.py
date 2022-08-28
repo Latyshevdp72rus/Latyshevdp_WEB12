@@ -10,7 +10,7 @@ class StandForm(forms.Form):
         required=True,
         min_length=10,
         max_length=30,
-        label="Заголовок",
+        label="Заголовок статьи",
         validators=[validation_stand],
         widget=forms.TextInput(attrs={"class":"txt"})
     )

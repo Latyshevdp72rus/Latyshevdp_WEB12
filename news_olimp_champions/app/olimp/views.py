@@ -57,7 +57,7 @@ class StandCreateView(CreateView):
 class SportsmanList(FilterView):
     model = Sportsman
     filterset_class = SportsmanFilter
-    context_object_name = "sportsmans"
+    context_object_name = "sportmans"
     template_name = "sportsman/sportsman_list.html"
     paginate_by = settings.OBJECTS_ON_PAGE
 

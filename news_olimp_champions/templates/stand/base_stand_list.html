@@ -11,7 +11,7 @@
                            <img src="/media/{{ stand.sportsman_id.sportsman_img }}">
                         </div>
                         <div class="items_news">
-                            <h3> Заголовок: {{ stand.stand_name }}</h3>
+                            <h3> Заголовок статьи: {{ stand.stand_name }}</h3>
                             <p><strong>Описание: </strong>{{ stand.stand_description }}</p>
                             <p><strong>Вид олимпийских игр: </strong>{{ stand.view_olimp_id }}</p>
                             <p><strong>ФИО спортсмена: </strong><a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a></p>
@@ -21,27 +21,29 @@
                     </div>
                     {% endfor %}
             </div>
-                    <div class="pagin">
-                             {% if page_obj.has_previous %}
-                                <a href="?page=1">&laquo; Первый</a>
-                                <a href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
-                             {% endif %}
-                    <span> Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }} </span>
-                            {% if page_obj.has_next %}
-                                <a href="?page={{ page_obj.next_page_number }}">Следующий</a>
-                                <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
-                            {% endif %}
-                    </div>
+            <div class="pagin">
+                 {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; Первый</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
+                 {% endif %}
+            <span> Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }} </span>
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}">Следующий</a>
+                        <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
+                    {% endif %}
+            </div>
         </div>
-        <div class="news right-panel">
-            <form method="get" class="setup_centr">
-                <p><strong>Фильтр новостей</strong></p>
-                         {{ filter.form.as_p }}
-                         <button type="submit" Class="btn">Применить фильтр</button>
 
-                </legend>
-            </form>
+        <div class="news right-panel">
+            <div>
+                <form method="get" class="setup_centr">
+                    <p><strong>Фильтр новостей</strong></p>
+                    {{ filter.form.as_p }}
+                    <button type="submit" Class="btn">Применить фильтр</button>
+                 </form>
+            </div>
         </div>
+
     </div>
 </div>
 
