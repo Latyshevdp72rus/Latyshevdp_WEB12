@@ -42,12 +42,12 @@ class RegistrationForm(forms.Form):
     password = forms.CharField(
         max_length=16,
         label="Пароль",
-        widget=forms.TextInput(attrs={"class": "filter"})
+        widget=forms.PasswordInput(attrs={"class": "filter"})
     )
     password2 = forms.CharField(
         max_length=16,
         label="Подтвердите пароль",
-        widget=forms.TextInput(attrs={"class": "filter"})
+        widget=forms.PasswordInput(attrs={"class": "filter"})
     )
 
     class Meta:

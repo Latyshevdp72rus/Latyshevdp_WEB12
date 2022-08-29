@@ -4,19 +4,26 @@
 {% include "inc/_header.html" %}
 
 <div class="wrapper">
-    <div class="field">
-        <div style="width: 1165px;">
-            <div style="margin-top: 50px;display: flex;flex-direction: column; ">
+    <div class="">
+        <div >
+            <div style="display: flex;flex-direction: column; align-items: center; ">
                 <div >
                  <form action="" method="post">
                      <fieldset >
                          <legend></legend>
+                          <div class="switch">
+                             <div class="switch_style switch_bg_w" >
+                                  <a href="{% url 'login' %}"  class="color_switch_b">Авторизоваться</a>
+                             </div>
+                             <div class="switch_style switch_bg_b">
+                                 <a href="{% url 'register' %}"  class="color_switch_w">Регистрация</a>
+                             </div>
+                         </div>
                          <h3 style="text-align:center">Регистрация</h3>
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <div style="text-align:center">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                            <div style="text-align:center">
                         <button type="submit" class="btn">Зарегистрироваться</button>
-                        <button type="reset" class="btn">Сброс </button>
                      </div>
                  </fieldset>
                  </form>
