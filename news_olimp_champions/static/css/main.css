@@ -1,3 +1,13 @@
+html{
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	outline: none;
+	line-height: 120%;
+}
+
 body {
     margin: 0px;
     padding: 0px;
@@ -107,7 +117,7 @@ header {
     background: #f8f7f7;
     border: 1px solid #e9e8e8;
     width: 1130px;
-    height: 1280px;
+   /* height: 1280px;*/
     margin-left: auto;
     margin-right: auto;
     /*margin-bottom: 50px;*/
@@ -138,7 +148,7 @@ header {
     border: 3px solid #e9e8e8;
     border-radius: 10px;
     margin-bottom: 10px;
-    box-shadow: 0 0 8px rgb(0 0 0 / 50%);
+/*    box-shadow: 0 0 8px rgb(0 0 0 / 50%);*/
     /*width: 750px;*/
 }
 
@@ -177,7 +187,7 @@ img.photo {
     height: 620px;
     /*margin-top: 50px;*/
     width: 300px;
-    box-shadow: 0 0 8px rgb(0 0 0 / 50%);
+    /*   box-shadow: 0 0 8px rgb(0 0 0 / 50%);*/
 }
 
 fieldset {
@@ -188,7 +198,7 @@ fieldset {
     margin-left: auto;
     margin-right: auto;
     /*box-shadow: 0 0 8px rgb(0 0 0 / 50%);*/
-    width: 570px;
+    width: 400px;
 }
 
 legend {
@@ -260,7 +270,7 @@ background-repeat:repeat-x;
 
 .switch{
     display:flex;
-    justify-content: center
+    justify-content: center;
     padding: 8px;
     margin:5px;
 }
@@ -299,5 +309,11 @@ background-repeat:repeat-x;
 .color_switch_b:hover{
    color: #417698;
    font-weight:bold;
+}
+
+footer{
+    display: block;
+    background: #eaeffc;
+
 }
 
