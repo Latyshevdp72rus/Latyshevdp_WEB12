@@ -13,12 +13,11 @@ body {
     padding: 0px;
     background-image: url("../img/background1.png");
     background-repeat: repeat;
-    /* font-family: Verdana; */
-    font-family: "Montserrat";
-    font-size: 16px;
+    font-family: Verdana;
+
+    font-size: 14px;
     color: #657791;
 }
-
 
 #navbar {
     padding: 0;
@@ -29,7 +28,6 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /*position: fixed;*/
     width: 100%;
     background: #417690;
 }
@@ -41,7 +39,6 @@ header {
     height: 50px;
     padding: 0;
     margin: 0;
-
     background: #417690;
     color: white;
     position: relative;
@@ -80,7 +77,6 @@ header {
     padding-top: 15px;
     color: white;
     text-decoration: none;
-
 }
 
 #navbar li:hover ul {
@@ -115,10 +111,8 @@ header {
     background: #f8f7f7;
     border: 1px solid #e9e8e8;
     width: 1130px;
-    height: 110%;
     margin-left: auto;
     margin-right: auto;
-    /*margin-bottom: 50px;*/
 }
 
 .field_news {
@@ -143,11 +137,9 @@ header {
     display: flex;
     align-items: flex-start;
     background: white;
-    border: 3px solid #e9e8e8;
+    border: 1px solid #e9e8e8;
     border-radius: 10px;
     margin-bottom: 10px;
-    /*    box-shadow: 0 0 8px rgb(0 0 0 / 50%);*/
-    /*width: 750px;*/
 }
 
 .photo_news {
@@ -168,37 +160,31 @@ img.photo {
     height: 250px;
 }
 
-
 .pagin {
     text-align: center;
+    margin-top: 30px;
     margin-bottom: 30px;
-    padding
 }
 
 .right-panel {
-    background: #f8f7f7;
-    border: 3px solid #e9e8e8;
+    background: #fff;
+    border: 1px solid #e9e8e8;
     border-radius: 10px;
-    /*margin: 50px;*/
     margin-left: 20px;
     margin-right: 20px;
     padding: 10px;
-    height: 620px;
-    /*margin-top: 50px;*/
+    height: 100%;
     width: 300px;
-    /*   box-shadow: 0 0 8px rgb(0 0 0 / 50%);*/
 }
 
 fieldset {
-    /*border: 2px solid #e9e8e8;*/
     border: 2px solid #f8f7f7;
     border-radius: 10px;
     background: #f8f7f7;
     padding: 25px 25px;
     margin-left: auto;
     margin-right: auto;
-    /*box-shadow: 0 0 8px rgb(0 0 0 / 50%);*/
-    width: 400px;
+    width: 300px;
 }
 
 legend {
@@ -229,13 +215,13 @@ nav {
 
 .btn {
     padding: 10px;
-    width: 185px;
+    width: 150px;
     margin-top: 10px;
     background: #417690;
     color: white;
     border: 1px solid #e9e8e8;
     border-radius: 50px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     font-weight: bold;
 }
 
@@ -258,7 +244,6 @@ nav {
 }
 
 .kolco {
-    /*margin-top:40px;*/
     height: 29px;
     background: white;
     background-image: url('../img/kolca.png');
@@ -275,7 +260,6 @@ nav {
 }
 
 .switch_style {
-
     padding: inherit;
     border: 2px solid #e9e8e8;
     width: 110px;
@@ -312,8 +296,6 @@ nav {
 }
 
 footer {
-margin-top:30px;
     display: block;
     background: #eaeffc;
-
 }

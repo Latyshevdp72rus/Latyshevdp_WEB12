@@ -18,7 +18,8 @@ def create_user(request):
     else:
         form = RegistrationForm()
     context = {
-        "form": form
+        "form": form,
+        "title": "Регистрация учётной записи"
     }
     return render(request, "user/registration.html", context=context)
 
@@ -39,6 +40,7 @@ def login_user(request):
         form = LoginForm()
     context = {
         "form": form,
+        "title": "Вход на сайт"
     }
     return render(request, "user/login.html", context=context)
 

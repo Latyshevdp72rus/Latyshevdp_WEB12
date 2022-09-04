@@ -6,7 +6,7 @@ from django.conf import settings
 from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal
 from app.olimp.forms import StandForm, SportsmanForm
 from django.urls import reverse_lazy
-from app.olimp.filters import StandFilter,SportsmanFilter
+from app.olimp.filters import StandFilter, SportsmanFilter
 
 
 class StandList(FilterView):
@@ -19,7 +19,7 @@ class StandList(FilterView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["stands"] = self.queryset
-        context["title"] = "Новости - «Олмипийские чемпионы»"
+        context["title"] = "Новости"
         return context
 
     def get_queryset(self):
@@ -32,10 +32,10 @@ class StandDetail(DetailView):
     template_name = "stand/stand_detail.html"
     pk_url_kwarg = "pk"
 
-    def get_context_data(self, **kwargs,):
+    def get_context_data(self, **kwargs, ):
         context = super().get_context_data(**kwargs)
         context["sportsman"] = self.queryset
-        context["title"] = "Новости - «Олмипийские чемпионы»"
+        context["title"] = "Новости"
         return context
 
 
@@ -50,8 +50,10 @@ class StandCreateView(CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["stands"] = self.queryset
-        context["title"] = "Добавление новости - «Олмипийские чемпионы»"
+        context["title"] = "Добавить новость"
         return context
+
+
 ###########################################################
 
 class SportsmanList(FilterView):
@@ -64,7 +66,7 @@ class SportsmanList(FilterView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["sportsmans"] = self.queryset
-        context["title"] = "Спортсмены - «Олмипийские чемпионы»"
+        context["title"] = "Спортсмены"
         return context
 
     def get_queryset(self):
@@ -77,11 +79,11 @@ class SportsmanCreateView(CreateView):
     context_object_name = "sportsman"
     template_name = "sportsman/sportsman_add.html"
     success_url = reverse_lazy("add_sportsman")
-    fields = ["sportsman_name", "sportsman_country", "sportsman_birthday", "sportsman_biogrpahy", "view_sports_id", "trener_id","sportsman_img",]
+    fields = ["sportsman_name", "sportsman_country", "sportsman_birthday", "sportsman_biogrpahy", "view_sports_id",
+              "trener_id", "sportsman_img", ]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["sportsman"] = self.queryset
-        context["title"] = "Добавление спортсмена - «Олмипийские чемпионы»"
+        context["title"] = "Добавить спортсмена"
         return context
-
