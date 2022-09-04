@@ -5,11 +5,8 @@
 <div class="wrapper">
     <div class="field">
         <div style="width: 1165px;">
-            <div style="margin-top: 50px;display: flex; flex-direction: column; ">
-                <div >
                  <form action="" method="post">
                      <fieldset >
-                         <legend></legend>
                          <h3 style="text-align:center">Добавить новость</h3>
                             {% csrf_token %}
                             {{ form.as_p }}
@@ -19,8 +16,6 @@
                      </div>
                  </fieldset>
                  </form>
-                </div>
-             </div>
             </div>
         </div>
     </div>

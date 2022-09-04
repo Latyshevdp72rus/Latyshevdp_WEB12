@@ -6,71 +6,80 @@
         <div class="field_news">
             <div class="news">
                 {% for stand in page_obj %}
-            <div class="records">
-                <div class="photo_news">
-                   <img src="/media/{{ stand.sportsman_id.sportsman_img }}" class="photo">
-                </div>
-                <div class="items_news">
-                    <strong><em>{{ stand.stand_name }}</em></strong><br>
-                      <div  class="title_info_sportsman">
-                           <div class="desc_info_sportsman">
-                               <strong>Вид олимпийских игр: </strong>
-                           </div>
-                          <div>{{ stand.view_olimp_id.view_olimp_name }}</div>
-                      </div>
-                      <div  class="title_info_sportsman">
-                           <div class="desc_info_sportsman">
-                               <strong>ФИО спортсмена: </strong>
-                           </div>
-                          <div><a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a></div>
-                      </div>
-                      <div  class="title_info_sportsman">
-                           <div class="desc_info_sportsman">
-                               <strong>Получена награда: </strong>
-                           </div>
-                          <div>{{ stand.medal_id }}</div>
-                      </div>
-                      <div  class="title_info_sportsman">
-                           <div class="desc_info_sportsman">
-                               <strong>Дата события:  </strong>
-                           </div>
-                          <div>{{ stand.date_event }}</div>
-                      </div>
+                <div class="records">
+                    <div class="photo_news">
+                        <img src="/media/{{ stand.sportsman_id.sportsman_img }}" class="photo">
+                    </div>
+                    <div class="items_news">
+                            <strong><em>{{ stand.stand_name }}</em></strong><br>
                         <div  class="title_info_sportsman">
                             <div class="desc_info_sportsman">
-                               <strong>Описание:  </strong>
-                           </div>
-                           <div style="white-space: pre-line;" >{{stand.stand_description }}</div>
-                          </div>
-            </div>
-        </div>
+                                <strong>Вид олимпийских игр: </strong>
+                            </div>
+                            <div>
+                                {{ stand.view_olimp_id.view_olimp_name }}
+                            </div>
+                            </div>
+                            <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>ФИО спортсмена: </strong>
+                            </div>
+                            <div>
+                                <a href="/news/{{ stand.id }}">{{stand.sportsman_id}}</a>
+                            </div>
+                        </div>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Получена награда: </strong>
+                            </div>
+                            <div>
+                                {{ stand.medal_id }}
+                            </div>
+                        </div>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Дата события:  </strong>
+                            </div>
+                            <div>
+                                {{ stand.date_event }}
+                            </div>
+                        </div>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Описание:  </strong>
+                            </div>
+                            <div style="white-space: pre-line;">
+                                {{stand.stand_description }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             {% endfor %}
-            </div>
+        </div>
             <div class="pagin">
-                 {% if page_obj.has_previous %}
+                {% if page_obj.has_previous %}
                     <a href="?page=1">&laquo; Первый</a>
                     <a href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
-                 {% endif %}
-            <span> Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }} </span>
-                    {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}">Следующий</a>
-                        <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
-                    {% endif %}
+                {% endif %}
+             <span> Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }} </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Следующий</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
+                {% endif %}
             </div>
         </div>
 
         <div class="news right-panel">
             <div>
                 <form method="get" class="setup_centr">
-                    <p><strong style="text-align:center;">Фильтр новостей: </strong></p>
-                    {{ filter.form.as_p }}
-                 <div style="text-align:center">
-                    <button type="submit" Class="btn">Применить фильтр</button>
-                 </div>
-                 </form>
+                    <p><strong style="text-align:center;">Фильтр новостей:</strong></p>
+                        {{ filter.form.as_p }}
+                        <div style="text-align:center">
+                            <button type="submit" class="btn">Применить фильтр</button>
+                        </div>
+                </form>
             </div>
         </div>
-
     </div>
 </div>
 
