@@ -19,7 +19,7 @@ class StandList(FilterView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["stands"] = self.queryset
-        context["title"] = "Новостной сайт «Олмипийские чемпионы»"
+        context["title"] = "Новости - «Олмипийские чемпионы»"
         return context
 
     def get_queryset(self):

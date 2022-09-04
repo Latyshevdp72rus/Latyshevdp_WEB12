@@ -12,7 +12,7 @@
     <nav >
     <div style="background: #417690;   padding-left:20px; padding-right:53px; text-align: center;">
     <a href="{% url 'stand_list_view' %}" style="text-decoration: none; border:none; ">
-    <p style="color:white; font-weight:bold; ">НОВОСТНОЙ САЙТ «ОЛМИПИЙСКИХ ЧЕМПИОНОВ»</p>
+    <p style="color:white; font-weight:bold; ">CАЙТ «ОЛМИПИЙСКИХ ЧЕМПИОНОВ»</p>
     </a>
     </div>
         <ul id="navbar" >
@@ -32,12 +32,9 @@
                  <li><a href="{% url 'logout' %}">ВЫХОД</a></li>
             {% else %}
                 <li><a href="{% url 'login' %}">ВХОД</a></li>
-                <li><a href="{% url 'register' %}">РЕГИСТРАЦИЯ</a></li>
-
             {% endif %}
-
         </ul>
-    <div style=" color:white; font-weight:bold; margin:auto; margin-left:10px; "> Пользователь: {{ user.username}} </div>
+         <div style=" color:white; font-weight:bold; margin:auto; margin-left:10px; "> Пользователь: {{ user.username}} </div>
     </nav>
 
 </header>

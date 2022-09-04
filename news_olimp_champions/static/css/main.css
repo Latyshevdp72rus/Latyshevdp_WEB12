@@ -6,6 +6,7 @@ body {
     /* font-family: Verdana; */
     font-family: "Montserrat";
     font-size: 16px;
+    color: #657791;
 }
 
 
@@ -186,8 +187,8 @@ fieldset {
     padding: 25px 25px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 0 8px rgb(0 0 0 / 50%);
-    width: 220px;
+    /*box-shadow: 0 0 8px rgb(0 0 0 / 50%);*/
+    width: 570px;
 }
 
 legend {
@@ -253,14 +254,13 @@ height:29px;
 background:white;
 background-image: url('../img/kolca.png');
 background-repeat:repeat-x;
-border-bottom: 3px solid #e9e8e8;
 }
 
 
 
 .switch{
     display:flex;
-    justify-content: space-between;
+    justify-content: center
     padding: 8px;
     margin:5px;
 }
