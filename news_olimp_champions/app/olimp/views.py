@@ -148,13 +148,14 @@ class TrenerCreateView(CreateView):
         return context
 
 
+#
 class ClubCreateView(CreateView):
     model = Club
     model_form = ClubForm
     context_object_name = "clubs"
     template_name = "club/club_add.html"
     success_url = reverse_lazy("add_club")
-    fields = ["trener_name", "club_id", "trener_img"]
+    fields = ["club_name", "club_img"]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.admin import widgets
-from app.olimp.models import Stand
+from app.olimp.models import Stand, Sportsman, Trener, Club
 from app.olimp.validators import validation_stand
 
 
@@ -49,11 +49,11 @@ class SportsmanForm(forms.Form):
     view_sports_id = ""
     trener_id = ""
     sportsman_img = ""
-    sportsman_is_visible = ""
 
     class Meta:
-        model = Stand
-        fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event"]
+        model = Sportsman
+        fields = ["sportsman_name", "sportsman_country", "sportsman_birthday", "sportsman_biogrpahy", \
+                  "view_sports_id", "trener_id", "sportsman_img"]
 
 
 class TrenerForm(forms.Form):
@@ -62,9 +62,19 @@ class TrenerForm(forms.Form):
     trener_img = ""
 
     class Meta:
-        model = Stand
+        model = Trener
         fields = ["trener_name", "club_id", "trener_img"]
 
 
 class ClubForm(forms.Form):
-        pass
+    club_name = forms.CharField(
+        required=True,
+        min_length=10,
+        max_length=30,
+        label="Название клуба"
+    )
+    club_img = ""
+
+    class Meta:
+        model = Club
+        fields = ["club_name", "club_img"]

@@ -276,3 +276,7 @@ class Medal(models.Model):
     class Meta:
         verbose_name = "МЕДАЛЬ"
         verbose_name_plural = "МЕДАЛИ"
+
+
+class Comments(models.Model):
+    pass
