@@ -14,7 +14,6 @@ body {
     background-image: url("../img/background1.png");
     background-repeat: repeat;
     font-family: Verdana;
-
     font-size: 14px;
     color: #657791;
 }
@@ -29,20 +28,20 @@ header {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    background: #417690;
+    background: #007dc6;
 }
 
 #navbar li {
     list-style: none;
     float: left;
     width: 150px;
-    /* height: 50px; */
     padding: 0;
     margin: 0;
-    background: #417690;
+    background: #007dc6;
     color: white;
     position: relative;
     text-align: center;
+    font-weight: bold;
 }
 
 
@@ -63,7 +62,7 @@ header {
     height: 30px;
     margin: 0;
     padding-bottom: 15px;
-    background: #417690;
+    background: #007dc6;
 }
 
 
@@ -79,13 +78,17 @@ header {
 
 #navbar li:hover ul {
     display: block;
-    /* font-weight: bold; */
 }
 
 #navbar li:hover {
-    background: #4d8faf;
+    /* background: #4d8faf; */
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
+    background-color: #007dc6;
+    background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
+    background-repeat: repeat-x;
+    border-color: #1f90bb #1f90bb #145e7a;
     display: block;
-    /* font-weight: bold; */
 }
 
 #navbar li ul li ul {
@@ -212,15 +215,14 @@ nav {
 }
 
 .btn {
-    padding: 10px;
-    width: 180px;
-    margin-top: 10px;
-    background: #417690;
-    color: white;
-    border: 1px solid #e9e8e8;
-    border-radius: 50px;
-    /* margin-top: 30px; */
-    font-weight: bold;
+    padding: 7.5px 40px;
+    border-radius: 4px;
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
+    background-color: #007dc6;
+    background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
+    background-repeat: repeat-x;
+    border-color: #1f90bb #1f90bb #145e7a;
 }
 
 .btn:hover {
@@ -248,8 +250,8 @@ nav {
     background-repeat: repeat-x;
 }
 
-.icon_header{
-    display:flex;
+.icon_header {
+    display: flex;
     justify-content: center;
 }
 
@@ -298,5 +300,11 @@ nav {
 
 footer {
     display: block;
-    background: #eaeffc;
+    background: #f8f7f7;
+    width: 100%;
+    height: 50px;
+}
+
+.container {
+    margin: auto;
 }

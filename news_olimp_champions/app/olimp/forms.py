@@ -12,7 +12,7 @@ class StandForm(forms.Form):
         max_length=30,
         label="Заголовок статьи",
         validators=[validation_stand],
-        widget=forms.TextInput(attrs={"class":"txt"})
+        widget=forms.TextInput(attrs={"class": "txt"})
     )
     stand_description = forms.CharField(
         required=True,
@@ -35,14 +35,10 @@ class StandForm(forms.Form):
         widget=forms.TextInput(attrs={"class": "txt"})
     )
 
-    # date_event
-    # sportsman_id
-    # view_olimp_id
-    # medal_id
-
     class Meta:
         model = Stand
         fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event"]
+
 
 class SportsmanForm(forms.Form):
     sportsman_query = Stand.objects.all()
@@ -54,7 +50,17 @@ class SportsmanForm(forms.Form):
     trener_id = ""
     sportsman_img = ""
     sportsman_is_visible = ""
-    
+
     class Meta:
         model = Stand
         fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event"]
+
+
+class TrenerForm(forms.Form):
+    trener_name = ""
+    club_id = ""
+    trener_img = ""
+
+    class Meta:
+        model = Stand
+        fields = ["trener_name", "club_id", "trener_img"]

@@ -1,18 +1,20 @@
 {% load static %}
 {%block header %}
 <html lang="ru">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="{% static  'img/favicon.png' %}" type="image/png">
     <link rel="stylesheet" href="{% static  'css/main.css' %}">
     <title>{{ title }}</title>
 </head>
+
 <body>
     <header>
         <nav>
-            <div style="background: #417690;   padding-left:20px; padding-right:53px; text-align: center;">
-                <a href="{% url 'stand_list_view' %}" style="text-decoration: none; border:none; ">
-                    <p style="color:white; font-weight:bold; ">CАЙТ «ОЛМИПИЙСКИХ ЧЕМПИОНОВ»</p>
+            <div style="background: #007dc6;   padding-left:20px; padding-right:53px; text-align: center;">
+                <a href="{% url 'stand_list_view' %}" style="text-decoration: none; border:none;">
+                    <p style="color:white; font-weight:bold;">CАЙТ «ОЛМИПИЙСКИХ ЧЕМПИОНОВ»</p>
                 </a>
             </div>
             <ul id="navbar">
@@ -21,7 +23,7 @@
                         <div class="icon_header">
                             <img src="{% static  'img/news.png' %}" alt="icon_news">
                             <div>НОВОСТИ</div>
-                        </div >
+                        </div>
                     </a>
                 </li>
                 <li>
@@ -32,10 +34,18 @@
                         </div>
                     </a>
                 </li>
+                <li>
+                    <a href="{% url 'trener' %}">
+                        <div class="icon_header">
+                            <img src="{% static  'img/sportsman.png' %}" alt="icon_sportsman">
+                            <div>ТРЕНЕРЫ</div>
+                        </div>
+                    </a>
+                </li>
                 {% if user.is_authenticated %}
                 {% if request.user.is_superuser %}
                 <li>
-                     <a href="#">
+                    <a href="#">
                         <div class="icon_header">
                             <img src="{% static  'img/add.png' %}" alt="icon_add">
                             <div>ДОБАВИТЬ</div>
@@ -44,13 +54,13 @@
                     <ul>
                         <li><a href="{% url 'add_stand' %}">НОВОСТЬ</a></li>
                         <li><a href="{% url 'add_sportsman' %}">СПОРТСМЕНА</a></li>
-                        <li><a href="{% url 'add_stand' %}">ТРЕНЕРА</a></li>
+                        <li><a href="{% url 'add_trener' %}">ТРЕНЕРА</a></li>
                         <li><a href="{% url 'add_stand' %}">КЛУБ</a></li>
                     </ul>
                 </li>
                 {% endif %}
                 <li>
-                     <a href="{% url 'logout' %}">
+                    <a href="{% url 'logout' %}">
                         <div class="icon_header">
                             <img src="{% static  'img/exit.png' %}" alt="icon_exit">
                             <div>ВЫХОД</div>
@@ -59,7 +69,7 @@
                 </li>
                 {% else %}
                 <li>
-                     <a href="{% url 'login' %}">
+                    <a href="{% url 'login' %}">
                         <div class="icon_header">
                             <img src="{% static  'img/enter.png' %}" alt="icon_enter">
                             <div>ВХОД</div>
@@ -68,9 +78,11 @@
                 </li>
                 {% endif %}
             </ul>
-            <div style=" color:white; font-weight:bold; margin:auto; margin-left:10px; "> Пользователь: {{user.username}} </div>
+            <div style=" color:white; font-weight:bold; margin:auto; margin-left:10px;">
+                Пользователь: {{user.username}}
+            </div>
         </nav>
     </header>
     <div class="kolco"></div>
 
-{% endblock %}
+    {% endblock %}
