@@ -1,0 +1,18 @@
+{% load static %}
+{% include "../inc/_header.html" %}
+<div class="field">
+    <div class="field_news">
+        <div class="news">
+            <div class="redcords">
+                <div class="photo_news">
+                    <img src="/media/{{ sportsman.sportsman_img }}" class="photo">
+                </div>
+                <div class="items_news">
+                    {{sportsman.sportsman_name}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "../inc/_footer.html" %}

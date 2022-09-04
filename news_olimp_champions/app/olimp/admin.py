@@ -100,15 +100,14 @@ class ClubAdmin(admin.ModelAdmin):
 
 
 class MedalAdmin(admin.ModelAdmin):
-    list_display = ("id", "medal_name", "medal_is_visible")
+    list_display = ("id", "medal_name")
     list_display_links = ("id", "medal_name",)
     search_fields = ("medal_name",)
-    list_editable = ("medal_is_visible",)
-    list_filter = ("medal_name", "medal_is_visible",)
+    list_filter = ("medal_name",)
     ordering = ("id",)
     fieldsets = (
         ("Основные сведения", {
-            "fields": ("medal_name", "medal_is_visible",)
+            "fields": ("medal_name",)
         }),
     )
 

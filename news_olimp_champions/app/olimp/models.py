@@ -263,12 +263,6 @@ class Medal(models.Model):
         null=False,
         blank=False,
     )
-    medal_is_visible = models.BooleanField(
-        default=False,
-        verbose_name="Скрытая запись",
-        null=True,
-        blank=True,
-    )
 
     def __str__(self):
         return self.medal_name
@@ -276,7 +270,3 @@ class Medal(models.Model):
     class Meta:
         verbose_name = "МЕДАЛЬ"
         verbose_name_plural = "МЕДАЛИ"
-
-
-class Comments(models.Model):
-    pass

@@ -56,6 +56,14 @@ class SportsmanForm(forms.Form):
                   "view_sports_id", "trener_id", "sportsman_img"]
 
 
+class ViewOlimpForm(forms.Form):
+    pass
+
+
+class ViewSportsForm(forms.Form):
+    pass
+
+
 class TrenerForm(forms.Form):
     trener_name = ""
     club_id = ""
