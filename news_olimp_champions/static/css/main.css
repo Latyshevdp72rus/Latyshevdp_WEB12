@@ -36,7 +36,7 @@ header {
     list-style: none;
     float: left;
     width: 150px;
-    height: 50px;
+    /* height: 50px; */
     padding: 0;
     margin: 0;
     background: #417690;
@@ -55,15 +55,13 @@ header {
     display: none;
     position: absolute;
     left: 0;
-    top: 42px;
+    top: 50px;
 }
 
 #navbar li ul li {
     float: none;
     height: 30px;
     margin: 0;
-    width: 150px;
-    text-align: center;
     padding-bottom: 15px;
     background: #417690;
 }
@@ -81,13 +79,13 @@ header {
 
 #navbar li:hover ul {
     display: block;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 #navbar li:hover {
     background: #4d8faf;
     display: block;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 #navbar li ul li ul {
@@ -250,7 +248,10 @@ nav {
     background-repeat: repeat-x;
 }
 
-
+.icon_header{
+    display:flex;
+    justify-content: center;
+}
 
 .switch {
     display: flex;

@@ -14,7 +14,7 @@
                             <a href="{% url 'register' %}" class="color_switch_w">Регистрация</a>
                         </div>
                     </div>
-                    <h3 style=" text-align:center;padding-bottom: 30px;padding-top: 30px;">Регистрация учётной записи</h3>
+                    <h3 style="text-align:center;padding-bottom: 30px;padding-top: 30px;">Регистрация учётной записи</h3>
                     {% csrf_token %}
                     {{ form.as_p }}
                     <div style="text-align:center">
