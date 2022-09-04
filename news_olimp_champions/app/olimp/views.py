@@ -4,7 +4,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.conf import settings
 from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal
-from app.olimp.forms import StandForm, SportsmanForm, TrenerForm
+from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, ClubForm
 from django.urls import reverse_lazy
 from app.olimp.filters import StandFilter, SportsmanFilter, TrenerFilter
 
@@ -145,4 +145,19 @@ class TrenerCreateView(CreateView):
         context = super().get_context_data(**kwargs)
         context["treners"] = self.queryset
         context["title"] = "Добавить тренера"
+        return context
+
+
+class ClubCreateView(CreateView):
+    model = Club
+    model_form = ClubForm
+    context_object_name = "clubs"
+    template_name = "club/club_add.html"
+    success_url = reverse_lazy("add_club")
+    fields = ["trener_name", "club_id", "trener_img"]
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["clubs"] = self.queryset
+        context["title"] = "Добавить клуб"
         return context

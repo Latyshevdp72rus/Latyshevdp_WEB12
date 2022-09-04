@@ -37,7 +37,7 @@
                 <li>
                     <a href="{% url 'trener' %}">
                         <div class="icon_header">
-                            <img src="{% static  'img/sportsman.png' %}" alt="icon_sportsman">
+                            <img src="{% static  'img/trener.png' %}" alt="icon_sportsman">
                             <div>ТРЕНЕРЫ</div>
                         </div>
                     </a>
@@ -60,6 +60,15 @@
                 </li>
                 {% endif %}
                 <li>
+                    <div style="padding: 5px; color:white; font-weight:bold; margin:auto;">
+                        <div class="icon_header">
+                            <img src="{% static  'img/user.png' %}" alt="icon_add">
+                            <div>Вы вошли как:<br>{{user.username}}</div>
+                        </div>
+                        
+                    </div>
+                </li>
+                <li>
                     <a href="{% url 'logout' %}">
                         <div class="icon_header">
                             <img src="{% static  'img/exit.png' %}" alt="icon_exit">
@@ -78,9 +87,7 @@
                 </li>
                 {% endif %}
             </ul>
-            <div style=" color:white; font-weight:bold; margin:auto; margin-left:10px;">
-                Пользователь: {{user.username}}
-            </div>
+
         </nav>
     </header>
     <div class="kolco"></div>

@@ -112,6 +112,7 @@ header {
     background: #f8f7f7;
     border: 1px solid #e9e8e8;
     width: 1130px;
+    height: 1300px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -168,13 +169,14 @@ img.photo {
 }
 
 .right-panel {
-    background: #fff;
-    border: 1px solid #e9e8e8;
-    border-radius: 10px;
+    /* background: #fff; */
+    /* border: 1px solid #e9e8e8;  */
+    /* border-radius: 10px;  */
     margin-left: 20px;
     margin-right: 20px;
+    /* height: 30%; */
     padding: 10px;
-    height: 100%;
+    /* height: 100%; */
     width: 300px;
 }
 
@@ -253,6 +255,7 @@ nav {
 .icon_header {
     display: flex;
     justify-content: center;
+    align-items: center
 }
 
 .switch {
@@ -301,8 +304,9 @@ nav {
 footer {
     display: block;
     background: #f8f7f7;
-    width: 100%;
+    width: 1131px;
     height: 50px;
+    margin: auto;
 }
 
 .container {

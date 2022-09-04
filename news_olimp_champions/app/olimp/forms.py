@@ -64,3 +64,7 @@ class TrenerForm(forms.Form):
     class Meta:
         model = Stand
         fields = ["trener_name", "club_id", "trener_img"]
+
+
+class ClubForm(forms.Form):
+        pass
