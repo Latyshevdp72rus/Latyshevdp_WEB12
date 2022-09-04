@@ -4,23 +4,23 @@
 <div class="wrapper">
     <div class="field">
         <div style="width: 1165px;">
-            <form action="" method="post" >
+            <form action="" method="post">
                 <fieldset>
-                        <div class="switch">
-                            <div class="switch_style switch_bg_b" >
-                                <a href="{% url 'login' %}"  class="color_switch_w">Авторизоваться</a>
-                            </div>
-                            <div class="switch_style switch_bg_w">
-                                <a href="{% url 'register' %}"  class="color_switch_b">Регистрация</a>
-                            </div>
+                    <div class="switch">
+                        <div class="switch_style switch_bg_b">
+                            <a href="{% url 'login' %}" class="color_switch_w">Авторизоваться</a>
                         </div>
-                            <h3 style="text-align:center">Вход на сайт</h3>
-                                {% csrf_token %}
-                                {{ form.as_p }}
-                            <div style="text-align:center">
-                                <button type="submit" class="btn">Войти</button>
-                                <button type="reset" class="btn">Сброс </button>
-                            </div>
+                        <div class="switch_style switch_bg_w">
+                            <a href="{% url 'register' %}" class="color_switch_b">Регистрация</a>
+                        </div>
+                    </div>
+                    <h3 style="text-align:center">Вход на сайт</h3>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div style="text-align:center">
+                        <button type="submit" class="btn">Войти</button>
+                        <button type="reset" class="btn">Сброс </button>
+                    </div>
                 </fieldset>
             </form>
         </div>
@@ -29,4 +29,3 @@
 
 
 {% include "inc/_footer.html" %}
-

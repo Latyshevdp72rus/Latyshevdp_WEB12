@@ -1,111 +1,50 @@
 {% load static %}
 {% include "../inc/_header.html" %}
 
-<!--<div class="wrapper">-->
-<!--    <div class="field">-->
-<!--        <div class="">-->
-<!--            <div class="news">-->
-<!--            <div class="redcords">-->
-<!--                <div class="photo_news">-->
-<!--                    <img src="/media/{{ stands.sportsman_id.sportsman_img }}" class="photo">-->
-<!--                </div>-->
-<!--                <div class="items_news">-->
-<!--                    <strong >Информация о спортсмене</strong>-->
-<!--                      <div  class="title_info_sportsman">-->
-<!--                          <div class="desc_info_sportsman">-->
-<!--                              <strong>Ф.И.О:</strong>-->
-<!--                          </div>-->
-<!--                          <div>{{stands.sportsman_id.sportsman_name}}</div>-->
-<!--                      </div>-->
-<!--                      <div  class="title_info_sportsman">-->
-<!--                           <div class="desc_info_sportsman">-->
-<!--                               <strong>День рождения: </strong>-->
-<!--                           </div>-->
-<!--                          <div>{{stands.sportsman_id.sportsman_birthday}}</div>-->
-<!--                      </div>-->
-<!--                      <div  class="title_info_sportsman">-->
-<!--                           <div class="desc_info_sportsman">-->
-<!--                               <strong>Страна: </strong>-->
-<!--                           </div>-->
-<!--                          <div>{{stands.sportsman_id.sportsman_country}}</div>-->
-<!--                      </div>-->
-<!--                      <div  class="title_info_sportsman">-->
-<!--                           <div class="desc_info_sportsman">-->
-<!--                               <strong>Вид спорта: </strong>-->
-<!--                           </div>-->
-<!--                          <div>{{stands.sportsman_id.view_sports_id.view_sport_name}}</div>-->
-<!--                      </div>-->
-<!--                      <div  class="title_info_sportsman">-->
-<!--                           <div class="desc_info_sportsman">-->
-<!--                               <strong>Тренер: </strong>-->
-<!--                           </div>-->
-<!--                          <div><a href="/news/{{ stands.sportsman_id.trener_id.id }}">{{stands.sportsman_id.trener_id.trener_name}}</a></div>-->
-<!--                      </div>-->
-<!--                      <div  class="title_info_sportsman">-->
-<!--                           <div class="desc_info_sportsman">-->
-<!--                               <strong>Вид спорта: </strong>-->
-<!--                           </div>-->
-<!--                          <div>{{stands.sportsman_id.view_sports_id.view_sport_name}}</div>-->
-<!--                      </div>-->
-<!--                      <div  class="title_info_sportsman">-->
-<!--                           <div style="width: 600px;">-->
-<!--                               <strong>Биография спортсмена: </strong>-->
-<!--                           </div>-->
-<!--                          <div>{{stands.sportsman_id.sportsman_biogrpahy}}</div>-->
-<!--                      </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--    </div>-->
-<!--</div>-->
-
 <div class="wrapper">
     <div class="field">
         <div class="field_news">
             <div class="news">
-
-            <div class="records">
-                <div class="photo_news">
-                   <img src="/media/{{ stands.sportsman_id.sportsman_img }}" class="photo">
-                </div>
-                <div class="items_news">
-                    <strong><em>{{ stand.stand_name }}</em></strong><br>
-                      <div  class="title_info_sportsman">
-                           <div class="desc_info_sportsman">
-                               <strong>Вид олимпийских игр: </strong>
-                           </div>
-                          <div>{{ stands.view_olimp_id.view_olimp_name }}</div>
-                      </div>
-                      <div  class="title_info_sportsman">
-                           <div class="desc_info_sportsman">
-                               <strong>ФИО спортсмена: </strong>
-                           </div>
-                          <div><a href="/news/{{ stand.id }}">{{v.sportsman_id}}</a></div>
-                      </div>
-                      <div  class="title_info_sportsman">
-                           <div class="desc_info_sportsman">
-                               <strong>Получена награда: </strong>
-                           </div>
-                          <div>{{ stands.medal_id }}</div>
-                      </div>
-                      <div  class="title_info_sportsman">
-                           <div class="desc_info_sportsman">
-                               <strong>Дата события:  </strong>
-                           </div>
-                          <div>{{ stand.date_event }}</div>
-                      </div>
-                        <div  class="title_info_sportsman">
+                <div class="records">
+                    <div class="photo_news">
+                        <img src="/media/{{ stands.sportsman_id.sportsman_img }}" class="photo">
+                    </div>
+                    <div class="items_news">
+                        <strong><em>{{ stands.stand_name }}</em></strong><br>
+                        <div class="title_info_sportsman">
                             <div class="desc_info_sportsman">
-                               <strong>Описание:  </strong>
-                           </div>
-                           <div style="white-space: pre-line;" >{{stand.stand_description }}</div>
-                          </div>
+                                <strong>Вид олимпийских игр: </strong>
+                            </div>
+                            <div>{{ stands.view_olimp_id.view_olimp_name }}</div>
+                        </div>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>ФИО спортсмена: </strong>
+                            </div>
+                            <div><a href="/news/{{ stands.id }}">{{stands.sportsman_id}}</a></div>
+                        </div>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Получена награда: </strong>
+                            </div>
+                            <div>{{ stands.medal_id }}</div>
+                        </div>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Дата события: </strong>
+                            </div>
+                            <div>{{ stands.date_event }}</div>
+                        </div>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Описание: </strong>
+                            </div>
+                            <div style="white-space: pre-line;">{{stands.stand_description }}</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-            </div>
-
-
-
     </div>
 </div>
 

@@ -5,22 +5,22 @@
     <div class="field">
         <div style="width: 1165px;">
             <form action="" method="post">
-                <fieldset >
+                <fieldset>
                     <div class="switch">
-                        <div class="switch_style switch_bg_w" >
-                             <a href="{% url 'login' %}"  class="color_switch_b">Авторизоваться</a>
+                        <div class="switch_style switch_bg_w">
+                            <a href="{% url 'login' %}" class="color_switch_b">Авторизоваться</a>
                         </div>
                         <div class="switch_style switch_bg_b">
-                            <a href="{% url 'register' %}"  class="color_switch_w">Регистрация</a>
+                            <a href="{% url 'register' %}" class="color_switch_w">Регистрация</a>
                         </div>
                     </div>
-                        <h3 style=" text-align:center">Регистрация учётной записи</h3>
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                        <div style="text-align:center">
-                            <button type="submit" class="btn">Зарегистрироваться</button>
-                            <button type="reset" class="btn">Сброс </button>
-                        </div>
+                    <h3 style=" text-align:center">Регистрация учётной записи</h3>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div style="text-align:center">
+                        <button type="submit" class="btn">Зарегистрироваться</button>
+                        <button type="reset" class="btn">Сброс </button>
+                    </div>
                 </fieldset>
             </form>
         </div>
@@ -29,4 +29,3 @@
 
 
 {% include "inc/_footer.html" %}
-

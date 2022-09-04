@@ -5,20 +5,20 @@
 <div class="wrapper">
     <div class="field">
         <div style="width: 1165px;">
-                 <form action="" method="post">
-                     <fieldset >
-                         <h3 style="text-align:center">Добавить новость</h3>
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                        <div style="text-align:center">
+            <form action="" method="post">
+                <fieldset>
+                    <h3 style="text-align:center">Добавить новость</h3>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div style="text-align:center">
                         <button type="submit" class="btn">Добавить</button>
                         <button type="reset" class="btn">Сброс </button>
-                     </div>
-                 </fieldset>
-                 </form>
-            </div>
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
+</div>
 </div>
 
 {% include "../inc/_footer.html" %}
