@@ -63,6 +63,9 @@ class ViewOlimpForm(forms.Form):
 class ViewSportsForm(forms.Form):
     pass
 
+class FeedBackForm(forms.Form):
+    pass
+
 
 class TrenerForm(forms.Form):
     trener_name = ""

@@ -3,8 +3,8 @@ from django.views.generic import ListView, DetailView, CreateView
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.conf import settings
-from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal
-from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, ClubForm
+from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack
+from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, ClubForm,FeedBackForm
 from django.urls import reverse_lazy
 from app.olimp.filters import StandFilter, SportsmanFilter, TrenerFilter
 
@@ -162,3 +162,14 @@ class ClubCreateView(CreateView):
         context["clubs"] = self.queryset
         context["title"] = "Добавить клуб"
         return context
+
+
+#
+
+class FeedBackCreateView(CreateView):
+    model = FeedBack
+    model_form = FeedBackForm
+    context_object_name = "feedback"
+    template_name = "feedback/feedback_add.html"
+    success_url = reverse_lazy("feedback")
+    fields = ["fb_name", "fb_email", "fb_message", "fb_img"]

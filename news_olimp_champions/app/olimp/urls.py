@@ -3,7 +3,8 @@ from app.olimp.views import \
     StandList, StandDetail, StandCreateView, \
     SportsmanList, SportsmanDetail, SportsmanCreateView, \
     TrenerList, TrenermanDetail,TrenerCreateView,\
-    ClubCreateView
+    ClubCreateView, \
+    FeedBackCreateView
 
 urlpatterns = [
     path('', StandList.as_view(), name='stand_list_view'),
@@ -19,6 +20,8 @@ urlpatterns = [
     path('trener/add_trener', TrenerCreateView.as_view(), name='add_trener'),
 
     path('trener/add_club/', ClubCreateView.as_view(), name='add_club'),
+    path('feedback/',  FeedBackCreateView.as_view(), name='feedback'),
+
 
 
 ]

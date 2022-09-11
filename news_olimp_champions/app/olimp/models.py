@@ -12,7 +12,7 @@ class Stand(models.Model):
     )
     stand_description = models.TextField(
         verbose_name="Описание записи",
-        max_length=100,
+        max_length=1000,
         null=False,
         blank=False,
     )
@@ -270,3 +270,43 @@ class Medal(models.Model):
     class Meta:
         verbose_name = "МЕДАЛЬ"
         verbose_name_plural = "МЕДАЛИ"
+
+
+class FeedBack(models.Model):
+    fb_name = models.CharField(
+        max_length=50,
+        verbose_name="Как к Вам обращаться:",
+        null=False,
+        blank=False,
+    )
+    fb_email = models.EmailField(
+        verbose_name="Email для связи:",
+        null=False,
+        blank=False,
+    )
+    fb_message = models.TextField(
+        verbose_name="Ваше сообщение:",
+        null=False,
+        blank=False,
+    )
+    fb_img = models.ImageField(
+        upload_to="media/feedback/%y/%m/%d/",
+        verbose_name="Загрузить фото",
+        null=True,
+        blank=True,
+    )
+
+    def save(self):
+        super().save()
+        fb_images = Image.open(self.fb_img.path)
+        if fb_images.height > 250 or fb_images.width > 200:
+            output_size = (200, 250)
+            fb_images.thumbnail(output_size)
+            fb_images.save(self.fb_img.path)
+
+    def __str__(self):
+        return self.fb_name
+
+    class Meta:
+        verbose_name = "ОБРАТНАЯ СВЯЗЬ"
+        verbose_name_plural = "ОБРАТНАЯ СВЯЗЬ"
