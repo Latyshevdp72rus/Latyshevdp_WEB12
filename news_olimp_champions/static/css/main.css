@@ -22,13 +22,15 @@ body {
     padding: 0;
     margin: 0;
 }
+.wrapper{
 
+}
 header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-
+    z-index:1;
     background: #007dc6;
 }
 
@@ -116,7 +118,6 @@ header {
     height: 1300px;
     margin-left: auto;
     margin-right: auto;
-    margin-top:50px;
 }
 
 .field_news {
@@ -145,6 +146,13 @@ header {
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
+.records:hover{
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+
+}
+
 
 .photo_news {
     border: 1px solid #e9e8e8;
@@ -313,4 +321,10 @@ footer {
 
 .container {
     margin: auto;
+}
+
+select,input[type=text]{
+padding:5px;
+border:1px solid black;
+border-radius:3px;
 }

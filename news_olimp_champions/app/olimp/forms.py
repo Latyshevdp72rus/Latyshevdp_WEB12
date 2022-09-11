@@ -32,7 +32,7 @@ class StandForm(forms.Form):
         required=True,
         label="Дата олимпиады",
         # validators=[validation_stand],
-        widget=forms.TextInput(attrs={"class": "txt"})
+        widget=forms.TextInput()
     )
 
     class Meta:
