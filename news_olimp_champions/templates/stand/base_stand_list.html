@@ -5,22 +5,14 @@
 <div class="wrapper">
     <div class="field">
         <div class="field_news">
+
             <div class="news">
                 {% for stand in page_obj %}
-                <div class="records">
+                <div class="records_news">
                     <div class="photo_news">
                         <img src="/media/{{ stand.sportsman_id.sportsman_img }}" class="photo">
                     </div>
                     <div class="items_news">
-                        <strong><em>{{ stand.stand_name }}</em></strong><br>
-                        <div class="title_info_sportsman">
-                            <div class="desc_info_sportsman">
-                                <strong>Вид олимпийских игр: </strong>
-                            </div>
-                            <div>
-                                {{ stand.view_olimp_id.view_olimp_name }}
-                            </div>
-                        </div>
                         <div class="title_info_sportsman">
                             <div class="desc_info_sportsman">
                                 <strong>ФИО спортсмена: </strong>
@@ -31,21 +23,25 @@
                         </div>
                         <div class="title_info_sportsman">
                             <div class="desc_info_sportsman">
-                                <strong>Получена награда: </strong>
+                                <strong>Вид спорта: </strong>
                             </div>
                             <div>
-                                {{ stand.medal_id }}
+                                {{ stand.sportsman_id.view_sports_id}}
                             </div>
                         </div>
-                       <div class="title_info_sportsman">
+                        <div class="title_info_sportsman">
                             <div class="desc_info_sportsman">
-                                <strong>Дата события: </strong>
+                                <strong>Получена награда: </strong>{{ stand.medal_id }}
                             </div>
-                            <div>
-                                {{ stand.date_event }}
-                            </div>
+
                         </div>
+                    <div class="read">
+                        <form action="{{  stand.id }}">
+                            <button type="submit" class="btn">Читать подробнее</button>
+                        </form>
                     </div>
+                    </div>
+
                 </div>
                 {% endfor %}
             </div>
