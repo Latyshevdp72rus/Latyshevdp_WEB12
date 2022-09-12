@@ -115,7 +115,7 @@ header {
     background: #f8f7f7;
     border: 1px solid #e9e8e8;
     width: 1174px;
-    height: 1060px;
+    height: 1080px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -128,10 +128,10 @@ header {
 
 .news {
     margin: 15px;
+
+/*
     margin-left: 30px;
     margin-right: 30px;
-/*
-
     display:flex;
     justify-content: space-evenly
     flex-wrap: wrap
