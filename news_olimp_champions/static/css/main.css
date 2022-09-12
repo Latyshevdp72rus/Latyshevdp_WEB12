@@ -22,22 +22,21 @@ body {
     padding: 0;
     margin: 0;
 }
-.wrapper{
 
-}
+
 header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    z-index:1;
+    z-index: 1;
     background: #007dc6;
 }
 
 #navbar li {
     list-style: none;
     float: left;
-    width:200px;
+    width: 200px;
     padding: 0;
     margin: 0;
     background: #007dc6;
@@ -115,7 +114,7 @@ header {
     background: #f8f7f7;
     border: 1px solid #e9e8e8;
     width: 1174px;
-  /*   height: 1080px;*/
+    /*   height: 1080px;*/
     margin-left: auto;
     margin-right: auto;
 }
@@ -125,6 +124,7 @@ header {
     height: inherit;
     border-right: 1px solid #e9e8e8;
 }
+
 /*
 .news {
     margin: 15px;
@@ -170,10 +170,11 @@ header {
 }
 
 
-h3{
+h3 {
     width: 450;
     margin-top: 0px;
 }
+
 .photo_news {
     border: 1px solid #e9e8e8;
     /*margin: 20px; height: 100%;*/
@@ -206,12 +207,12 @@ img.photo {
     /* background: #fff; */
     /* border: 1px solid #e9e8e8;  */
     /* border-radius: 10px;  */
-    margin-left: 20px;
-    margin-right: 20px;
+    /* margin-left: 20px;
+    margin-right: 20px; */
     /* height: 30%; */
     padding: 10px;
     /* height: 100%; */
-    width: 300px;
+    width: 500px;
 }
 
 fieldset {
@@ -251,7 +252,7 @@ nav {
 }
 
 .btn {
-    padding: 7.5px 40px;
+    padding: 10px 40px;
     border-radius: 4px;
     color: #ffffff;
     text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
@@ -275,7 +276,7 @@ nav {
     display: flex;
     border-bottom: 1px solid #e9e8e8;
     padding: 10px;
-   /* border-bottom: 1px solid #e9e8e8;
+    /* border-bottom: 1px solid #e9e8e8;
     width: 430px;*/
 }
 
@@ -343,24 +344,30 @@ footer {
     display: block;
     background: #f8f7f7;
     width: 1174px;
-    height: 50px;
+    height: 100px;
     margin: auto;
 }
 
-.container {
-    margin: auto;
+.conatainer_footer {
+    margin: 20px;
+    text-align: center;
 }
 
-select,input[type=text],textarea,input[type=email],input[type=password] {
-padding:5px;
-border:1px solid black;
-border-radius:3px;
+select,
+input[type=text],
+textarea,
+input[type=email],
+input[type=password] {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
 }
 
-.read{
+.read {
     margin: auto;
+    margin-top: 20px;
     text-align: right;
-    padding:10px;
+    padding: 10px;
 }
 
 a {
@@ -368,3 +375,8 @@ a {
     color: #657791;
 }
 
+form p {
+
+    width: 300px;
+    margin: auto;
+}

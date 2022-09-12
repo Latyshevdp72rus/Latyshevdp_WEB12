@@ -5,7 +5,6 @@
 <div class="wrapper">
     <div class="field">
         <div class="field_news">
-
             <div class="news">
                 {% for stand in page_obj %}
                 <div class="records_news">
@@ -15,9 +14,9 @@
                     <div class="items_news">
                         <div class="title_info_sportsman">
                             <a href="{{ stand.id }}">
-                                <h3>
+                                <strong>
                                     {{stand.view_olimp_id}} - {{stand.stand_name}}
-                                </h3>
+                                </strong>
                             </a>
                         </div>
                         <div class="title_info_sportsman">
@@ -44,15 +43,13 @@
                                 {{ stand.medal_id }}
                             </div>
                         </div>
-                    <div class="read">
-                        <form action="{{  stand.id }}">
-                            <button type="submit" class="btn">Читать подробнее</button>
-                        </form>
+                        <div class="read">
+                            <form action="{{  stand.id }}">
+                                <button type="submit" class="btn">Читать подробнее</button>
+                            </form>
+                        </div>
                     </div>
-                    </div>
-
                 </div>
-
                 {% endfor %}
             </div>
             <div class="pagin">
