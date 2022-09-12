@@ -115,7 +115,7 @@ header {
     background: #f8f7f7;
     border: 1px solid #e9e8e8;
     width: 1174px;
-    height: 1080px;
+  /*   height: 1080px;*/
     margin-left: auto;
     margin-right: auto;
 }
@@ -365,5 +365,10 @@ border-radius:3px;
     margin: auto;
     text-align: right;
     padding:10px;
+}
+
+a {
+    text-decoration: none;
+    color: #657791;
 }
 
