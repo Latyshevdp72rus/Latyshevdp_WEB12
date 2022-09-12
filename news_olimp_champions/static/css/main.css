@@ -121,7 +121,7 @@ header {
 }
 
 .field_news {
-    width: 800px;
+    width: 1389px;
     height: inherit;
     border-right: 1px solid #e9e8e8;
 }
@@ -130,10 +130,12 @@ header {
     margin: 15px;
     margin-left: 30px;
     margin-right: 30px;
+/*
+
     display:flex;
     justify-content: space-evenly
-
-
+    flex-wrap: wrap
+*/
 }
 
 
@@ -154,12 +156,12 @@ header {
 
 .records_news {
     display: flex;
-    flex-wrap: wrap;
+
     background: white;
     border: 1px solid #e9e8e8;
     border-radius: 10px;
-    margin-bottom: 10px;
-    width: 355;
+    /* flex-wrap: wrap;margin-bottom: 10px;
+   width: 355;*/
     margin: 5px;
     padding: 10px;
 
@@ -177,7 +179,8 @@ header {
     border: 1px solid #e9e8e8;
     /*margin: 20px; height: 100%;*/
     margin: 20px auto;
-
+    width: 200px;
+    height: 250px;
 }
 
 .items_news {
@@ -270,6 +273,7 @@ nav {
         display: flex;
     align-items: baseline;
     */
+    border-bottom: 1px solid #e9e8e8;
     padding: 10px;
    /* border-bottom: 1px solid #e9e8e8;
     width: 430px;*/
@@ -347,7 +351,7 @@ footer {
     margin: auto;
 }
 
-select,input[type=text],textarea{
+select,input[type=text],textarea,input[type=email],input[type=password] {
 padding:5px;
 border:1px solid black;
 border-radius:3px;
@@ -355,7 +359,7 @@ border-radius:3px;
 
 .read{
     margin: auto;
-    text-align: center;
+    text-align: right;
     padding:10px;
 }
 

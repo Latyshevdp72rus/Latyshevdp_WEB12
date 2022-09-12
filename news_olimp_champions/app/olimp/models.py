@@ -1,6 +1,5 @@
-from django.contrib import admin
-from django.db import models
 from PIL import Image
+from django.db import models
 
 
 class Stand(models.Model):

@@ -1,5 +1,5 @@
 from django_filters.views import FilterView
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import DetailView, CreateView
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.conf import settings
@@ -170,6 +170,12 @@ class FeedBackCreateView(CreateView):
     model = FeedBack
     model_form = FeedBackForm
     context_object_name = "feedback"
-    template_name = "feedback/feedback_add.html"
+    template_name = "feedback/feedback_msg.html"
     success_url = reverse_lazy("feedback")
-    fields = ["fb_name", "fb_email", "fb_message", "fb_img"]
+    fields = ["fb_name", "fb_email", "fb_message", "fb_img",]
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["feedback"] = self.queryset
+        context["title"] = "Обратная связь"
+        return context
