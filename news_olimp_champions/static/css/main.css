@@ -173,6 +173,7 @@ header {
 h3 {
     width: 450;
     margin-top: 0px;
+    text-align:center
 }
 
 .photo_news {
@@ -313,10 +314,12 @@ nav {
 
 
 .switch_bg_b {
+    padding: 10px;
     background: #417698;
 }
 
 .switch_bg_w {
+    padding: 10px;
     background: white;
 }
 
@@ -327,7 +330,7 @@ nav {
 
 .color_switch_w:hover {
     color: white;
-    font-weight: bold;
+
 }
 
 .color_switch_b {
@@ -337,7 +340,7 @@ nav {
 
 .color_switch_b:hover {
     color: #417698;
-    font-weight: bold;
+
 }
 
 footer {
@@ -379,4 +382,9 @@ form p {
 
     width: 300px;
     margin: auto;
+}
+
+.btn_align{
+    text-align:center;
+    margin: 42px auto;
 }

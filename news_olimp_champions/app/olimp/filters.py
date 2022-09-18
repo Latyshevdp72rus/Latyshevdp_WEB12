@@ -28,7 +28,7 @@ class SportsmanFilter(django_filters.FilterSet):
     sportsman_query = Sportsman.objects.all()
     sportsman_name = django_filters.ModelChoiceFilter(queryset=Sportsman.objects.all())
     sportsman_birthday = django_filters.DateFilter(
-        label=('Дата Рождения'),
+        label=('Дата рождения'),
         lookup_expr=('icontains'),
         widget=DateTimeInput()
     )

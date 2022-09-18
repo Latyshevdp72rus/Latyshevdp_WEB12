@@ -68,7 +68,7 @@ class Sportsman(models.Model):
     )
     sportsman_country = models.CharField(
         max_length=30,
-        verbose_name="Страна",
+        verbose_name="Страна спортсмена",
         null=False,
         blank=False,
     )

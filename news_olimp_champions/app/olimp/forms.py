@@ -1,8 +1,13 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.admin import widgets
+from django import forms
 from app.olimp.models import Stand, Sportsman, Trener, Club, FeedBack
 from app.olimp.validators import validation_stand
+
+
+class DateTimeInput(forms.DateTimeInput):
+    input_type = 'date'
 
 
 class StandForm(forms.Form):
@@ -22,17 +27,18 @@ class StandForm(forms.Form):
         # validators=[validation_book_name],
         widget=forms.TextInput()
     )
-    date_event = forms.DateField(
-        required=True,
-        label="Дата олимпиады",
-        # validators=[validation_book_name],
-        widget=forms.SelectDateWidget(),
-    )
     medal_id = forms.CharField(
         required=True,
         label="Дата олимпиады",
         # validators=[validation_stand],
         widget=forms.TextInput()
+    )
+    date_event = forms.DateField(
+        required=True,
+        label="Дата олимпиады",
+        # validators=[validation_book_name],
+
+        widget=DateTimeInput(),
     )
 
     class Meta:
