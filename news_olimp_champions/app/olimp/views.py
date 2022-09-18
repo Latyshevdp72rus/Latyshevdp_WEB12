@@ -4,9 +4,10 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.conf import settings
 from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack
-from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, ClubForm,FeedBackForm
+from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, ClubForm, FeedBackForm
 from django.urls import reverse_lazy
 from app.olimp.filters import StandFilter, SportsmanFilter, TrenerFilter
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 ###########################################################
@@ -40,13 +41,14 @@ class StandDetail(DetailView):
         return context
 
 
-class StandCreateView(CreateView):
+class StandCreateView(LoginRequiredMixin, CreateView):
     model = Stand
     model_form = StandForm
     context_object_name = "stands"
     template_name = "stand/stand_add.html"
     success_url = reverse_lazy("add_stand")
     fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event"]
+    raise_exception = True
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -86,7 +88,7 @@ class SportsmanDetail(DetailView):
         return context
 
 
-class SportsmanCreateView(CreateView):
+class SportsmanCreateView(LoginRequiredMixin,CreateView):
     model = Sportsman
     model_form = SportsmanForm
     context_object_name = "sportsmans"
@@ -94,6 +96,7 @@ class SportsmanCreateView(CreateView):
     success_url = reverse_lazy("add_sportsman")
     fields = ["sportsman_name", "sportsman_country", "sportsman_birthday", "sportsman_biogrpahy", "view_sports_id",
               "trener_id", "sportsman_img", ]
+    raise_exception = True
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -133,13 +136,14 @@ class TrenermanDetail(DetailView):
         return context
 
 
-class TrenerCreateView(CreateView):
+class TrenerCreateView(LoginRequiredMixin, CreateView):
     model = Trener
     model_form = TrenerForm
     context_object_name = "treners"
     template_name = "trener/trener_add.html"
     success_url = reverse_lazy("add_trener")
     fields = ["trener_name", "club_id", "trener_img"]
+    raise_exception = True
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -149,13 +153,14 @@ class TrenerCreateView(CreateView):
 
 
 #
-class ClubCreateView(CreateView):
+class ClubCreateView(LoginRequiredMixin, CreateView):
     model = Club
     model_form = ClubForm
     context_object_name = "clubs"
     template_name = "club/club_add.html"
     success_url = reverse_lazy("add_club")
     fields = ["club_name", "club_img"]
+    raise_exception = True
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -166,13 +171,14 @@ class ClubCreateView(CreateView):
 
 #
 
-class FeedBackCreateView(CreateView):
+class FeedBackCreateView(LoginRequiredMixin, CreateView):
     model = FeedBack
     model_form = FeedBackForm
     context_object_name = "feedback"
     template_name = "feedback/feedback_msg.html"
     success_url = reverse_lazy("feedback")
-    fields = ["fb_name", "fb_email", "fb_message", "fb_img",]
+    fields = ["fb_name", "fb_email", "fb_message", "fb_img", ]
+    raise_exception = True
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
