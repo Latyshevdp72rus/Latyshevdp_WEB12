@@ -6,6 +6,7 @@ from app.olimp.models import Stand, Sportsman, Trener, Club, FeedBack
 from app.olimp.validators import validation_stand
 
 
+# validators=[validation_book_name],
 class DateTimeInput(forms.DateTimeInput):
     input_type = 'date'
 
@@ -17,27 +18,33 @@ class StandForm(forms.Form):
         max_length=30,
         label="Заголовок статьи",
         validators=[validation_stand],
-        widget=forms.TextInput(attrs={"class": "txt"})
+        widget=forms.TextInput()
     )
     stand_description = forms.CharField(
         required=True,
         min_length=10,
         max_length=100,
         label="Описание",
-        # validators=[validation_book_name],
+        widget=forms.TextInput()
+    )
+    sportsman_id = forms.CharField(
+        required=True,
+        label="Спортсмен",
+        widget=forms.TextInput()
+    )
+    view_olimp_id = forms.CharField(
+        required=True,
+        label="Вид олимпийских игр",
         widget=forms.TextInput()
     )
     medal_id = forms.CharField(
         required=True,
-        label="Дата олимпиады",
-        # validators=[validation_stand],
+        label="Медаль",
         widget=forms.TextInput()
     )
     date_event = forms.DateField(
         required=True,
         label="Дата олимпиады",
-        # validators=[validation_book_name],
-
         widget=DateTimeInput(),
     )
 
@@ -47,7 +54,6 @@ class StandForm(forms.Form):
 
 
 class SportsmanForm(forms.Form):
-    sportsman_query = Stand.objects.all()
     sportsman_name = ""
     sportsman_country = ""
     sportsman_birthday = ""
@@ -68,23 +74,20 @@ class FeedBackForm(forms.Form):
         min_length=10,
         max_length=30,
         label="Как к Вам обращаться:",
-        # validators=[validation_stand],
-        widget=forms.TextInput(attrs={"class": "txt"})
+        widget=forms.TextInput()
     )
     fb_email = forms.CharField(
         required=True,
         min_length=10,
         max_length=30,
         label="Email для связи:",
-        # validators=[validation_stand],
-        widget=forms.TextInput(attrs={"class": "txt"})
+        widget=forms.TextInput()
     )
     fb_message = forms.CharField(
         required=True,
         min_length=10,
         max_length=100,
         label="Ваше сообщение:",
-        # validators=[validation_book_name],
         widget=forms.TextInput()
     )
 
