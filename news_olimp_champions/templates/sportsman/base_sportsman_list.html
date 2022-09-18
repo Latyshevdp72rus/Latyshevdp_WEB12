@@ -1,0 +1,89 @@
+{% load static %}
+{% include "../inc/_header.html" %}
+
+
+
+<div class="wrapper">
+    <div class="field">
+        <div class="field_news">
+            <div class="news">
+                {% for sportman in page_obj %}
+                <div class="records_news">
+                    <div class="photo_news">
+                        <img src="/media/{{ sportman.sportsman_img }}" class="photo">
+                    </div>
+                    <div class="items_news">
+                        <div class="title_info_sportsman">
+                            <a href="{{ stand.id }}">
+                                <strong>
+                                    {{sportman.sportsman_name}}
+                                </strong>
+                            </a>
+                        </div>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>День рождения:</strong>
+                            </div>
+                            <div>
+                                {{sportman.sportsman_birthday}}
+                            </div>
+                        </div>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Страна:</strong>
+                            </div>
+                            <div>
+                                {{sportman.sportsman_country}}
+                            </div>
+                        </div>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Вид спорта:</strong>
+                            </div>
+                            <div>
+                                {{sportman.view_sports_id.view_sport_name}}
+                            </div>
+                        </div>
+
+                        <div class="read">
+                            <form action="{{  sportman.id }}">
+                                <button type="submit" class="btn">Читать подробнее</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="pagin">
+                {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; Первый</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
+                {% endif %}
+                <span> Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }} </span>
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Следующий</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div>
+                <form method="get" class="setup_centr">
+                    <p><strong style="text-align:center;">Фильтр новостей:</strong></p>
+                    {{ filter.form.as_p }}
+                    <div style="text-align:center;margin: 42px auto;">
+                        <button type="submit" class="btn">Применить фильтр</button>
+                    </div>
+                </form>
+              <div style="text-align:center;margin: 42px auto;">
+                <form action="{% url 'sportsman' %}">
+                    <button type="submit" class="btn">Сброс</button>
+                </form>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+{% include "../inc/_footer.html" %}
