@@ -1,9 +1,6 @@
 import django_filters
 from django import forms
-from django.forms import DateTimeInput
-
 from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal
-from django.contrib.admin import widgets
 
 
 class DateTimeInput(forms.DateTimeInput):

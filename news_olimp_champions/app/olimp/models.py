@@ -10,7 +10,7 @@ class Stand(models.Model):
         blank=False,
     )
     stand_description = models.TextField(
-        verbose_name="Описание записи",
+        verbose_name="Описание",
         max_length=1000,
         null=False,
         blank=False,
