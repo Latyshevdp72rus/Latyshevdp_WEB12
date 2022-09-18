@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.admin import widgets
 from django import forms
-from app.olimp.models import Stand, Sportsman, Trener, Club, FeedBack
+from app.olimp.models import Stand, Sportsman, Trener, Club, FeedBack, ViewOlimp,Medal
 from app.olimp.validators import validation_stand
 
 
@@ -27,20 +27,14 @@ class StandForm(forms.Form):
         label="Описание",
         widget=forms.TextInput()
     )
-    sportsman_id = forms.CharField(
-        required=True,
-        label="Спортсмен",
-        widget=forms.TextInput()
+    sportsman_id = forms.SelectMultiple(
+
     )
-    view_olimp_id = forms.CharField(
-        required=True,
-        label="Вид олимпийских игр",
-        widget=forms.TextInput()
+    view_olimp_id = forms.SelectMultiple(
+
     )
-    medal_id = forms.CharField(
-        required=True,
-        label="Медаль",
-        widget=forms.TextInput()
+    medal_id = forms.SelectMultiple(
+
     )
     date_event = forms.DateField(
         required=True,
