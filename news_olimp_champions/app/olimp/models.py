@@ -288,6 +288,12 @@ class FeedBack(models.Model):
         null=False,
         blank=False,
     )
+    date_create = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Дата добавления",
+        null=True,
+        blank=True,
+    )
     fb_img = models.ImageField(
         upload_to="media/feedback/%y/%m/%d/",
         verbose_name="Загрузить фото",

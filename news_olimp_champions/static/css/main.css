@@ -252,7 +252,7 @@ nav {
 }
 
 .btn {
-    padding: 10px 40px;
+    padding: 10px 20px;
     border-radius: 4px;
     color: #ffffff;
     text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
@@ -357,7 +357,7 @@ select,
 input[type=text],
 textarea,
 input[type=email],
-input[type=password] {
+input[type=password],input#id_sportsman_birthday, input#id_date_event {
     padding: 5px;
     border: 1px solid black;
     border-radius: 3px;
