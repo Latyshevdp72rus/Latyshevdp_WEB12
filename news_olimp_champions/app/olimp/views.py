@@ -77,14 +77,14 @@ class SportsmanList(FilterView):
 
 class SportsmanDetail(DetailView):
     model = Sportsman
-    context_object_name = "sportsman"
+    context_object_name = "sportsmans"
     template_name = "sportsman/sportsman_detail.html"
     pk_url_kwarg = "pk"
 
     def get_context_data(self, **kwargs, ):
         context = super().get_context_data(**kwargs)
-        context["sportsman"] = self.queryset
-        context["title"] = "Новости"
+        context["sportsmans"] = self.queryset
+        context["title"] = "Спортсмен"
         return context
 
 
@@ -169,9 +169,8 @@ class ClubCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
-#
-
-class FeedBackCreateView(LoginRequiredMixin, CreateView):
+# Создание запроса  "Обраятная связь"
+class FeedBackCreateView(CreateView):
     model = FeedBack
     model_form = FeedBackForm
     context_object_name = "feedback"

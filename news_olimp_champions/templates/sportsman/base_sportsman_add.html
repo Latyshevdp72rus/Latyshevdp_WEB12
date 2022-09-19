@@ -4,6 +4,7 @@
 <div class="wrapper">
     <div class="field">
         <div style="width: 1165px;">
+        {% if user.is_superuser %}
             <form action="" method="post">
                 <fieldset>
                     <h3 style="text-align:center">Добавить спортсмена</h3>
@@ -15,6 +16,7 @@
                     </div>
                 </fieldset>
             </form>
+         {% endif %}
         </div>
     </div>
 </div>
