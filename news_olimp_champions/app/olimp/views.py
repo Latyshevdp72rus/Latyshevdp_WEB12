@@ -36,7 +36,6 @@ class StandDetail(DetailView):
 
     def get_context_data(self, **kwargs, ):
         context = super().get_context_data(**kwargs)
-        context["stands"] = self.queryset
         context["title"] = "Новости"
         return context
 
@@ -77,13 +76,12 @@ class SportsmanList(FilterView):
 
 class SportsmanDetail(DetailView):
     model = Sportsman
-    context_object_name = "sportsmans"
+    context_object_name = "sportsman"
     template_name = "sportsman/sportsman_detail.html"
     pk_url_kwarg = "pk"
 
     def get_context_data(self, **kwargs, ):
         context = super().get_context_data(**kwargs)
-        context["sportsmans"] = self.queryset
         context["title"] = "Спортсмен"
         return context
 
