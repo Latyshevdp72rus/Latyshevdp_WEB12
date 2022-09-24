@@ -154,16 +154,9 @@ header {
 
 }
 
-.records_news {
+.records_news, .comments_user {
     display: flex;
-
     background: white;
-
-    /*
-        border: 1px solid #e9e8e8;
-    border-radius: 10px;
-    flex-wrap: wrap;margin-bottom: 10px;
-   width: 355;*/
     margin: 5px;
     padding: 10px;
 
@@ -270,15 +263,14 @@ nav {
 }
 
 .title_info_sportsman {
-    /*
-        display: flex;
-    align-items: baseline;
-    */
     display: flex;
+    flex-wrap: wrap;
+    text-align:justify;
+    text-indent: 30px;
     border-bottom: 1px solid #e9e8e8;
+
+
     padding: 10px;
-    /* border-bottom: 1px solid #e9e8e8;
-    width: 430px;*/
 }
 
 .desc_info_sportsman {
@@ -387,4 +379,56 @@ form p {
 .btn_align{
     text-align:center;
     margin: 20px auto;
+}
+
+.info_sportsman{
+    margin:auto 0px;
+
+
+}
+
+
+
+/**/
+
+
+.comments_user{
+    flex: 0 0 800px;
+    width: 800px;
+/*
+
+    background: black;
+  border: red 1px solid;
+*/
+
+}
+
+.users{
+ width:inherit
+}
+.user{
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid rgba(31,31,31,.07);
+}
+
+.msg{
+    padding: 19px 24px 38px;
+}
+
+msg_user{
+    overflow: hidden;
+    max-height: 300px;
+/*
+padding: 19px 24px 38px;*/
+}
+
+
+
+
+section{
+  margin-bottom:  20px;
+  border: red 1px solid;
+
 }

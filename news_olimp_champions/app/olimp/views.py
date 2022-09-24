@@ -1,7 +1,7 @@
 from django_filters.views import FilterView
 from django.views.generic import DetailView, CreateView
-from django.core.paginator import Paginator
-from django.shortcuts import render, redirect
+# from django.core.paginator import Paginator
+# from django.shortcuts import render, redirect
 from django.conf import settings
 from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack
 from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, ClubForm, FeedBackForm
@@ -86,7 +86,7 @@ class SportsmanDetail(DetailView):
         return context
 
 
-class SportsmanCreateView(LoginRequiredMixin,CreateView):
+class SportsmanCreateView(LoginRequiredMixin, CreateView):
     model = Sportsman
     model_form = SportsmanForm
     context_object_name = "sportsmans"

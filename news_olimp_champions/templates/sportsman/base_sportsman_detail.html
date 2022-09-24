@@ -1,27 +1,103 @@
 {% load static %}
 {% include "../inc/_header.html" %}
 
-{{ sportsman.sportsman_country }}
+
+
 <div class="wrapper">
     <div class="field">
         <div class="field_news">
             <div class="news">
                 <div class="records_news">
-                    <div class="photo_news">
-                       <img src="/media/{{ sportsman.sportsman_img }}" class="photo">
+                        <div class="photo_news">
+                           <img src="/media/{{ sportsman.sportsman_img }}" class="photo">
+                        </div>
+                        <div class="items_news">
+                       <!-- ФИО спортсмена -->
+                           <div class="title_info_sportsman">
+                                <div class="desc_info_sportsman">
+                                    <strong>ФИО:</strong>
+                                </div>
+                                 <div class="info_sportsman">
+                                    {{ sportsman.sportsman_name }}
+                                </div>
+                           </div>
+                        <!-- Страна спортсмена -->
+                           <div class="title_info_sportsman">
+                                <div class="desc_info_sportsman">
+                                    <strong>Страна:</strong>
+                                </div>
+                                 <div class="info_sportsman">
+                                    {{ sportsman.sportsman_country }}
+                                </div>
+                           </div>
+                       <!-- День рождения спортсмена -->
+                           <div class="title_info_sportsman">
+                                <div class="desc_info_sportsman">
+                                    <strong>День рождения:</strong>
+                                </div>
+                                 <div class="info_sportsman">
+                                    {{ sportsman.sportsman_birthday }}
+                                </div>
+                           </div>
+                       <!-- Вид спорта -->
+                           <div class="title_info_sportsman">
+                                <div class="desc_info_sportsman">
+                                    <strong>Вид спорта:</strong>
+                                </div>
+                                 <div class="info_sportsman">
+                                    {{ sportsman.view_sports_id }}
+                                </div>
+                           </div>
+                       <!-- Тренер -->
+                           <div class="title_info_sportsman">
+                                <div class="desc_info_sportsman">
+                                    <strong>Тренер:</strong>
+                                </div>
+                                 <div class="info_sportsman">
+                                    {{ sportsman.trener_id }}
+                                </div>
+                           </div>
+                       <!-- Биография -->
+                           <div class="title_info_sportsman">
+                                <div class="desc_info_sportsman">
+                                    <strong>Биография: </strong>
+                                </div>
+                                 <div class="info_sportsman">
+                                    {{ sportsman.sportsman_biogrpahy }}
+                                </div>
+                           </div>
                     </div>
-                    <div class="items_news">
-                       <div class="title_info_sportsman">
-                            <div class="desc_info_sportsman">
-                                <strong>ФИО спортсмена: 55</strong>
+                </div>
+                <div class="comments_user">
+                    <div class="users">
+                        <section>
+                            <div class="user">
+                                ФИО_комментатора
                             </div>
+                            <div class="msg">
+                                <div class="msg_user">
+                                        Сообщение комментатора
+                                    Советская гимнастка, девятикратная олимпийская чемпионка, Заслуженный мастер спорта СССР, неоднократная чемпионка мира и Европы, СССР в личных и командных соревнованиях, Заслуженный тренер СССР, Заслуженный работник физической культуры Российской Федерации
+                                </div>
 
                             </div>
-                            <div>
-                                {{sportman.sportsman_country}}
+                        </section>
+                    </div>
+                </div>
+                                <div class="comments_user">
+                    <div class="users">
+                        <section>
+                            <div class="user">
+                                ФИО_комментатора
                             </div>
-                        </div>
-                        </div>
+                            <div class="msg">
+                                <div class="msg_user">
+                                        Сообщение комментатора
+                                    Советская гимнастка, девятикратная олимпийская чемпионка, Заслуженный мастер спорта СССР, неоднократная чемпионка мира и Европы, СССР в личных и командных соревнованиях, Заслуженный тренер СССР, Заслуженный работник физической культуры Российской Федерации
+                                </div>
+
+                            </div>
+                        </section>
                     </div>
                 </div>
             </div>
