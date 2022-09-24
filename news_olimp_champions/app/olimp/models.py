@@ -1,5 +1,7 @@
 from PIL import Image
+from django.contrib.auth.models import User
 from django.db import models
+from django.contrib.auth.base_user import BaseUserManager
 
 
 class Stand(models.Model):
@@ -315,3 +317,36 @@ class FeedBack(models.Model):
     class Meta:
         verbose_name = "ОБРАТНАЯ СВЯЗЬ"
         verbose_name_plural = "ОБРАТНАЯ СВЯЗЬ"
+
+
+class CommentsSportsman(models.Model):
+    """ Класс коментарий на странице спортсмена"""
+    # user
+
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    news = models.ForeignKey(
+        Sportsman,
+        verbose_name="Новость",
+        on_delete=models.CASCADE
+    )
+    text = models.TextField(verbose_name="Комментарии")
+    date_created = models.DateTimeField(
+        verbose_name="Дата добавления",
+        blank=True,
+        null=True,
+        auto_now_add=True,
+    )
+    moderation_is_visible = models.BooleanField(
+        default=False,
+        verbose_name="Скрытая запись",
+        null=True,
+        blank=True,
+    )
+
+    def __str__(self):
+        return "{} - {} ({})".format(self.user,self.news,self.date_created)
+
+    class Meta:
+        db_table = "CommentsSportsman"
+        verbose_name = "Коментарий"
+        verbose_name_plural = "Коментарии"

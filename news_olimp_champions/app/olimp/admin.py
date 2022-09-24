@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack
+from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack, CommentsSportsman
 
 
 class StandAdmin(admin.ModelAdmin):
@@ -20,7 +20,6 @@ class StandAdmin(admin.ModelAdmin):
     )
 
 
-# "sportsman_biogrpahy", "view_sports_id", "trener_id", "sportsman_img",
 class SportsmanAdmin(admin.ModelAdmin):
     list_display = (
         "id", "sportsman_name", "sportsman_country", "sportsman_birthday", "view_sports_id", "sportsman_is_visible")
@@ -125,6 +124,20 @@ class FeedBackAdmin(admin.ModelAdmin):
     )
 
 
+class CommentsSportsmanAdmin(admin.ModelAdmin):
+    list_display = ("id", "user", "news","date_created","moderation_is_visible")
+    list_display_links = ("id", "user",)
+    search_fields = ("user", "news",)
+    # list_editable = ("moderation_is_visible",)
+    list_filter = ("user", "news", "moderation_is_visible",)
+    ordering = ("id",)
+    fieldsets = (
+        ("Основные сведения", {
+            "fields": ("user", "news", "text",  "moderation_is_visible")
+        }),
+    )
+
+
 admin.site.register(Stand, StandAdmin)
 admin.site.register(Sportsman, SportsmanAdmin)
 admin.site.register(ViewOlimp, ViewOlimpAdmin)
@@ -133,3 +146,4 @@ admin.site.register(Trener, TrenerAdmin)
 admin.site.register(Club, ClubAdmin)
 admin.site.register(Medal, MedalAdmin)
 admin.site.register(FeedBack, FeedBackAdmin)
+admin.site.register(CommentsSportsman, CommentsSportsmanAdmin)

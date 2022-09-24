@@ -159,6 +159,7 @@ header {
     background: white;
     margin: 5px;
     padding: 10px;
+    border: 1px solid #e9e8e8;
 
 }
 
@@ -172,7 +173,8 @@ h3 {
 .photo_news {
     border: 1px solid #e9e8e8;
     /*margin: 20px; height: 100%;*/
-    margin: 20px auto;
+    margin: auto;
+    /*20px */
     width: 200px;
     height: 250px;
 }
@@ -409,6 +411,7 @@ form p {
 .user{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 16px 24px;
     border-bottom: 1px solid rgba(31,31,31,.07);
 }
@@ -429,6 +432,12 @@ padding: 19px 24px 38px;*/
 
 section{
   margin-bottom:  20px;
-  border: red 1px solid;
+  border: 1px solid #e9e8e8;
 
+}
+
+.wrapper{
+margin:auto;
+width: 1165px;
+min-height:1100;
 }

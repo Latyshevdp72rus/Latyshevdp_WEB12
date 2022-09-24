@@ -2,9 +2,14 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.admin import widgets
 from django import forms
-from app.olimp.models import Stand, Sportsman, Trener, Club, FeedBack, ViewOlimp,Medal
+from app.olimp.models import Stand, Sportsman, Trener, Club, FeedBack, ViewOlimp,Medal,CommentsSportsman
 from app.olimp.validators import validation_stand
 
+
+class CommentsForm(forms.ModelForm):
+    class Meta:
+        model = CommentsSportsman
+        fields=['text',]
 
 # validators=[validation_book_name],
 class DateTimeInput(forms.DateTimeInput):

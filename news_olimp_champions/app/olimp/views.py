@@ -1,13 +1,15 @@
+from django.views.generic.edit import FormMixin
 from django_filters.views import FilterView
 from django.views.generic import DetailView, CreateView
 # from django.core.paginator import Paginator
 # from django.shortcuts import render, redirect
 from django.conf import settings
-from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack
-from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, ClubForm, FeedBackForm
+from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack,CommentsSportsman
+from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, ClubForm, FeedBackForm,CommentsForm
 from django.urls import reverse_lazy
 from app.olimp.filters import StandFilter, SportsmanFilter, TrenerFilter
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404, redirect
 
 
 ###########################################################
@@ -32,6 +34,7 @@ class StandDetail(DetailView):
     model = Stand
     context_object_name = "stands"
     template_name = "stand/stand_detail.html"
+
     pk_url_kwarg = "pk"
 
     def get_context_data(self, **kwargs, ):
@@ -74,16 +77,42 @@ class SportsmanList(FilterView):
         return Sportsman.objects.filter(sportsman_is_visible=False)
 
 
-class SportsmanDetail(DetailView):
+class SportsmanDetail(FormMixin,DetailView):
     model = Sportsman
     context_object_name = "sportsman"
     template_name = "sportsman/sportsman_detail.html"
     pk_url_kwarg = "pk"
+    form_class = CommentsForm
 
-    def get_context_data(self, **kwargs, ):
+    def get_success_url(self):
+        return reverse_lazy('main:news', kwargs={'pk': self.object.pk})
+
+    def get_context_data(self, **kwargs ):
         context = super().get_context_data(**kwargs)
         context["title"] = "Спортсмен"
+        # context['comments'] = self.object.temporary_comment.filter(is_approved=True)
+        context["comments"] = CommentsSportsman.objects.all()
+        context['form'] = self.get_form()
         return context
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return redirect('register')
+
+            # return self.form_invalid(form)
+
+    def form_valid(self, form):
+        form.instance.news = self.object
+        form.instance.user = self.object
+        form.save()
+        return super().form_valid(form)
+
+
+
 
 
 class SportsmanCreateView(LoginRequiredMixin, CreateView):
@@ -101,6 +130,21 @@ class SportsmanCreateView(LoginRequiredMixin, CreateView):
         context["sportsman"] = self.queryset
         context["title"] = "Добавить спортсмена"
         return context
+
+
+class CommentsCreateView(CreateView):
+    model = CommentsSportsman
+    context_object_name ="Comment"
+    forms = CommentsForm
+    fields = ["text"]
+    # template_name = "sportsman/sportsman_detail.html"
+    success_url = reverse_lazy("sportsman_detail_view")
+
+    raise_exception = True
+
+
+
+
 
 
 ###########################################################
