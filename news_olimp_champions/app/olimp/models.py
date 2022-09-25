@@ -47,7 +47,7 @@ class Stand(models.Model):
     )
     stand_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрытая запись",
+        verbose_name="Скрыть запись",
         null=True,
         blank=True,
     )
@@ -109,7 +109,7 @@ class Sportsman(models.Model):
     )
     sportsman_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрытая запись",
+        verbose_name="Скрыть запись",
         null=True,
         blank=True,
     )
@@ -139,7 +139,7 @@ class ViewOlimp(models.Model):
     )
     view_olimp_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрытая запись",
+        verbose_name="Скрыть запись",
         null=True,
         blank=True,
     )
@@ -161,7 +161,7 @@ class ViewSports(models.Model):
     )
     view_sports_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрытая запись",
+        verbose_name="Скрыть запись",
         null=True,
         blank=True,
     )
@@ -198,7 +198,7 @@ class Trener(models.Model):
     )
     trener_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрытая запись",
+        verbose_name="Скрыть запись",
         null=True,
         blank=True,
     )
@@ -235,7 +235,7 @@ class Club(models.Model):
     )
     club_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрытая запись",
+        verbose_name="Скрыть запись",
         null=True,
         blank=True,
     )
@@ -268,11 +268,13 @@ class Medal(models.Model):
         return self.medal_name
 
     class Meta:
+        db_table = "Medal"
         verbose_name = "МЕДАЛЬ"
         verbose_name_plural = "МЕДАЛИ"
 
 
 class FeedBack(models.Model):
+    """ Класс Обратной связи"""
     fb_name = models.CharField(
         max_length=50,
         verbose_name="Как к Вам обращаться:",
@@ -292,12 +294,13 @@ class FeedBack(models.Model):
     date_create = models.DateTimeField(
         auto_now_add=True,
         verbose_name="Дата добавления",
-        null=True,
-        blank=True,
+        null=False,
+        blank=False,
     )
     fb_img = models.ImageField(
-        upload_to="media/feedback/%y/%m/%d/",
         verbose_name="Загрузить фото",
+        upload_to="media/feedback/%y/%m/%d/",
+        default="media/default.png",
         null=True,
         blank=True,
     )
@@ -314,38 +317,49 @@ class FeedBack(models.Model):
         return self.fb_name
 
     class Meta:
+        db_table = "FeedBack"
         verbose_name = "ОБРАТНАЯ СВЯЗЬ"
         verbose_name_plural = "ОБРАТНАЯ СВЯЗЬ"
 
 
 class CommentsSportsman(models.Model):
     """ Класс коментарий на странице спортсмена"""
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
-    news = models.ForeignKey(
-        Sportsman,
-        blank=True,
-        null=True,
-        verbose_name="Новость",
-        on_delete=models.CASCADE
-    )
-    text = models.TextField(verbose_name="Комментарии")
-    date_created = models.DateTimeField(
-        verbose_name="Дата добавления",
+    user = models.ForeignKey(
+        User,
+        verbose_name="Пользователь",
         blank=False,
         null=False,
+        on_delete=models.CASCADE
+    )
+    news = models.ForeignKey(
+        Sportsman,
+        verbose_name="Новость",
+        blank=False,
+        null=False,
+        on_delete=models.CASCADE
+    )
+    text = models.TextField(
+        verbose_name="Комментарии",
+        blank=False,
+        null=False,
+    )
+    date_created = models.DateTimeField(
         auto_now_add=True,
+        verbose_name="Дата добавления коментария",
+        blank=False,
+        null=False,
     )
     moderation_is_visible = models.BooleanField(
+        verbose_name="Скрыть запись",
         default=False,
-        verbose_name="Скрытая запись",
         null=True,
         blank=True,
     )
 
     def __str__(self):
-        return "{} - {} ({})".format(self.user,self.news,self.date_created)
+        return "{} - {} ({})".format(self.user, self.news, self.date_created)
 
     class Meta:
         db_table = "CommentsSportsman"
-        verbose_name = "Коментарий"
-        verbose_name_plural = "Коментарии"
+        verbose_name = "КОММЕНТАРИЙ"
+        verbose_name_plural = "КОМЕНТАРИИ"

@@ -425,4 +425,5 @@ label[for="id_text"] {
     border-color: #1f90bb #1f90bb #145e7a;
     color: #fff;
     padding: 16px 24px;
+    border-radius: 5px;
 }

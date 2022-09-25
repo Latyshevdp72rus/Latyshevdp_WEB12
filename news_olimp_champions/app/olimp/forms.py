@@ -54,13 +54,13 @@ class StandForm(forms.Form):
 
 
 class SportsmanForm(forms.Form):
-    sportsman_name = ""
-    sportsman_country = ""
-    sportsman_birthday = ""
-    sportsman_biogrpahy = ""
-    view_sports_id = ""
-    trener_id = ""
-    sportsman_img = ""
+    # sportsman_name = ""
+    # sportsman_country = ""
+    # sportsman_birthday = ""
+    # sportsman_biogrpahy = ""
+    # view_sports_id = ""
+    # trener_id = ""
+    # sportsman_img = ""
 
     class Meta:
         model = Sportsman
@@ -69,31 +69,31 @@ class SportsmanForm(forms.Form):
 
 
 class FeedBackForm(forms.Form):
-    fb_name = forms.CharField(
-        required=True,
-        min_length=10,
-        max_length=30,
-        label="Как к Вам обращаться:",
-        widget=forms.TextInput()
-    )
-    fb_email = forms.CharField(
-        required=True,
-        min_length=10,
-        max_length=30,
-        label="Email для связи:",
-        widget=forms.TextInput()
-    )
-    fb_message = forms.CharField(
-        required=True,
-        min_length=10,
-        max_length=100,
-        label="Ваше сообщение:",
-        widget=forms.TextInput()
-    )
+    # fb_name = forms.CharField(
+    #     required=True,
+    #     min_length=10,
+    #     max_length=30,
+    #     label="Как к Вам обращаться:",
+    #     widget=forms.TextInput()
+    # )
+    # fb_email = forms.CharField(
+    #     required=True,
+    #     min_length=10,
+    #     max_length=30,
+    #     label="Email для связи:",
+    #     widget=forms.TextInput()
+    # )
+    # fb_message = forms.CharField(
+    #     required=True,
+    #     min_length=10,
+    #     max_length=100,
+    #     label="Ваше сообщение:",
+    #     widget=forms.TextInput()
+    # )
 
     class Meta:
         model = FeedBack
-        fields = ["fb_name", "fb_email", "fb_message"]
+        fields = ["fb_name", "fb_email", "fb_message","fb_img"]
 
 
 class ViewOlimpForm(forms.Form):
