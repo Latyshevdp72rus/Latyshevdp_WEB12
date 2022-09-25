@@ -1,3 +1,4 @@
+from django.http import request
 from django.views.generic.edit import FormMixin
 from django_filters.views import FilterView
 from django.views.generic import DetailView, CreateView
@@ -85,13 +86,12 @@ class SportsmanDetail(FormMixin,DetailView):
     form_class = CommentsForm
 
     def get_success_url(self):
-        return reverse_lazy('main:news', kwargs={'pk': self.object.pk})
+        return reverse_lazy('sportsman_detail_view', kwargs={'pk': self.object.pk})
 
-    def get_context_data(self, **kwargs ):
+    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["title"] = "Спортсмен"
-        # context['comments'] = self.object.temporary_comment.filter(is_approved=True)
-        context["comments"] = CommentsSportsman.objects.all()
+        context["comments"] = CommentsSportsman.objects.filter(news=self.object.pk)
         context['form'] = self.get_form()
         return context
 
@@ -101,13 +101,19 @@ class SportsmanDetail(FormMixin,DetailView):
         if form.is_valid():
             return self.form_valid(form)
         else:
-            return redirect('register')
+            return self.form_invalid(form)
 
-            # return self.form_invalid(form)
+    # def form_valid(self, form, *args, **kwargs):
+    #     form.save(commit=False)
+    #     form.user_id = self.request.user
+    #     form.instance.news_id = 1
+    #     form.save()
+    #     return super().form_valid(form)
 
-    def form_valid(self, form):
+    def form_valid(self, form, *args, **kwargs):
+        # form.user_id = sel.request.user
         form.instance.news = self.object
-        form.instance.user = self.object
+        form.instance.user_id = self.request.user.id
         form.save()
         return super().form_valid(form)
 

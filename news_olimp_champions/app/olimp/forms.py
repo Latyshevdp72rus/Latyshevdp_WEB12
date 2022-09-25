@@ -10,7 +10,7 @@ class CommentsForm(forms.ModelForm):
     class Meta:
         model = CommentsSportsman
         fields=['text',]
-
+# 'user','news',
 # validators=[validation_book_name],
 class DateTimeInput(forms.DateTimeInput):
     input_type = 'date'

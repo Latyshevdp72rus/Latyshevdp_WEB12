@@ -326,6 +326,8 @@ class CommentsSportsman(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     news = models.ForeignKey(
         Sportsman,
+        blank=True,
+        null=True,
         verbose_name="Новость",
         on_delete=models.CASCADE
     )
