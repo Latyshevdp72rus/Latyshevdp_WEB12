@@ -5,7 +5,6 @@ from django.db import models
 
 class Stand(models.Model):
     stand_name = models.CharField(
-        # min_length=5,
         max_length=40,
         verbose_name="Заголовок новости",
         null=False,
@@ -13,7 +12,6 @@ class Stand(models.Model):
     )
     stand_description = models.TextField(
         verbose_name="Описание новости",
-        # min_length=10,
         max_length=1000,
         null=False,
         blank=False,
