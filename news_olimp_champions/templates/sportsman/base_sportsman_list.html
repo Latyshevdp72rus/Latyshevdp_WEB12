@@ -2,8 +2,8 @@
 {% include "../inc/_header.html" %}
 
 
-
 <div class="wrapper">
+    <!-- Начало -->
     <div class="field">
         <div class="field_news">
             <div class="news">
@@ -54,6 +54,7 @@
                 </div>
                 {% endfor %}
             </div>
+            <!-- Пагинация -->
             <div class="pagin">
                 {% if page_obj.has_previous %}
                 <a href="?page=1">&laquo; Первый</a>
@@ -65,8 +66,10 @@
                 <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
                 {% endif %}
             </div>
+            <!-- Пагинация -->
         </div>
 
+        <!-- Фильтр -->
         <div class="right-panel">
             <div>
                 <form method="get" class="setup_centr">
@@ -76,14 +79,15 @@
                         <button type="submit" class="btn">Применить фильтр</button>
                     </div>
                 </form>
-              <div style="text-align:center;margin:  auto;">
-                <form action="{% url 'sportsman' %}">
-                    <button type="submit" class="btn">Сброс</button>
-                </form>
-              </div>
+                <div style="text-align:center;margin:  auto;">
+                    <form action="{% url 'sportsman' %}">
+                        <button type="submit" class="btn">Сброс</button>
+                    </form>
+                </div>
             </div>
         </div>
+        <!-- Фильтр -->
     </div>
-
-
+    <!-- Конец -->
+</div>
 {% include "../inc/_footer.html" %}
