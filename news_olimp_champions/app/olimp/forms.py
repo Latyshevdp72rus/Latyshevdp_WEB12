@@ -6,11 +6,12 @@ from app.olimp.models import Stand, Sportsman, Trener, Club, FeedBack, ViewOlimp
 from app.olimp.validators import validation_stand
 
 
-class CommentsForm(forms.ModelForm):
+class CommentsSportsmanForm(forms.ModelForm):
     class Meta:
         model = CommentsSportsman
         fields=['text',]
-# 'user','news',
+
+
 # validators=[validation_book_name],
 class DateTimeInput(forms.DateTimeInput):
     input_type = 'date'

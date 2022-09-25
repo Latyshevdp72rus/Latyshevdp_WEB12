@@ -264,6 +264,27 @@ nav {
 
 }
 
+.btn_comments {
+    padding: 10px 20px;
+    border-radius: 4px;
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
+    background-color: #007dc6;
+    background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
+    background-repeat: repeat-x;
+    border-color: #1f90bb #1f90bb #145e7a;
+}
+
+.btn_comments:hover {
+    cursor: pointer;
+    background: #4d8faf;
+
+}
+
+
+
+
+
 .title_info_sportsman {
     display: flex;
     flex-wrap: wrap;
@@ -439,4 +460,13 @@ section{
 .wrapper{
 margin:auto;
 width: 1165px;
+}
+
+a:hover{
+    color:red;
+
+}
+
+.comments_user > form p{
+width:800px;
 }

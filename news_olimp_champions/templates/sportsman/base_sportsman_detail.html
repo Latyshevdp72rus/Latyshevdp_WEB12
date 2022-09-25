@@ -2,7 +2,6 @@
 {% include "../inc/_header.html" %}
 
 
-
 <div class="wrapper">
     <div class="field">
         <div class="field_news">
@@ -68,23 +67,6 @@
                            </div>
                     </div>
                 </div>
-
-                {% if user.is_authenticated %}
-                     <form action="" method="post">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <div class="btn_align">
-                        <button type="submit" class="btn">Добавить</button>
-                    </div>
-                     </form>
-                {% else %}
-                    <div>
-                        Чтобы оставить комментарии нужно:
-                        <a href="{% url 'login' %}">Авторизоваться</a> /
-                        <a href="{% url 'register' %}">Зарегистрироваться</a>
-
-                    </div>
-                {% endif %}
             {% for comment in comments %}
                 <div class="comments_user">
                     <div class="users">
@@ -103,23 +85,26 @@
                         </section>
                     </div>
                 </div>
-
-
-
-
-            {% endfor %}
-
-<!--
-
-
-
-
--->
-
-
-
-
-
+                {% endfor %}
+<!---->
+                <!--                -->
+                {% if user.is_authenticated %}
+                    <div class="comments_user">
+                     <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                    <div class="btn_align">
+                        <button type="submit" class="btn">Добавить</button>
+                    </div>
+                     </form>
+                    </div>
+                {% else %}
+                    <div class="comments_user" style="display:inline-block;text-align:center;">
+                        Чтобы оставить комментарии нужно:
+                        <a href="{% url 'login' %}">Авторизоваться</a> /
+                        <a href="{% url 'register' %}">Зарегистрироваться</a>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>

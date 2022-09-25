@@ -6,14 +6,14 @@ from django.views.generic import DetailView, CreateView
 # from django.shortcuts import render, redirect
 from django.conf import settings
 from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack,CommentsSportsman
-from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, ClubForm, FeedBackForm,CommentsForm
+from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, ClubForm, FeedBackForm,CommentsSportsmanForm
 from django.urls import reverse_lazy
 from app.olimp.filters import StandFilter, SportsmanFilter, TrenerFilter
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect
 
 
-###########################################################
+######################################################################################################################
 class StandList(FilterView):
     model = Stand
     filterset_class = StandFilter
@@ -35,12 +35,11 @@ class StandDetail(DetailView):
     model = Stand
     context_object_name = "stands"
     template_name = "stand/stand_detail.html"
-
     pk_url_kwarg = "pk"
 
     def get_context_data(self, **kwargs, ):
         context = super().get_context_data(**kwargs)
-        context["title"] = "Новости"
+        context["title"] = self.object.stand_name
         return context
 
 
@@ -60,7 +59,7 @@ class StandCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
-###########################################################
+######################################################################################################################
 class SportsmanList(FilterView):
     model = Sportsman
     filterset_class = SportsmanFilter
@@ -83,15 +82,15 @@ class SportsmanDetail(FormMixin,DetailView):
     context_object_name = "sportsman"
     template_name = "sportsman/sportsman_detail.html"
     pk_url_kwarg = "pk"
-    form_class = CommentsForm
+    form_class = CommentsSportsmanForm
 
     def get_success_url(self):
         return reverse_lazy('sportsman_detail_view', kwargs={'pk': self.object.pk})
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["title"] = "Спортсмен"
-        context["comments"] = CommentsSportsman.objects.filter(news=self.object.pk)
+        context["title"] = self.object.sportsman_name
+        context["comments"] = CommentsSportsman.objects.filter(news=self.object.pk).filter(moderation_is_visible=False)
         context['form'] = self.get_form()
         return context
 
@@ -103,22 +102,13 @@ class SportsmanDetail(FormMixin,DetailView):
         else:
             return self.form_invalid(form)
 
-    # def form_valid(self, form, *args, **kwargs):
-    #     form.save(commit=False)
-    #     form.user_id = self.request.user
-    #     form.instance.news_id = 1
-    #     form.save()
-    #     return super().form_valid(form)
-
     def form_valid(self, form, *args, **kwargs):
         # form.user_id = sel.request.user
         form.instance.news = self.object
         form.instance.user_id = self.request.user.id
+        form.instance.moderation_is_visible=False
         form.save()
         return super().form_valid(form)
-
-
-
 
 
 class SportsmanCreateView(LoginRequiredMixin, CreateView):
@@ -138,22 +128,7 @@ class SportsmanCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
-class CommentsCreateView(CreateView):
-    model = CommentsSportsman
-    context_object_name ="Comment"
-    forms = CommentsForm
-    fields = ["text"]
-    # template_name = "sportsman/sportsman_detail.html"
-    success_url = reverse_lazy("sportsman_detail_view")
-
-    raise_exception = True
-
-
-
-
-
-
-###########################################################
+######################################################################################################################
 class TrenerList(FilterView):
     model = Trener
     filterset_class = TrenerFilter
@@ -180,7 +155,7 @@ class TrenermanDetail(DetailView):
     def get_context_data(self, **kwargs, ):
         context = super().get_context_data(**kwargs)
         context["trener"] = self.queryset
-        context["title"] = "Новости"
+        context["title"] = "Тренер"
         return context
 
 
