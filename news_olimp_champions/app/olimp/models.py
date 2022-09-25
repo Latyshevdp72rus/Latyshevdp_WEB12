@@ -1,18 +1,19 @@
 from PIL import Image
 from django.contrib.auth.models import User
 from django.db import models
-from django.contrib.auth.base_user import BaseUserManager
 
 
 class Stand(models.Model):
     stand_name = models.CharField(
+        # min_length=5,
         max_length=40,
-        verbose_name="Заголовок записи",
+        verbose_name="Заголовок новости",
         null=False,
         blank=False,
     )
     stand_description = models.TextField(
-        verbose_name="Описание",
+        verbose_name="Описание новости",
+        # min_length=10,
         max_length=1000,
         null=False,
         blank=False,
@@ -43,7 +44,7 @@ class Stand(models.Model):
     )
     date_event = models.DateField(
         verbose_name="Дата олимпиады",
-        null=True,
+        null=False,
         blank=False,
     )
     stand_is_visible = models.BooleanField(
@@ -321,8 +322,6 @@ class FeedBack(models.Model):
 
 class CommentsSportsman(models.Model):
     """ Класс коментарий на странице спортсмена"""
-    # user
-
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     news = models.ForeignKey(
         Sportsman,
@@ -334,8 +333,8 @@ class CommentsSportsman(models.Model):
     text = models.TextField(verbose_name="Комментарии")
     date_created = models.DateTimeField(
         verbose_name="Дата добавления",
-        blank=True,
-        null=True,
+        blank=False,
+        null=False,
         auto_now_add=True,
     )
     moderation_is_visible = models.BooleanField(

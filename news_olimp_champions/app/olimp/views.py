@@ -175,23 +175,7 @@ class TrenerCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
-#
-class ClubCreateView(LoginRequiredMixin, CreateView):
-    model = Club
-    model_form = ClubForm
-    context_object_name = "clubs"
-    template_name = "club/club_add.html"
-    success_url = reverse_lazy("add_club")
-    fields = ["club_name", "club_img"]
-    raise_exception = True
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["clubs"] = self.queryset
-        context["title"] = "Добавить клуб"
-        return context
-
-
+######################################################################################################################
 # Создание запроса  "Обраятная связь"
 class FeedBackCreateView(CreateView):
     model = FeedBack

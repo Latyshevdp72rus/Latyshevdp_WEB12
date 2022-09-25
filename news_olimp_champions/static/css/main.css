@@ -30,7 +30,10 @@ header {
     align-items: center;
     width: 100%;
     z-index: 1;
-    background: #007dc6;
+    /*background: #007dc6;*/
+    background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
+    background-repeat: repeat-x;
+    border-color: #1f90bb #1f90bb #145e7a;
 }
 
 #navbar li {
@@ -39,7 +42,10 @@ header {
     width: 200px;
     padding: 0;
     margin: 0;
-    background: #007dc6;
+    /*background: #007dc6;*/
+    background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
+    background-repeat: repeat-x;
+    border-color: #1f90bb #1f90bb #145e7a;
     color: white;
     position: relative;
     text-align: center;
@@ -265,7 +271,7 @@ nav {
 }
 
 .btn_comments {
-    padding: 10px 20px;
+    padding: 10px 350px;
     border-radius: 4px;
     color: #ffffff;
     text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
@@ -377,7 +383,7 @@ textarea,
 input[type=email],
 input[type=password],input#id_sportsman_birthday, input#id_date_event {
     padding: 5px;
-    border: 1px solid black;
+    border: 1px solid #e9e8e8;
     border-radius: 3px;
 }
 
@@ -418,6 +424,7 @@ form p {
 .comments_user{
     flex: 0 0 800px;
     width: 800px;
+
 /*
 
     background: black;
@@ -435,6 +442,11 @@ form p {
     justify-content: space-between;
     padding: 16px 24px;
     border-bottom: 1px solid rgba(31,31,31,.07);
+    background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
+    background-repeat: repeat-x;
+    border-color: #1f90bb #1f90bb #145e7a;
+   /* background: #0e8cca;*/
+    color: #fff;
 }
 
 .msg{
@@ -469,4 +481,18 @@ a:hover{
 
 .comments_user > form p{
 width:800px;
+}
+
+
+
+label[for="id_text"]{
+    border-bottom: 1px solid rgba(31,31,31,.07);
+    /*background: #0e8cca;*/
+
+    background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
+    background-repeat: repeat-x;
+    border-color: #1f90bb #1f90bb #145e7a;
+
+    color: #fff;
+    padding: 16px 24px;
 }
