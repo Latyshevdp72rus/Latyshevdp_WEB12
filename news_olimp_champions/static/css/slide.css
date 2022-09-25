@@ -14,7 +14,6 @@
 	height: 100%;
 	opacity: 0;
 	z-index: 2;
-
 	-webkit-transition: opacity 1s;
 	-moz-transition: opacity 1s;
 	-o-transition: opacity 1s;

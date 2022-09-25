@@ -21,17 +21,11 @@ body {
     margin: 0;
 }
 
-.icon_header>div:hover {
-    color: red;
-}
-
 header {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    /* z-index: 1;
-    background: #007dc6; */
     background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
     background-repeat: repeat-x;
     border-color: #1f90bb #1f90bb #145e7a;
@@ -88,8 +82,10 @@ header {
     display: block;
 }
 
-#navbar li:hover {
-    color: #ffffff;
+#navbar li>a:hover {
+    color: red;
+
+    /* color: #ffffff; */
     text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
     background-color: #007dc6;
     background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
@@ -312,7 +308,6 @@ nav {
 
 .color_switch_w:hover {
     color: white;
-
 }
 
 .color_switch_b {
@@ -422,8 +417,6 @@ a:hover {
 .comments_user>form p {
     width: 800px;
 }
-
-
 
 label[for="id_text"] {
     border-bottom: 1px solid rgba(31, 31, 31, .07);

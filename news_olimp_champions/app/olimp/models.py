@@ -5,7 +5,7 @@ from django.db import models
 
 class Stand(models.Model):
     stand_name = models.CharField(
-        max_length=40,
+        max_length=50,
         verbose_name="Заголовок новости",
         null=False,
         blank=False,

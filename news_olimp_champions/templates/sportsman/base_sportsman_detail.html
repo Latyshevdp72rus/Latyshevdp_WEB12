@@ -7,109 +7,110 @@
         <div class="field_news">
             <div class="news">
                 <div class="records_news">
-                        <div class="photo_news">
-                           <img src="/media/{{ sportsman.sportsman_img }}" class="photo">
+                    <div class="photo_news">
+                        <img src="/media/{{ sportsman.sportsman_img }}" class="photo">
+                    </div>
+                    <div class="items_news">
+                        <!-- ФИО спортсмена -->
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>ФИО:</strong>
+                            </div>
+                            <div class="info_sportsman">
+                                {{ sportsman.sportsman_name }}
+                            </div>
                         </div>
-                        <div class="items_news">
-                       <!-- ФИО спортсмена -->
-                           <div class="title_info_sportsman">
-                                <div class="desc_info_sportsman">
-                                    <strong>ФИО:</strong>
-                                </div>
-                                 <div class="info_sportsman">
-                                    {{ sportsman.sportsman_name }}
-                                </div>
-                           </div>
                         <!-- Страна спортсмена -->
-                           <div class="title_info_sportsman">
-                                <div class="desc_info_sportsman">
-                                    <strong>Страна:</strong>
-                                </div>
-                                 <div class="info_sportsman">
-                                    {{ sportsman.sportsman_country }}
-                                </div>
-                           </div>
-                       <!-- День рождения спортсмена -->
-                           <div class="title_info_sportsman">
-                                <div class="desc_info_sportsman">
-                                    <strong>День рождения:</strong>
-                                </div>
-                                 <div class="info_sportsman">
-                                    {{ sportsman.sportsman_birthday }}
-                                </div>
-                           </div>
-                       <!-- Вид спорта -->
-                           <div class="title_info_sportsman">
-                                <div class="desc_info_sportsman">
-                                    <strong>Вид спорта:</strong>
-                                </div>
-                                 <div class="info_sportsman">
-                                    {{ sportsman.view_sports_id }}
-                                </div>
-                           </div>
-                       <!-- Тренер -->
-                           <div class="title_info_sportsman">
-                                <div class="desc_info_sportsman">
-                                    <strong>Тренер:</strong>
-                                </div>
-                                 <div class="info_sportsman">
-                                    {{ sportsman.trener_id }}
-                                </div>
-                           </div>
-                       <!-- Биография -->
-                           <div class="title_info_sportsman">
-                                <div class="desc_info_sportsman">
-                                    <strong>Биография: </strong>
-                                </div>
-                                 <div class="info_sportsman">
-                                    {{ sportsman.sportsman_biogrpahy }}
-                                </div>
-                           </div>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Страна:</strong>
+                            </div>
+                            <div class="info_sportsman">
+                                {{ sportsman.sportsman_country }}
+                            </div>
+                        </div>
+                        <!-- День рождения спортсмена -->
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>День рождения:</strong>
+                            </div>
+                            <div class="info_sportsman">
+                                {{ sportsman.sportsman_birthday }}
+                            </div>
+                        </div>
+                        <!-- Вид спорта -->
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Вид спорта:</strong>
+                            </div>
+                            <div class="info_sportsman">
+                                {{ sportsman.view_sports_id }}
+                            </div>
+                        </div>
+                        <!-- Тренер -->
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Тренер:</strong>
+                            </div>
+                            <div class="info_sportsman">
+                                {{ sportsman.trener_id }}
+                            </div>
+                        </div>
+                        <!-- Биография -->
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Биография: </strong>
+                            </div>
+                            <div class="info_sportsman">
+                                {{ sportsman.sportsman_biogrpahy }}
+                            </div>
+                        </div>
                     </div>
                 </div>
-            {% for comment in comments %}
+                <!-- Распаковываем комментарии -->
+                {% for comment in comments %}
                 <div class="comments_user">
                     <div class="users">
                         <section>
                             <div class="user">
-                               <div>
-                                   <strong>Пользователь:</strong>  {{ comment.user}}
-                               </div>
+                                <div>
+                                    <strong>Пользователь:</strong> {{ comment.user}}
+                                </div>
                                 <div><strong>Дата создания:</strong> {{ comment.date_created}}</div>
                             </div>
                             <div class="msg">
                                 <div class="msg_user">
-                                        {{ comment.text}}
+                                    {{ comment.text}}
                                 </div>
                             </div>
                         </section>
                     </div>
                 </div>
                 {% endfor %}
-<!---->
-                <!--                -->
+                <!-- Распаковываем комментарии -->
+                <!-- Проверка на аутентификацию  -->
                 {% if user.is_authenticated %}
-                    <div class="comments_user">
-                     <form action="" method="post">
+                <div class="comments_user">
+                    <form action="" method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
-                    <div class="btn_align">
-                        <button type="submit" class="btn_comments">Добавить</button>
-                    </div>
-                     </form>
-                    </div>
+                        <div class="btn_align">
+                            <button type="submit" class="btn_comments">Добавить</button>
+                        </div>
+                    </form>
+                </div>
                 {% else %}
-                    <div class="comments_user" style="display:inline-block;text-align:center;">
-                        Чтобы оставить комментарии нужно:
-                        <a href="{% url 'login' %}">Авторизоваться</a> /
-                        <a href="{% url 'register' %}">Зарегистрироваться</a>
-                    </div>
+                <div class="comments_user" style="display:inline-block;text-align:center;">
+                    Чтобы оставить комментарии нужно:
+                    <a href="{% url 'login' %}">Авторизоваться</a> /
+                    <a href="{% url 'register' %}">Зарегистрироваться</a>
+                </div>
                 {% endif %}
+                <!-- Проверка на аутентификацию  -->
             </div>
         </div>
     </div>
 </div>
-
 
 
 {% include "../inc/_footer.html" %}
