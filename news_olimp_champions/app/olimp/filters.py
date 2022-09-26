@@ -14,8 +14,8 @@ class StandFilter(django_filters.FilterSet):
     medal_id = django_filters.ModelChoiceFilter(queryset=Medal.objects.all())
     view_olimp_id = django_filters.ModelChoiceFilter(queryset=ViewOlimp.objects.all())
     date_event = django_filters.DateFilter(
-        label=('Дата олимпиады'),
-        lookup_expr=('icontains'),
+        label='Дата олимпиады',
+        lookup_expr='icontains',
         widget=DateTimeInput()
     )
 
@@ -28,8 +28,8 @@ class SportsmanFilter(django_filters.FilterSet):
     sportsman_query = Sportsman.objects.all()
     sportsman_name = django_filters.ModelChoiceFilter(queryset=Sportsman.objects.all())
     sportsman_birthday = django_filters.DateFilter(
-        label=('Дата рождения'),
-        lookup_expr=('icontains'),
+        label='Дата рождения',
+        lookup_expr='icontains',
         widget=DateTimeInput()
     )
     sportsman_country = django_filters.CharFilter()

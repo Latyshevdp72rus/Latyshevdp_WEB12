@@ -12,7 +12,7 @@ class StandAdmin(admin.ModelAdmin):
     ordering = ("id",)
     fieldsets = (
         ("Основные сведения", {
-            "fields": ("stand_name", "stand_description", "date_event", "stand_is_visible")
+            "fields": ("stand_name", "stand_description", "date_event","stand_img", "stand_is_visible")
         }),
         ("Прочие сведения", {
             "fields": ("sportsman_id", "view_olimp_id", "medal_id")
@@ -125,7 +125,7 @@ class FeedBackAdmin(admin.ModelAdmin):
 
 
 class CommentsSportsmanAdmin(admin.ModelAdmin):
-    list_display = ("id", "user", "news","date_created","moderation_is_visible")
+    list_display = ("id", "user", "news", "date_created", "moderation_is_visible")
     list_display_links = ("id", "user",)
     search_fields = ("user", "news",)
     # list_editable = ("moderation_is_visible",)
@@ -133,7 +133,7 @@ class CommentsSportsmanAdmin(admin.ModelAdmin):
     ordering = ("id",)
     fieldsets = (
         ("Основные сведения", {
-            "fields": ("user", "news", "text",  "moderation_is_visible")
+            "fields": ("user", "news", "text", "moderation_is_visible")
         }),
     )
 

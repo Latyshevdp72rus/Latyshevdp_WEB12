@@ -49,7 +49,7 @@ class StandCreateView(LoginRequiredMixin, CreateView):
     context_object_name = "stands"
     template_name = "stand/stand_add.html"
     success_url = reverse_lazy("add_stand")
-    fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event"]
+    fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event","stand_img"]
     raise_exception = True
 
     def get_context_data(self, **kwargs):
@@ -77,7 +77,7 @@ class SportsmanList(FilterView):
         return Sportsman.objects.filter(sportsman_is_visible=False)
 
 
-class SportsmanDetail(FormMixin,DetailView):
+class SportsmanDetail(FormMixin, DetailView):
     model = Sportsman
     context_object_name = "sportsman"
     template_name = "sportsman/sportsman_detail.html"
@@ -103,10 +103,9 @@ class SportsmanDetail(FormMixin,DetailView):
             return self.form_invalid(form)
 
     def form_valid(self, form, *args, **kwargs):
-        # form.user_id = sel.request.user
         form.instance.news = self.object
         form.instance.user_id = self.request.user.id
-        form.instance.moderation_is_visible=False
+        form.instance.moderation_is_visible = False
         form.save()
         return super().form_valid(form)
 

@@ -2,7 +2,7 @@ from django.urls import path
 from app.olimp.views import \
     StandList, StandDetail, StandCreateView, \
     SportsmanList, SportsmanDetail, SportsmanCreateView, \
-    TrenerList, TrenermanDetail,TrenerCreateView,\
+    TrenerList, TrenermanDetail, TrenerCreateView, \
     FeedBackCreateView
 
 urlpatterns = [
@@ -18,8 +18,6 @@ urlpatterns = [
     path('trener/<int:pk>', TrenermanDetail.as_view(), name='trener_detail_view'),
     path('trener/add_trener', TrenerCreateView.as_view(), name='add_trener'),
 
-    path('feedback/',  FeedBackCreateView.as_view(), name='feedback'),
-
-
+    path('feedback/', FeedBackCreateView.as_view(), name='feedback'),
 
 ]

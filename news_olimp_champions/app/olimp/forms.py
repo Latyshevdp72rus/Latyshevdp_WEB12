@@ -1,15 +1,13 @@
 from django import forms
-from django.contrib.auth.models import User
-from django.contrib.admin import widgets
-from django import forms
-from app.olimp.models import Stand, Sportsman, Trener, Club, FeedBack, ViewOlimp,Medal,CommentsSportsman
+
+from app.olimp.models import Stand, Sportsman, Trener, Club, FeedBack, CommentsSportsman
 from app.olimp.validators import validation_stand
 
 
 class CommentsSportsmanForm(forms.ModelForm):
     class Meta:
         model = CommentsSportsman
-        fields=['text',]
+        fields = ['text', ]
 
 
 # validators=[validation_book_name],
@@ -18,82 +16,51 @@ class DateTimeInput(forms.DateTimeInput):
 
 
 class StandForm(forms.Form):
-    stand_name = forms.CharField(
-        required=True,
-        min_length=10,
-        max_length=30,
-        label="Заголовок статьи",
-        validators=[validation_stand],
-        widget=forms.TextInput()
-    )
-    stand_description = forms.CharField(
-        required=True,
-        min_length=10,
-        max_length=100,
-        label="Описание",
-        widget=forms.TextInput()
-    )
-    sportsman_id = forms.SelectMultiple(
-
-    )
-    view_olimp_id = forms.SelectMultiple(
-
-    )
-    medal_id = forms.SelectMultiple(
-
-    )
-    date_event = forms.DateField(
-        required=True,
-        label="Дата олимпиады",
-        widget=DateTimeInput(),
-    )
-
-    class Meta:
-        model = Stand
-        fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event"]
-
-
-class SportsmanForm(forms.Form):
-    # sportsman_name = ""
-    # sportsman_country = ""
-    # sportsman_birthday = ""
-    # sportsman_biogrpahy = ""
-    # view_sports_id = ""
-    # trener_id = ""
-    # sportsman_img = ""
-
-    class Meta:
-        model = Sportsman
-        fields = ["sportsman_name", "sportsman_country", "sportsman_birthday", "sportsman_biogrpahy", \
-                  "view_sports_id", "trener_id", "sportsman_img"]
-
-
-class FeedBackForm(forms.Form):
-    # fb_name = forms.CharField(
+    # stand_name = forms.CharField(
     #     required=True,
     #     min_length=10,
     #     max_length=30,
-    #     label="Как к Вам обращаться:",
+    #     label="Заголовок статьи",
+    #     validators=[validation_stand],
     #     widget=forms.TextInput()
     # )
-    # fb_email = forms.CharField(
-    #     required=True,
-    #     min_length=10,
-    #     max_length=30,
-    #     label="Email для связи:",
-    #     widget=forms.TextInput()
-    # )
-    # fb_message = forms.CharField(
+    # stand_description = forms.CharField(
     #     required=True,
     #     min_length=10,
     #     max_length=100,
-    #     label="Ваше сообщение:",
+    #     label="Описание",
     #     widget=forms.TextInput()
+    # )
+    # sportsman_id = forms.SelectMultiple(
+    #
+    # )
+    # view_olimp_id = forms.SelectMultiple(
+    #
+    # )
+    # medal_id = forms.SelectMultiple(
+    #
+    # )
+    # date_event = forms.DateField(
+    #     required=True,
+    #     label="Дата олимпиады",
+    #     widget=DateTimeInput(),
     # )
 
     class Meta:
+        model = Stand
+        fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event","stand_img"]
+
+
+class SportsmanForm(forms.Form):
+    class Meta:
+        model = Sportsman
+        fields = ["sportsman_name", "sportsman_country", "sportsman_birthday", "sportsman_biogrpahy", "view_sports_id", "trener_id", "sportsman_img"]
+
+
+class FeedBackForm(forms.Form):
+    class Meta:
         model = FeedBack
-        fields = ["fb_name", "fb_email", "fb_message","fb_img"]
+        fields = ["fb_name", "fb_email", "fb_message", "fb_img"]
 
 
 class ViewOlimpForm(forms.Form):

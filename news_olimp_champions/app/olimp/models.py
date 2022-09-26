@@ -45,9 +45,16 @@ class Stand(models.Model):
         null=False,
         blank=False,
     )
+    stand_img = models.ImageField(
+        upload_to="media/stand/%y/%m/%d/",
+        default="media/default.png",
+        verbose_name="Загрузить фото",
+        null=True,
+        blank=True,
+    )
     stand_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрыть запись",
+        verbose_name="Скрытая запись",
         null=True,
         blank=True,
     )
@@ -109,7 +116,7 @@ class Sportsman(models.Model):
     )
     sportsman_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрыть запись",
+        verbose_name="Скрытая запись",
         null=True,
         blank=True,
     )
@@ -139,7 +146,7 @@ class ViewOlimp(models.Model):
     )
     view_olimp_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрыть запись",
+        verbose_name="Скрытая запись",
         null=True,
         blank=True,
     )
@@ -161,7 +168,7 @@ class ViewSports(models.Model):
     )
     view_sports_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрыть запись",
+        verbose_name="Скрытая запись",
         null=True,
         blank=True,
     )
@@ -175,6 +182,7 @@ class ViewSports(models.Model):
 
 
 class Trener(models.Model):
+    """ Класс медали"""
     trener_name = models.CharField(
         max_length=50,
         verbose_name="ФИО тренера",
@@ -198,7 +206,7 @@ class Trener(models.Model):
     )
     trener_is_visible = models.BooleanField(
         default=False,
-        verbose_name="Скрыть запись",
+        verbose_name="Скрытая запись",
         null=True,
         blank=True,
     )
@@ -220,22 +228,23 @@ class Trener(models.Model):
 
 
 class Club(models.Model):
+    """ Класс клуб"""
     club_name = models.CharField(
-        max_length=30,
         verbose_name="Название клуба",
+        max_length=30,
         null=False,
         blank=False,
     )
     club_img = models.ImageField(
-        upload_to="media/club/%y/%m/%d/",
         verbose_name="Загрузить логотип",
         default="media/default.png",
-        null=False,
+        upload_to="media/club/%y/%m/%d/",
+        null=True,
         blank=True,
     )
     club_is_visible = models.BooleanField(
+        verbose_name="Скрытая запись",
         default=False,
-        verbose_name="Скрыть запись",
         null=True,
         blank=True,
     )
@@ -257,9 +266,10 @@ class Club(models.Model):
 
 
 class Medal(models.Model):
+    """ Класс медали"""
     medal_name = models.CharField(
-        max_length=20,
         verbose_name="Вид медали",
+        max_length=20,
         null=False,
         blank=False,
     )
@@ -268,39 +278,40 @@ class Medal(models.Model):
         return self.medal_name
 
     class Meta:
-        db_table = "Medal"
         verbose_name = "МЕДАЛЬ"
         verbose_name_plural = "МЕДАЛИ"
 
 
 class FeedBack(models.Model):
-    """ Класс Обратной связи"""
+    """ Класс обратной связи"""
     fb_name = models.CharField(
-        max_length=50,
         verbose_name="Как к Вам обращаться:",
+        max_length=50,
         null=False,
         blank=False,
     )
     fb_email = models.EmailField(
         verbose_name="Email для связи:",
+        max_length=30,
         null=False,
         blank=False,
     )
     fb_message = models.TextField(
         verbose_name="Ваше сообщение:",
+        max_length=1000,
         null=False,
         blank=False,
     )
     date_create = models.DateTimeField(
-        auto_now_add=True,
         verbose_name="Дата добавления",
+        auto_now_add=True,
         null=False,
         blank=False,
     )
     fb_img = models.ImageField(
         verbose_name="Загрузить фото",
-        upload_to="media/feedback/%y/%m/%d/",
         default="media/default.png",
+        upload_to="media/feedback/%y/%m/%d/",
         null=True,
         blank=True,
     )
@@ -317,7 +328,6 @@ class FeedBack(models.Model):
         return self.fb_name
 
     class Meta:
-        db_table = "FeedBack"
         verbose_name = "ОБРАТНАЯ СВЯЗЬ"
         verbose_name_plural = "ОБРАТНАЯ СВЯЗЬ"
 
@@ -327,30 +337,30 @@ class CommentsSportsman(models.Model):
     user = models.ForeignKey(
         User,
         verbose_name="Пользователь",
-        blank=False,
-        null=False,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
     )
     news = models.ForeignKey(
         Sportsman,
         verbose_name="Новость",
-        blank=False,
-        null=False,
-        on_delete=models.CASCADE
+        null = False,
+        blank = False,
+        on_delete=models.CASCADE,
     )
     text = models.TextField(
         verbose_name="Комментарии",
-        blank=False,
-        null=False,
+        max_length = 1000,
+        null = False,
+        blank = False,
     )
     date_created = models.DateTimeField(
+        verbose_name="Дата добавления",
         auto_now_add=True,
-        verbose_name="Дата добавления коментария",
         blank=False,
         null=False,
+
     )
     moderation_is_visible = models.BooleanField(
-        verbose_name="Скрыть запись",
+        verbose_name="Скрытая запись",
         default=False,
         null=True,
         blank=True,
@@ -360,6 +370,5 @@ class CommentsSportsman(models.Model):
         return "{} - {} ({})".format(self.user, self.news, self.date_created)
 
     class Meta:
-        db_table = "CommentsSportsman"
-        verbose_name = "КОММЕНТАРИЙ"
-        verbose_name_plural = "КОМЕНТАРИИ"
+        verbose_name = "Коментарий"
+        verbose_name_plural = "Коментарии"
