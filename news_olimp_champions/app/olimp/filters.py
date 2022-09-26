@@ -1,6 +1,6 @@
 import django_filters
 from django import forms
-from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal
+from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal,Country
 
 
 class DateTimeInput(forms.DateTimeInput):
@@ -21,7 +21,7 @@ class StandFilter(django_filters.FilterSet):
 
     class Meta:
         model = Stand
-        fields = ["stand_name", "sportsman_id", "medal_id", "view_olimp_id", "date_event"]
+        fields = ["stand_name", "sportsman_id", "medal_id", "view_olimp_id","date_event"]
 
 
 class SportsmanFilter(django_filters.FilterSet):
@@ -32,13 +32,14 @@ class SportsmanFilter(django_filters.FilterSet):
         lookup_expr='icontains',
         widget=DateTimeInput()
     )
-    sportsman_country = django_filters.CharFilter()
+    # sportsman_country = django_filters.CharFilter()
+    country_id = django_filters.ModelChoiceFilter(queryset=Country.objects.all())
     view_sports_id = django_filters.ModelChoiceFilter(queryset=ViewSports.objects.all())
     trener_id = django_filters.ModelChoiceFilter(queryset=Trener.objects.all())
 
     class Meta:
-        model = Stand
-        fields = ["sportsman_name", "sportsman_country", 'sportsman_birthday', "view_sports_id", "sportsman_country", "trener_id"]
+        model = Sportsman
+        fields = ["sportsman_name", 'sportsman_birthday', "view_sports_id", "country_id", "trener_id"]
 
 
 class TrenerFilter(django_filters.FilterSet):

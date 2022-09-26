@@ -54,7 +54,7 @@ class StandForm(forms.Form):
 class SportsmanForm(forms.Form):
     class Meta:
         model = Sportsman
-        fields = ["sportsman_name", "sportsman_country", "sportsman_birthday", "sportsman_biogrpahy", "view_sports_id", "trener_id", "sportsman_img"]
+        fields = ["sportsman_name", "country_id", "sportsman_birthday", "sportsman_biogrpahy", "view_sports_id", "trener_id", "sportsman_img"]
 
 
 class FeedBackForm(forms.Form):

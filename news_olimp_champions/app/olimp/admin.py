@@ -1,5 +1,5 @@
 from django.contrib import admin
-from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack, CommentsSportsman
+from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack, CommentsSportsman,Country
 
 
 class StandAdmin(admin.ModelAdmin):
@@ -22,15 +22,15 @@ class StandAdmin(admin.ModelAdmin):
 
 class SportsmanAdmin(admin.ModelAdmin):
     list_display = (
-        "id", "sportsman_name", "sportsman_country", "sportsman_birthday", "view_sports_id", "sportsman_is_visible")
-    list_display_links = ("id", "sportsman_name", "view_sports_id", "sportsman_birthday", "sportsman_country",)
-    search_fields = ("sportsman_name", "sportsman_country",)
+        "id", "sportsman_name","sportsman_birthday", "country_id", "view_sports_id", "sportsman_is_visible")
+    list_display_links = ("id", "sportsman_name", "view_sports_id", "sportsman_birthday","country_id",)
+    search_fields = ("sportsman_name", "country_id","country_id")
     list_editable = ("sportsman_is_visible",)
-    list_filter = ("sportsman_name", "sportsman_country", "sportsman_is_visible",)
+    list_filter = ("sportsman_name", "country_id", "sportsman_is_visible",)
     ordering = ("id",)
     fieldsets = (
         ("Основные сведения", {
-            "fields": ("sportsman_name", "sportsman_country", "sportsman_birthday", "sportsman_biogrpahy",
+            "fields": ("sportsman_name",  "sportsman_birthday","country_id", "sportsman_biogrpahy",
                        "sportsman_img", "sportsman_is_visible")
         }),
         ("Прочие сведения", {
@@ -138,6 +138,25 @@ class CommentsSportsmanAdmin(admin.ModelAdmin):
     )
 
 
+class CountryAdmin(admin.ModelAdmin):
+    list_display = ("id", "country_name", "country_is_visible")
+    list_display_links = ("id", "country_name",)
+    search_fields = ("country_name",)
+    list_editable = ("country_is_visible",)
+    list_filter = ("country_name", "country_is_visible",)
+    ordering = ("id",)
+    fieldsets = (
+        ("Основные сведения", {
+            "fields": ("country_name", "country_img", "country_is_visible",)
+        }),
+    )
+
+
+
+
+
+
+
 admin.site.register(Stand, StandAdmin)
 admin.site.register(Sportsman, SportsmanAdmin)
 admin.site.register(ViewOlimp, ViewOlimpAdmin)
@@ -147,3 +166,4 @@ admin.site.register(Club, ClubAdmin)
 admin.site.register(Medal, MedalAdmin)
 admin.site.register(FeedBack, FeedBackAdmin)
 admin.site.register(CommentsSportsman, CommentsSportsmanAdmin)
+admin.site.register(Country, CountryAdmin)
