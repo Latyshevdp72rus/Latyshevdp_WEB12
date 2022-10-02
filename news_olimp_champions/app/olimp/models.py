@@ -68,7 +68,7 @@ class Stand(models.Model):
 
 
 class CommentsStand(models.Model):
-    """ Класс коментарий на странице НОВОСТИ"""
+    """ Класс коментарий на странице НОВОСТИ """
     user = models.ForeignKey(
         User,
         verbose_name="Пользователь",
