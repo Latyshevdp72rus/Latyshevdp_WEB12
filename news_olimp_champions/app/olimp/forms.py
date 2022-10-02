@@ -1,6 +1,7 @@
 from django import forms
 from app.olimp.models import Stand, Sportsman, Trener, FeedBack, CommentsSportsman, CommentsTrener
-from app.olimp.validators import validation_stand
+# from app.olimp.validators import validation_stand
+
 
 class DateTimeInput(forms.DateTimeInput):
     input_type = 'date'
@@ -9,17 +10,17 @@ class DateTimeInput(forms.DateTimeInput):
 class StandForm(forms.Form):
     class Meta:
         model = Stand
-        fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event","stand_img"]
-
+        fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event",
+                  "stand_img"]
 
 
 class SportsmanForm(forms.Form):
     sportsman_birthday = forms.DateField(widget=DateTimeInput())
 
-
     class Meta:
         model = Sportsman
-        fields = ["sportsman_name", "country_id", "sportsman_birthday", "sportsman_biogrpahy", "view_sports_id", "trener_id", "sportsman_img"]
+        fields = ["sportsman_name", "country_id", "sportsman_birthday", "sportsman_biogrpahy", "view_sports_id",
+                  "trener_id", "sportsman_img"]
 
 
 class CommentsSportsmanForm(forms.ModelForm):
@@ -38,6 +39,7 @@ class CommentsTrenerForm(forms.ModelForm):
     class Meta:
         model = CommentsTrener
         fields = ['text', ]
+
 
 class FeedBackForm(forms.Form):
     class Meta:

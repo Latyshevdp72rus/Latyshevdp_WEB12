@@ -43,6 +43,26 @@
                         </div>
                     </div>
                 </div>
+                <!-- Проверка на аутентификацию  -->
+                {% if user.is_authenticated %}
+                <div class="comments_user">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="btn_align">
+                            <button type="submit" class="btn_comments">ДОБАВИТЬ</button>
+                        </div>
+                    </form>
+                </div>
+                {% else %}
+                <div class="comments_user" style="display:inline-block;text-align:center;">
+                    Чтобы оставить комментарии нужно:
+                    <a href="{% url 'login' %}">Авторизоваться</a> /
+                    <a href="{% url 'register' %}">Зарегистрироваться</a>
+                </div>
+                {% endif %}
+                <!-- Проверка на аутентификацию  -->
+
             </div>
         </div>
     </div>
