@@ -116,7 +116,7 @@ class SportsmanCreateView(LoginRequiredMixin, CreateView):
     context_object_name = "sportsmans"
     template_name = "sportsman/sportsman_add.html"
     success_url = reverse_lazy("add_sportsman")
-    fields = ["sportsman_name", "sportsman_country", "sportsman_birthday", "sportsman_biogrpahy", "view_sports_id",
+    fields = ["sportsman_name", "country_id", "sportsman_birthday", "sportsman_biogrpahy", "view_sports_id",
               "trener_id", "sportsman_img", ]
     raise_exception = True
 
@@ -159,6 +159,7 @@ class TrenermanDetail(FormMixin, DetailView):
         context = super().get_context_data(**kwargs)
         context["title"] = self.object.trener_name
         context["comments"] = CommentsTrener.objects.filter(news=self.object.pk).filter(moderation_is_visible=False)
+        context["sports"] = Sportsman.objects.filter(trener_id=self.object.pk).filter(sportsman_is_visible=False)
         context['form'] = self.get_form()
         return context
 

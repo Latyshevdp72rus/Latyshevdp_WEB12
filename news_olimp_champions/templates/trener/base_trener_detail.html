@@ -29,10 +29,26 @@
                                 {{ trener.club_id }}
                             </div>
                         </div>
+                        <!-- Ученики спортсмена -->
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Спортсмены:</strong>
+                            </div>
+                            <div class="info_sportsman">
+                                 {% for sport in sports %}
+                                <strong>
+                                    {{sport}};
+                                </strong>
+                            </a>
+                                 {% endfor %}
+                            </div>
+                        </div>
 
 
                     </div>
                 </div>
+
+
                 <!-- Распаковываем комментарии -->
                 {% for comment in comments %}
                 <div class="comments_user">
@@ -61,7 +77,7 @@
                         {% csrf_token %}
                         {{ form.as_p }}
                         <div class="btn_align">
-                            <button type="submit" class="btn_comments">Добавить</button>
+                            <button type="submit" class="btn_comments">ДОБАВИТЬ</button>
                         </div>
                     </form>
                 </div>

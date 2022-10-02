@@ -1,6 +1,6 @@
 from django.contrib import admin
 from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club,\
-    Medal, FeedBack, CommentsSportsman,Country, CommentsTrener
+    Medal, FeedBack, CommentsSportsman,Country, CommentsTrener, CommentsStand
 
 
 class StandAdmin(admin.ModelAdmin):
@@ -17,6 +17,20 @@ class StandAdmin(admin.ModelAdmin):
         }),
         ("Прочие сведения", {
             "fields": ("sportsman_id", "view_olimp_id", "medal_id")
+        }),
+    )
+
+
+class CommentsStandAdmin(admin.ModelAdmin):
+    list_display = ("id", "user", "news", "date_created", "moderation_is_visible")
+    list_display_links = ("id", "user",)
+    search_fields = ("user", "news",)
+    # list_editable = ("moderation_is_visible",)
+    list_filter = ("user", "news", "moderation_is_visible",)
+    ordering = ("id",)
+    fieldsets = (
+        ("Основные сведения", {
+            "fields": ("user", "news", "text", "moderation_is_visible")
         }),
     )
 
@@ -168,9 +182,11 @@ class CountryAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Stand, StandAdmin)
+admin.site.register(CommentsStand, CommentsStandAdmin)
 
 admin.site.register(Sportsman, SportsmanAdmin)
 admin.site.register(CommentsSportsman, CommentsSportsmanAdmin)
+
 admin.site.register(Trener, TrenerAdmin)
 admin.site.register(CommentsTrener, CommentsTrenerAdmin)
 

@@ -67,6 +67,50 @@ class Stand(models.Model):
         verbose_name_plural = "СТЕНД"
 
 
+class CommentsStand(models.Model):
+    """ Класс коментарий на странице НОВОСТИ"""
+    user = models.ForeignKey(
+        User,
+        verbose_name="Пользователь",
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+    )
+    news = models.ForeignKey(
+        Stand,
+        verbose_name="Новость спортсмена",
+        null = False,
+        blank = False,
+        on_delete=models.CASCADE,
+    )
+    text = models.TextField(
+        verbose_name="Комментарии",
+        max_length = 1000,
+        null = False,
+        blank = False,
+    )
+    date_created = models.DateTimeField(
+        verbose_name="Дата добавления",
+        auto_now_add=True,
+        blank=False,
+        null=False,
+
+    )
+    moderation_is_visible = models.BooleanField(
+        verbose_name="Скрыть запись",
+        default=False,
+        null=True,
+        blank=True,
+    )
+
+    def __str__(self):
+        return "{} - {} ({})".format(self.user, self.news, self.date_created)
+
+    class Meta:
+        verbose_name = "КОММЕНТАРИЙ НОВОСТЕЙ"
+        verbose_name_plural = "КОММЕНТАРИИ НОВОСТЕЙ"
+
+
 class Sportsman(models.Model):
     sportsman_name = models.CharField(
         verbose_name="ФИО спортсмена",

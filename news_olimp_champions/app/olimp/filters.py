@@ -32,7 +32,6 @@ class SportsmanFilter(django_filters.FilterSet):
         lookup_expr='icontains',
         widget=DateTimeInput()
     )
-    # sportsman_country = django_filters.CharFilter()
     country_id = django_filters.ModelChoiceFilter(queryset=Country.objects.all())
     view_sports_id = django_filters.ModelChoiceFilter(queryset=ViewSports.objects.all())
     trener_id = django_filters.ModelChoiceFilter(queryset=Trener.objects.all())
