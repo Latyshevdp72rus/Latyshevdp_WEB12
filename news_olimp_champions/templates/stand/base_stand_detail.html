@@ -43,6 +43,27 @@
                         </div>
                     </div>
                 </div>
+                <!-- Распаковываем комментарии -->
+                {% for comment in comments %}
+                <div class="comments_user">
+                    <div class="users">
+                        <section>
+                            <div class="user">
+                                <div>
+                                    <strong>Пользователь:</strong> {{ comment.user}}
+                                </div>
+                                <div><strong>Дата создания:</strong> {{ comment.date_created}}</div>
+                            </div>
+                            <div class="msg">
+                                <div class="msg_user">
+                                    {{ comment.text}}
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- Распаковываем комментарии -->
                 <!-- Проверка на аутентификацию  -->
                 {% if user.is_authenticated %}
                 <div class="comments_user">

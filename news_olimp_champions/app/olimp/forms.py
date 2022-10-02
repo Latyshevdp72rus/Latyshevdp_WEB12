@@ -10,8 +10,13 @@ class DateTimeInput(forms.DateTimeInput):
 class StandForm(forms.Form):
     class Meta:
         model = Stand
-        fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event",
-                  "stand_img"]
+        fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event", "stand_img",]
+
+
+class CommentsStandForm(forms.ModelForm):
+    class Meta:
+        model = CommentsSportsman
+        fields = ['text', ]
 
 
 class SportsmanForm(forms.Form):

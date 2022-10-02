@@ -5,8 +5,8 @@ from django.views.generic import DetailView, CreateView
 # from django.core.paginator import Paginator
 # from django.shortcuts import render, redirect
 from django.conf import settings
-from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, FeedBack,CommentsSportsman, CommentsTrener
-from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, FeedBackForm, CommentsSportsmanForm, CommentsTrenerForm
+from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, FeedBack,CommentsSportsman, CommentsTrener,CommentsStand
+from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, FeedBackForm, CommentsSportsmanForm, CommentsTrenerForm,CommentsStandForm
 from django.urls import reverse_lazy
 from app.olimp.filters import StandFilter, SportsmanFilter, TrenerFilter
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -31,16 +31,37 @@ class StandList(FilterView):
         return Stand.objects.filter(stand_is_visible=False)
 
 
-class StandDetail(DetailView):
+class StandDetail(FormMixin, DetailView):
     model = Stand
     context_object_name = "stands"
     template_name = "stand/stand_detail.html"
     pk_url_kwarg = "pk"
+    form_class = CommentsStandForm
+
+    def get_success_url(self):
+        return reverse_lazy('stand_detail_view', kwargs={'pk': self.object.pk})
 
     def get_context_data(self, **kwargs, ):
         context = super().get_context_data(**kwargs)
         context["title"] = self.object.stand_name
+        context["comments"] = CommentsStand.objects.filter(news=self.object.pk).filter(moderation_is_visible=False)
+        context['form'] = self.get_form()
         return context
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form, *args, **kwargs):
+        form.instance.news = self.object
+        form.instance.user_id = self.request.user.id
+        form.instance.moderation_is_visible = False
+        form.save()
+        return super().form_valid(form)
 
 
 class StandCreateView(LoginRequiredMixin, CreateView):
@@ -49,7 +70,7 @@ class StandCreateView(LoginRequiredMixin, CreateView):
     context_object_name = "stands"
     template_name = "stand/stand_add.html"
     success_url = reverse_lazy("add_stand")
-    fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event","stand_img"]
+    fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event", "stand_img"]
     raise_exception = True
 
     def get_context_data(self, **kwargs):
