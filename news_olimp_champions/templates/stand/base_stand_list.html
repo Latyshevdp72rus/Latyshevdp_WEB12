@@ -8,17 +8,12 @@
             <div class="news">
                 {% for stand in page_obj %}
                 <div class="records_news">
+                    <div class="header_news"> <a href="{{ stand.id }}">{{stand.id}}#  {{stand.view_olimp_id}} - {{stand.stand_name}} </a></div>
+                <div style="display:flex;">
                     <div class="photo_news">
                         <img src="/media/{{ stand.stand_img }}" class="photo">
                     </div>
                     <div class="items_news">
-                        <div class="title_info_sportsman">
-                            <a href="{{ stand.id }}">
-                                <strong>
-                                  <h3>  {{stand.view_olimp_id}} - {{stand.stand_name}}</h3>
-                                </strong>
-                            </a>
-                        </div>
                         <div class="title_info_sportsman">
                             <div class="desc_info_sportsman">
                                 <strong>ФИО спортсмена: </strong>
@@ -40,7 +35,8 @@
                                 <strong>Получена награда: </strong>
                             </div>
                             <div>
-                                {{ stand.medal_id }}
+                                {{ stand.medal_id }}<br>
+                                 {{ stand.stand_description | truncatechars:200}}
                             </div>
                         </div>
                         <div class="read">
@@ -49,6 +45,8 @@
                             </form>
                         </div>
                     </div>
+                </div>
+<!--                    -->
                 </div>
                 {% endfor %}
             </div>

@@ -7,6 +7,8 @@
             <div class="news">
                 {% for trener in page_obj %}
                 <div class="records_news">
+                    <div class="header_news"><a href="{{ trener.id }}">   {{trener.id}}# Тренер - {{trener.trener_name}}  </a> </div>
+                <div style="display:flex;">
                     <div class="photo_news">
                         <img src="/media/{{ trener.trener_img }}" class="photo">
                     </div>
@@ -29,6 +31,7 @@
                             </form>
                         </div>
                     </div>
+                  </div>
                 </div>
                 {% endfor %}
             </div>

@@ -9,17 +9,12 @@
             <div class="news">
                 {% for sportman in page_obj %}
                 <div class="records_news">
+                    <div class="header_news"><a href="{{ sportman.id }}">   {{sportman.id}}# Спортсмен - {{sportman.sportsman_name}}  </a> </div>
+                <div style="display:flex;">
                     <div class="photo_news">
                         <img src="/media/{{ sportman.sportsman_img }}" class="photo">
                     </div>
                     <div class="items_news">
-                        <div class="title_info_sportsman">
-                            <a href="{{ sportman.id }}">
-                                <strong>
-                                    {{sportman.sportsman_name}}
-                                </strong>
-                            </a>
-                        </div>
                         <div class="title_info_sportsman">
                             <div class="desc_info_sportsman">
                                 <strong>День рождения:</strong>
@@ -53,6 +48,7 @@
                             </form>
                         </div>
                     </div>
+                </div>
                 </div>
                 {% endfor %}
             </div>

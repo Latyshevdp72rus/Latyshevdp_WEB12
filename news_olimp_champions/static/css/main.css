@@ -141,6 +141,7 @@ header {
 .records_news,
 .comments_user {
     display: flex;
+    flex-direction: column;
     background: white;
     margin: 5px;
     padding: 10px;
@@ -257,10 +258,11 @@ nav {
     text-indent: 30px;
     border-bottom: 1px solid #e9e8e8;
     padding: 10px;
+    margin-right: 75px;
 }
 
 .desc_info_sportsman {
-    width: 200px;
+    width: 220px;
 }
 
 .kolco {
@@ -426,4 +428,22 @@ label[for="id_text"] {
     color: #fff;
     padding: 16px 24px;
     border-radius: 5px;
+}
+
+
+.header_news{
+    border-bottom: 1px solid rgba(31, 31, 31, .07);
+    background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
+    background-repeat: repeat-x;
+    border-color: #1f90bb #1f90bb #145e7a;
+    color: #fff;
+    font-weight:bold;
+    padding: 10px 24px;
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.header_news>a{
+    text-decoration: none;
+    color:white;
 }
