@@ -5,8 +5,8 @@ from django.views.generic import DetailView, CreateView
 # from django.core.paginator import Paginator
 # from django.shortcuts import render, redirect
 from django.conf import settings
-from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack,CommentsSportsman
-from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, ClubForm, FeedBackForm,CommentsSportsmanForm
+from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, FeedBack,CommentsSportsman, CommentsTrener
+from app.olimp.forms import StandForm, SportsmanForm, TrenerForm, FeedBackForm, CommentsSportsmanForm, CommentsTrenerForm
 from django.urls import reverse_lazy
 from app.olimp.filters import StandFilter, SportsmanFilter, TrenerFilter
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -145,17 +145,37 @@ class TrenerList(FilterView):
         return Trener.objects.filter(trener_is_visible=False)
 
 
-class TrenermanDetail(DetailView):
+class TrenermanDetail(FormMixin, DetailView):
     model = Trener
     context_object_name = "trener"
     template_name = "trener/trener_detail.html"
     pk_url_kwarg = "pk"
+    form_class = CommentsTrenerForm
+
+    def get_success_url(self):
+        return reverse_lazy('trener_detail_view', kwargs={'pk': self.object.pk})
 
     def get_context_data(self, **kwargs, ):
         context = super().get_context_data(**kwargs)
-        context["trener"] = self.queryset
-        context["title"] = "Тренер"
+        context["title"] = self.object.trener_name
+        context["comments"] = CommentsTrener.objects.filter(news=self.object.pk).filter(moderation_is_visible=False)
+        context['form'] = self.get_form()
         return context
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        form = self.get_form()
+        if form.is_valid():
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form, *args, **kwargs):
+        form.instance.news = self.object
+        form.instance.user_id = self.request.user.id
+        form.instance.moderation_is_visible = False
+        form.save()
+        return super().form_valid(form)
 
 
 class TrenerCreateView(LoginRequiredMixin, CreateView):

@@ -139,6 +139,141 @@ class Sportsman(models.Model):
         verbose_name_plural = "СПОРТСМЕНЫ"
 
 
+class CommentsSportsman(models.Model):
+    """ Класс коментарий на странице спортсмена"""
+    user = models.ForeignKey(
+        User,
+        verbose_name="Пользователь",
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+    )
+    news = models.ForeignKey(
+        Sportsman,
+        verbose_name="Новость спортсмена",
+        null = False,
+        blank = False,
+        on_delete=models.CASCADE,
+    )
+    text = models.TextField(
+        verbose_name="Комментарии",
+        max_length = 1000,
+        null = False,
+        blank = False,
+    )
+    date_created = models.DateTimeField(
+        verbose_name="Дата добавления",
+        auto_now_add=True,
+        blank=False,
+        null=False,
+
+    )
+    moderation_is_visible = models.BooleanField(
+        verbose_name="Скрыть запись",
+        default=False,
+        null=True,
+        blank=True,
+    )
+
+    def __str__(self):
+        return "{} - {} ({})".format(self.user, self.news, self.date_created)
+
+    class Meta:
+        verbose_name = "КОММЕНТАРИЙ СПОРТСМЕНА"
+        verbose_name_plural = "КОММЕНТАРИИ СПОРТСМЕНА"
+
+
+class Trener(models.Model):
+    """ Класс медали"""
+    trener_name = models.CharField(
+        verbose_name="ФИО тренера",
+        max_length=50,
+        null=False,
+        blank=False,
+    )
+    club_id = models.ForeignKey(
+        "Club",
+        related_name="Club_Trener",
+        verbose_name="Клуб",
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+    )
+    trener_img = models.ImageField(
+        default="media/default.png",
+        upload_to="media/trener/%y/%m/%d/",
+        verbose_name="Загрузить фото",
+        null=True,
+        blank=True,
+    )
+
+    trener_is_visible = models.BooleanField(
+        verbose_name="Скрыть запись",
+        default=False,
+        null=True,
+        blank=True,
+    )
+
+    def save(self):
+        super().save()
+        trener_images = Image.open(self.trener_img.path)
+        if trener_images.height > 250 or trener_images.width > 187:
+            output_size = (187, 250)
+            trener_images.thumbnail(output_size)
+            trener_images.save(self.trener_img.path)
+
+    def __str__(self):
+        return self.trener_name
+
+    class Meta:
+        verbose_name = "ТРЕНЕРА"
+        verbose_name_plural = "ТРЕНЕРЫ"
+
+
+class CommentsTrener(models.Model):
+    """ Класс коментарий на странице Тренера"""
+    user = models.ForeignKey(
+        User,
+        verbose_name="Пользователь",
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+    )
+    news = models.ForeignKey(
+        Trener,
+        verbose_name="Новость тренера",
+        null = False,
+        blank = False,
+        on_delete=models.CASCADE,
+    )
+    text = models.TextField(
+        verbose_name="Комментарии",
+        max_length = 1000,
+        null = False,
+        blank = False,
+    )
+    date_created = models.DateTimeField(
+        verbose_name="Дата добавления",
+        auto_now_add=True,
+        blank=False,
+        null=False,
+
+    )
+    moderation_is_visible = models.BooleanField(
+        verbose_name="Скрыть запись",
+        default=False,
+        null=True,
+        blank=True,
+    )
+
+    def __str__(self):
+        return "{} - {} ({})".format(self.user, self.news, self.date_created)
+
+    class Meta:
+        verbose_name = "КОММЕНТАРИЙ ТРЕНЕРА"
+        verbose_name_plural = "КОММЕНТАРИИ ТРЕНЕРА"
+
+
 class ViewOlimp(models.Model):
     view_olimp_name = models.CharField(
         verbose_name="Наименование олимпийских игр",
@@ -181,52 +316,6 @@ class ViewSports(models.Model):
     class Meta:
         verbose_name = "ВИД СПОРТА"
         verbose_name_plural = "ВИД СПОРТА"
-
-
-class Trener(models.Model):
-    """ Класс медали"""
-    trener_name = models.CharField(
-        verbose_name="ФИО тренера",
-        max_length=50,
-        null=False,
-        blank=False,
-    )
-    trener_img = models.ImageField(
-        default="media/default.png",
-        upload_to="media/trener/%y/%m/%d/",
-        verbose_name="Загрузить фото",
-        null=True,
-        blank=True,
-    )
-    club_id = models.ForeignKey(
-        "Club",
-        related_name="Club_Trener",
-        verbose_name="Клуб",
-        null=False,
-        blank=False,
-        on_delete=models.CASCADE,
-    )
-    trener_is_visible = models.BooleanField(
-        verbose_name="Скрыть запись",
-        default=False,
-        null=True,
-        blank=True,
-    )
-
-    def save(self):
-        super().save()
-        trener_images = Image.open(self.trener_img.path)
-        if trener_images.height > 250 or trener_images.width > 200:
-            output_size = (200, 250)
-            trener_images.thumbnail(output_size)
-            trener_images.save(self.trener_img.path)
-
-    def __str__(self):
-        return self.trener_name
-
-    class Meta:
-        verbose_name = "ТРЕНЕРА"
-        verbose_name_plural = "ТРЕНЕРЫ"
 
 
 class Club(models.Model):
@@ -333,49 +422,6 @@ class FeedBack(models.Model):
         verbose_name = "ОБРАТНАЯ СВЯЗЬ"
         verbose_name_plural = "ОБРАТНАЯ СВЯЗЬ"
 
-
-class CommentsSportsman(models.Model):
-    """ Класс коментарий на странице спортсмена"""
-    user = models.ForeignKey(
-        User,
-        verbose_name="Пользователь",
-        null=False,
-        blank=False,
-        on_delete=models.CASCADE,
-    )
-    news = models.ForeignKey(
-        Sportsman,
-        verbose_name="Новость",
-        null = False,
-        blank = False,
-        on_delete=models.CASCADE,
-    )
-    text = models.TextField(
-        verbose_name="Комментарии",
-        max_length = 1000,
-        null = False,
-        blank = False,
-    )
-    date_created = models.DateTimeField(
-        verbose_name="Дата добавления",
-        auto_now_add=True,
-        blank=False,
-        null=False,
-
-    )
-    moderation_is_visible = models.BooleanField(
-        verbose_name="Скрыть запись",
-        default=False,
-        null=True,
-        blank=True,
-    )
-
-    def __str__(self):
-        return "{} - {} ({})".format(self.user, self.news, self.date_created)
-
-    class Meta:
-        verbose_name = "КОММЕНТАРИЙ"
-        verbose_name_plural = "КОММЕНТАРИИ"
 
 class Country(models.Model):
     """ Класс Страны"""

@@ -1,18 +1,82 @@
 {% load static %}
 {% include "../inc/_header.html" %}
-<div class="field">
-    <div class="field_news">
-        <div class="news">
-            <div class="redcords">
-                <div class="photo_news">
-                    <img src="/media/{{ sportsman.sportsman_img }}" class="photo">
+
+
+<div class="wrapper">
+    <div class="field">
+        <div class="field_news">
+            <div class="news">
+                <div class="records_news">
+                    <div class="photo_news">
+                        <img src="/media/{{ trener.trener_img }}" class="photo">
+                    </div>
+                    <div class="items_news">
+                        <!-- ФИО Тренера -->
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>ФИО тренера:</strong>
+                            </div>
+                            <div class="info_sportsman">
+                                {{ trener.trener_name }}
+                            </div>
+                        </div>
+                        <!-- Страна спортсмена -->
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Состоит в клубе:</strong>
+                            </div>
+                            <div class="info_sportsman">
+                                {{ trener.club_id }}
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
-                <div class="items_news">
-                    {{sportsman.sportsman_name}}
+                <!-- Распаковываем комментарии -->
+                {% for comment in comments %}
+                <div class="comments_user">
+                    <div class="users">
+                        <section>
+                            <div class="user">
+                                <div>
+                                    <strong>Пользователь:</strong> {{ comment.user}}
+                                </div>
+                                <div><strong>Дата создания:</strong> {{ comment.date_created}}</div>
+                            </div>
+                            <div class="msg">
+                                <div class="msg_user">
+                                    {{ comment.text}}
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
+                {% endfor %}
+                <!-- Распаковываем комментарии -->
+                <!-- Проверка на аутентификацию  -->
+                {% if user.is_authenticated %}
+                <div class="comments_user">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="btn_align">
+                            <button type="submit" class="btn_comments">Добавить</button>
+                        </div>
+                    </form>
+                </div>
+                {% else %}
+                <div class="comments_user" style="display:inline-block;text-align:center;">
+                    Чтобы оставить комментарии нужно:
+                    <a href="{% url 'login' %}">Авторизоваться</a> /
+                    <a href="{% url 'register' %}">Зарегистрироваться</a>
+                </div>
+                {% endif %}
+                <!-- Проверка на аутентификацию  -->
             </div>
         </div>
     </div>
 </div>
+
 
 {% include "../inc/_footer.html" %}

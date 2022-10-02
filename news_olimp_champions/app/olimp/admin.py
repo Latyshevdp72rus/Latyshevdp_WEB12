@@ -1,5 +1,6 @@
 from django.contrib import admin
-from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club, Medal, FeedBack, CommentsSportsman,Country
+from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Club,\
+    Medal, FeedBack, CommentsSportsman,Country, CommentsTrener
 
 
 class StandAdmin(admin.ModelAdmin):
@@ -25,7 +26,7 @@ class SportsmanAdmin(admin.ModelAdmin):
         "id", "sportsman_name","sportsman_birthday", "country_id", "view_sports_id", "sportsman_is_visible")
     list_display_links = ("id", "sportsman_name", "view_sports_id", "sportsman_birthday","country_id",)
     search_fields = ("sportsman_name", "country_id","country_id")
-    list_editable = ("sportsman_is_visible",)
+    # list_editable = ("sportsman_is_visible",)
     list_filter = ("sportsman_name", "country_id", "sportsman_is_visible",)
     ordering = ("id",)
     fieldsets = (
@@ -35,6 +36,20 @@ class SportsmanAdmin(admin.ModelAdmin):
         }),
         ("Прочие сведения", {
             "fields": ("view_sports_id", "trener_id")
+        }),
+    )
+
+
+class CommentsSportsmanAdmin(admin.ModelAdmin):
+    list_display = ("id", "user", "news", "date_created", "moderation_is_visible")
+    list_display_links = ("id", "user",)
+    search_fields = ("user", "news",)
+    # list_editable = ("moderation_is_visible",)
+    list_filter = ("user", "news", "moderation_is_visible",)
+    ordering = ("id",)
+    fieldsets = (
+        ("Основные сведения", {
+            "fields": ("user", "news", "text", "moderation_is_visible")
         }),
     )
 
@@ -84,6 +99,20 @@ class TrenerAdmin(admin.ModelAdmin):
     )
 
 
+class CommentsTrenerAdmin(admin.ModelAdmin):
+    list_display = ("id", "user", "news", "date_created", "moderation_is_visible")
+    list_display_links = ("id", "user",)
+    search_fields = ("user", "news",)
+    # list_editable = ("moderation_is_visible",)
+    list_filter = ("user", "news", "moderation_is_visible",)
+    ordering = ("id",)
+    fieldsets = (
+        ("Основные сведения", {
+            "fields": ("user", "news", "text", "moderation_is_visible")
+        }),
+    )
+
+
 class ClubAdmin(admin.ModelAdmin):
     list_display = ("id", "club_name", "club_is_visible")
     list_display_links = ("id", "club_name",)
@@ -124,20 +153,6 @@ class FeedBackAdmin(admin.ModelAdmin):
     )
 
 
-class CommentsSportsmanAdmin(admin.ModelAdmin):
-    list_display = ("id", "user", "news", "date_created", "moderation_is_visible")
-    list_display_links = ("id", "user",)
-    search_fields = ("user", "news",)
-    # list_editable = ("moderation_is_visible",)
-    list_filter = ("user", "news", "moderation_is_visible",)
-    ordering = ("id",)
-    fieldsets = (
-        ("Основные сведения", {
-            "fields": ("user", "news", "text", "moderation_is_visible")
-        }),
-    )
-
-
 class CountryAdmin(admin.ModelAdmin):
     list_display = ("id", "country_name", "country_is_visible")
     list_display_links = ("id", "country_name",)
@@ -152,18 +167,16 @@ class CountryAdmin(admin.ModelAdmin):
     )
 
 
-
-
-
-
-
 admin.site.register(Stand, StandAdmin)
+
 admin.site.register(Sportsman, SportsmanAdmin)
+admin.site.register(CommentsSportsman, CommentsSportsmanAdmin)
+admin.site.register(Trener, TrenerAdmin)
+admin.site.register(CommentsTrener, CommentsTrenerAdmin)
+
 admin.site.register(ViewOlimp, ViewOlimpAdmin)
 admin.site.register(ViewSports, ViewSportsAdmin)
-admin.site.register(Trener, TrenerAdmin)
 admin.site.register(Club, ClubAdmin)
 admin.site.register(Medal, MedalAdmin)
 admin.site.register(FeedBack, FeedBackAdmin)
-admin.site.register(CommentsSportsman, CommentsSportsmanAdmin)
 admin.site.register(Country, CountryAdmin)
