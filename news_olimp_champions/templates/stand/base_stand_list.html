@@ -35,10 +35,12 @@
                                 <strong>Получена награда: </strong>
                             </div>
                             <div>
-                                {{ stand.medal_id }}<br>
-                                 {{ stand.stand_description | truncatechars:200}}
+                                {{ stand.medal_id }}
+
                             </div>
                         </div>
+
+                                 {{ stand.stand_description | truncatechars:200}}
                         <div class="read">
                             <form action="{{ stand.id }}">
                                 <button type="submit" class="btn">Читать подробнее</button>

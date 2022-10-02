@@ -144,7 +144,7 @@ header {
     flex-direction: column;
     background: white;
     margin: 5px;
-    padding: 10px;
+   /* padding: 10px;*/
     border: 1px solid #e9e8e8;
 }
 
@@ -160,6 +160,8 @@ h3 {
     margin: auto;
     width: 200px;
     height: 250px;
+    margin-left: 20px;
+
 }
 
 .items_news {
@@ -440,7 +442,7 @@ label[for="id_text"] {
     font-weight:bold;
     padding: 10px 24px;
     border-radius: 2px;
-    margin-bottom: 10px;
+    /*    margin-bottom: 10px;*/
 }
 
 .header_news>a{
