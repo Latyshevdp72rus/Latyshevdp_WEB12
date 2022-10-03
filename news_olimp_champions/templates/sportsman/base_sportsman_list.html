@@ -10,7 +10,7 @@
                 {% for sportman in page_obj %}
                 <div class="records_news">
                     <div class="header_news"><a href="{{ sportman.id }}">   {{sportman.id}}# Спортсмен - {{sportman.sportsman_name}}  </a> </div>
-                <div style="display:flex;">
+                <div style="display:flex; padding:15px">
                     <div class="photo_news">
                         <img src="/media/{{ sportman.sportsman_img }}" class="photo">
                     </div>
@@ -28,8 +28,6 @@
                                 <strong>Страна:</strong>
                             </div>
                             <div style="display:flex">
-<!--                             {{sportman.country_id.country_img}}   -->
-<!--                                <img src="/media/{{ sportman.country_id.country_img }}" >-->
                                 <div>{{sportman.country_id}}</div>
                             </div>
                         </div>
@@ -41,7 +39,6 @@
                                 {{sportman.view_sports_id.view_sport_name}}
                             </div>
                         </div>
-
                         <div class="read">
                             <form action="{{  sportman.id }}">
                                 <button type="submit" class="btn">Читать подробнее</button>

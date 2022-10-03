@@ -117,6 +117,8 @@ header {
     width: 1174px;
     margin-left: auto;
     margin-right: auto;
+    -webkit-box-shadow: 0 2px 4px 0 #dee2e6;
+    box-shadow: 0 2px 4px 0 #dee2e6;
 }
 
 .field_news {
@@ -136,6 +138,8 @@ header {
     border: 1px solid #e9e8e8;
     border-radius: 10px;
     margin-bottom: 10px;
+    -webkit-box-shadow: 0 2px 4px 0 #dee2e6;
+    box-shadow: 0 2px 4px 0 #dee2e6;
 }
 
 .records_news,
@@ -146,7 +150,22 @@ header {
     margin: 5px;
    /* padding: 10px;*/
     border: 1px solid #e9e8e8;
+    -webkit-box-shadow: 0 2px 4px 0 #dee2e6;
+    box-shadow: 0 2px 4px 0 #dee2e6;
 }
+
+
+.records_news2,.comments_user
+ {
+    display: flex;
+    background: white;
+    margin: 5px;
+   /* padding: 10px;*/
+    border: 1px solid #e9e8e8;
+}
+
+
+
 
 
 h3 {
