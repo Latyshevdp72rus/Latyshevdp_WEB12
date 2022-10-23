@@ -153,7 +153,7 @@ class SportsmanCreateView(LoginRequiredMixin, CreateView):
 
 
 class TrenerList(FilterView):
-    """ """
+    """Класс вывода всех записей тренера"""
     model = Trener
     filterset_class = TrenerFilter
     context_object_name = "treners"
