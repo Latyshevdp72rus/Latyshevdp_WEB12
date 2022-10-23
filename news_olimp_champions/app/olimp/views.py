@@ -32,7 +32,7 @@ class StandList(FilterView):
 
 
 class StandDetail(FormMixin, DetailView):
-    """ """
+    """Класс просмотра детализированной страницы Новости(Стэнд)"""
     model = Stand
     context_object_name = "stands"
     template_name = "stand/stand_detail.html"
@@ -66,7 +66,7 @@ class StandDetail(FormMixin, DetailView):
 
 
 class StandCreateView(LoginRequiredMixin, CreateView):
-    """ """
+    """Класс создание поста Стэнд(новости)"""
     model = Stand
     model_form = StandForm
     context_object_name = "stands"
@@ -101,7 +101,7 @@ class SportsmanList(FilterView):
 
 
 class SportsmanDetail(FormMixin, DetailView):
-    """ """
+    """Класс просмотра детализированной страницы Спортсмена"""
     model = Sportsman
     context_object_name = "sportsman"
     template_name = "sportsman/sportsman_detail.html"
@@ -135,7 +135,7 @@ class SportsmanDetail(FormMixin, DetailView):
 
 
 class SportsmanCreateView(LoginRequiredMixin, CreateView):
-    """ """
+    """Класс создание поста Спортсмена"""
     model = Sportsman
     model_form = SportsmanForm
     context_object_name = "sportsmans"
@@ -171,7 +171,7 @@ class TrenerList(FilterView):
 
 
 class TrenermanDetail(FormMixin, DetailView):
-    """ """
+    """Класс просмотра детализированной страницы Тренера"""
     model = Trener
     context_object_name = "trener"
     template_name = "trener/trener_detail.html"
@@ -206,7 +206,7 @@ class TrenermanDetail(FormMixin, DetailView):
 
 
 class TrenerCreateView(LoginRequiredMixin, CreateView):
-    """ """
+    """Класс создание поста Тренера"""
     model = Trener
     model_form = TrenerForm
     context_object_name = "treners"
@@ -223,7 +223,7 @@ class TrenerCreateView(LoginRequiredMixin, CreateView):
 
 
 class FeedBackCreateView(CreateView):
-    """ Создание запроса  "Обраятная связь """
+    """Класс создание поста Обраятная связь"""
     model = FeedBack
     model_form = FeedBackForm
     context_object_name = "feedback"

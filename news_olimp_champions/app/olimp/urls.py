@@ -6,28 +6,27 @@ from app.olimp.views import \
     FeedBackCreateView
 
 urlpatterns = [
-    # Маршрут ссылки на все записи новостей
+    # Регистрация представления на все записи новостей
     path('', StandList.as_view(), name='stand_list_view'),
-    # Маршрут ссылки на конкретную детализированную запись новости
+    # Регистрация представления на конкретную детализированную запись новости
     path('<int:pk>/', StandDetail.as_view(), name='stand_detail_view'),
-    # Маршрут ссылки на добавление новости
+    # Регистрация представления на добавление новости
     path(r'add_stand/', StandCreateView.as_view(), name='add_stand'),
 
-    # Маршрут ссылки на все записи спортсмены
+    # Регистрация представления на все записи спортсмены
     path('sportsman/', SportsmanList.as_view(), name='sportsman'),
-    # Маршрут ссылки на конкретную детализированную запись спортсмена
+    # Регистрация представления на конкретную детализированную запись спортсмена
     path('sportsman/<int:pk>', SportsmanDetail.as_view(), name='sportsman_detail_view'),
-    # Маршрут ссылки на добавление спортсмена
+    # Регистрация представления на добавление спортсмена
     path('sportsman/add_sportsman', SportsmanCreateView.as_view(), name='add_sportsman'),
 
-    # Маршрут ссылки на все записи тренера
+    # Регистрация представления на все записи тренера
     path('trener/', TrenerList.as_view(), name='trener'),
-    # Маршрут ссылки на конкретную детализированную запись тренера
+    # Регистрация представления на конкретную детализированную запись тренера
     path('trener/<int:pk>', TrenermanDetail.as_view(), name='trener_detail_view'),
-    # Маршрут ссылки на добавление тренера
+    # Регистрация представления на добавление тренера
     path('trener/add_trener', TrenerCreateView.as_view(), name='add_trener'),
 
-    # Маршрут ссылки на добавление обратной связи
+    # Регистрация представления на добавление обратной связи
     path('feedback/', FeedBackCreateView.as_view(), name='feedback'),
-
 ]
