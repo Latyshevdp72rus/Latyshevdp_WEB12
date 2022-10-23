@@ -13,8 +13,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect
 
 
-######################################################################################################################
 class StandList(FilterView):
+    """ """
     model = Stand
     filterset_class = StandFilter
     context_object_name = "stands"
@@ -32,6 +32,7 @@ class StandList(FilterView):
 
 
 class StandDetail(FormMixin, DetailView):
+    """ """
     model = Stand
     context_object_name = "stands"
     template_name = "stand/stand_detail.html"
@@ -65,6 +66,7 @@ class StandDetail(FormMixin, DetailView):
 
 
 class StandCreateView(LoginRequiredMixin, CreateView):
+    """ """
     model = Stand
     model_form = StandForm
     context_object_name = "stands"
@@ -80,8 +82,8 @@ class StandCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
-######################################################################################################################
 class SportsmanList(FilterView):
+    """ """
     model = Sportsman
     filterset_class = SportsmanFilter
     context_object_name = "sportsmans"
@@ -99,6 +101,7 @@ class SportsmanList(FilterView):
 
 
 class SportsmanDetail(FormMixin, DetailView):
+    """ """
     model = Sportsman
     context_object_name = "sportsman"
     template_name = "sportsman/sportsman_detail.html"
@@ -132,6 +135,7 @@ class SportsmanDetail(FormMixin, DetailView):
 
 
 class SportsmanCreateView(LoginRequiredMixin, CreateView):
+    """ """
     model = Sportsman
     model_form = SportsmanForm
     context_object_name = "sportsmans"
@@ -148,8 +152,8 @@ class SportsmanCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
-######################################################################################################################
 class TrenerList(FilterView):
+    """ """
     model = Trener
     filterset_class = TrenerFilter
     context_object_name = "treners"
@@ -167,6 +171,7 @@ class TrenerList(FilterView):
 
 
 class TrenermanDetail(FormMixin, DetailView):
+    """ """
     model = Trener
     context_object_name = "trener"
     template_name = "trener/trener_detail.html"
@@ -201,6 +206,7 @@ class TrenermanDetail(FormMixin, DetailView):
 
 
 class TrenerCreateView(LoginRequiredMixin, CreateView):
+    """ """
     model = Trener
     model_form = TrenerForm
     context_object_name = "treners"
@@ -216,9 +222,8 @@ class TrenerCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
-    ######################################################################################################################
-# Создание запроса  "Обраятная связь"
 class FeedBackCreateView(CreateView):
+    """ Создание запроса  "Обраятная связь """
     model = FeedBack
     model_form = FeedBackForm
     context_object_name = "feedback"
