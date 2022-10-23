@@ -14,7 +14,7 @@ from django.shortcuts import get_object_or_404, redirect
 
 
 class StandList(FilterView):
-    """ """
+    """Класс вывода всех записей Стэнд(Новости)"""
     model = Stand
     filterset_class = StandFilter
     context_object_name = "stands"
@@ -83,7 +83,7 @@ class StandCreateView(LoginRequiredMixin, CreateView):
 
 
 class SportsmanList(FilterView):
-    """ """
+    """Класс вывода всех записей Спортсмена"""
     model = Sportsman
     filterset_class = SportsmanFilter
     context_object_name = "sportsmans"
@@ -153,7 +153,7 @@ class SportsmanCreateView(LoginRequiredMixin, CreateView):
 
 
 class TrenerList(FilterView):
-    """Класс вывода всех записей тренера"""
+    """Класс вывода всех записей Тренера"""
     model = Trener
     filterset_class = TrenerFilter
     context_object_name = "treners"
