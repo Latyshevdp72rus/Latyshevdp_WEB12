@@ -20,7 +20,7 @@ class CommentsStandForm(forms.ModelForm):
 
 
 class SportsmanForm(forms.Form):
-    sportsman_birthday = forms.DateField(widget=DateTimeInput())
+    sportsman_birthday = forms.DateField(widget=forms.DateTimeInput(attrs={'class': 'form-control', 'type':'date'}))
 
     class Meta:
         model = Sportsman

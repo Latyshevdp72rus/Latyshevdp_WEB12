@@ -4,6 +4,7 @@ from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Cl
 
 
 class StandAdmin(admin.ModelAdmin):
+    """Настройка админки модели Стэнд(Новости)"""
     list_display = ("id", "stand_name", "view_olimp_id", "date_event",
                     "stand_is_visible")
     list_display_links = ("id", "stand_name", "view_olimp_id", "date_event",)
@@ -22,10 +23,10 @@ class StandAdmin(admin.ModelAdmin):
 
 
 class CommentsStandAdmin(admin.ModelAdmin):
+    """Настройка админки модели Блока Стэнд(Новости)"""
     list_display = ("id", "user", "news", "date_created", "moderation_is_visible")
     list_display_links = ("id", "user",)
     search_fields = ("user", "news",)
-    # list_editable = ("moderation_is_visible",)
     list_filter = ("user", "news", "moderation_is_visible",)
     ordering = ("id",)
     fieldsets = (
@@ -36,11 +37,11 @@ class CommentsStandAdmin(admin.ModelAdmin):
 
 
 class SportsmanAdmin(admin.ModelAdmin):
+    """Настройка админки модели Спортсмена"""
     list_display = (
         "id", "sportsman_name","sportsman_birthday", "country_id", "view_sports_id", "sportsman_is_visible")
     list_display_links = ("id", "sportsman_name", "view_sports_id", "sportsman_birthday","country_id",)
     search_fields = ("sportsman_name", "country_id","country_id")
-    # list_editable = ("sportsman_is_visible",)
     list_filter = ("sportsman_name", "country_id", "sportsman_is_visible",)
     ordering = ("id",)
     fieldsets = (
@@ -55,10 +56,10 @@ class SportsmanAdmin(admin.ModelAdmin):
 
 
 class CommentsSportsmanAdmin(admin.ModelAdmin):
+    """Настройка админки модели Блока комментарий Спортсмена"""
     list_display = ("id", "user", "news", "date_created", "moderation_is_visible")
     list_display_links = ("id", "user",)
     search_fields = ("user", "news",)
-    # list_editable = ("moderation_is_visible",)
     list_filter = ("user", "news", "moderation_is_visible",)
     ordering = ("id",)
     fieldsets = (
@@ -69,6 +70,7 @@ class CommentsSportsmanAdmin(admin.ModelAdmin):
 
 
 class ViewOlimpAdmin(admin.ModelAdmin):
+    """Настройка админки модели Виды олимпийских игр"""
     list_display = ("id", "view_olimp_name", "view_olimp_is_visible")
     list_display_links = ("id", "view_olimp_name",)
     search_fields = ("view_olimp_name",)
@@ -83,6 +85,7 @@ class ViewOlimpAdmin(admin.ModelAdmin):
 
 
 class ViewSportsAdmin(admin.ModelAdmin):
+    """Настройка админки модели Виды спорта"""
     list_display = ("id", "view_sport_name", "view_sports_is_visible")
     list_display_links = ("id", "view_sport_name",)
     search_fields = ("view_sport_name",)
@@ -97,6 +100,7 @@ class ViewSportsAdmin(admin.ModelAdmin):
 
 
 class TrenerAdmin(admin.ModelAdmin):
+    """Настройка админки модели Тренера"""
     list_display = ("id", "trener_name", "trener_is_visible")
     list_display_links = ("id", "trener_name",)
     search_fields = ("trener_name",)
@@ -114,10 +118,10 @@ class TrenerAdmin(admin.ModelAdmin):
 
 
 class CommentsTrenerAdmin(admin.ModelAdmin):
+    """Настройка админки модели Блок комментарий Тренера"""
     list_display = ("id", "user", "news", "date_created", "moderation_is_visible")
     list_display_links = ("id", "user",)
     search_fields = ("user", "news",)
-    # list_editable = ("moderation_is_visible",)
     list_filter = ("user", "news", "moderation_is_visible",)
     ordering = ("id",)
     fieldsets = (
@@ -128,6 +132,7 @@ class CommentsTrenerAdmin(admin.ModelAdmin):
 
 
 class ClubAdmin(admin.ModelAdmin):
+    """Настройка админки модели Клубы"""
     list_display = ("id", "club_name", "club_is_visible")
     list_display_links = ("id", "club_name",)
     search_fields = ("club_name",)
@@ -142,6 +147,7 @@ class ClubAdmin(admin.ModelAdmin):
 
 
 class MedalAdmin(admin.ModelAdmin):
+    """Настройка админки модели Блок комментарий Тренера"""
     list_display = ("id", "medal_name")
     list_display_links = ("id", "medal_name",)
     search_fields = ("medal_name",)
@@ -155,6 +161,7 @@ class MedalAdmin(admin.ModelAdmin):
 
 
 class FeedBackAdmin(admin.ModelAdmin):
+    """Настройка админки модели Обратной связи"""
     list_display = ("id", "fb_name", "fb_email")
     list_display_links = ("id", "fb_name",)
     search_fields = ("fb_name", "fb_email",)
@@ -168,6 +175,7 @@ class FeedBackAdmin(admin.ModelAdmin):
 
 
 class CountryAdmin(admin.ModelAdmin):
+    """Настройка админки модели Страны"""
     list_display = ("id", "country_name", "country_is_visible")
     list_display_links = ("id", "country_name",)
     search_fields = ("country_name",)
@@ -181,18 +189,38 @@ class CountryAdmin(admin.ModelAdmin):
     )
 
 
+# Регистрация модели Стэнд(Новости) административной панели
 admin.site.register(Stand, StandAdmin)
+
+# Регистрация модели Блок комментарий Стэнд административной панели
 admin.site.register(CommentsStand, CommentsStandAdmin)
 
+# Регистрация модели Спортсмена административной панели
 admin.site.register(Sportsman, SportsmanAdmin)
+
+# Регистрация модели Блок комментарии спортсмена административной панели
 admin.site.register(CommentsSportsman, CommentsSportsmanAdmin)
 
+# Регистрация модели Тренера административной панели
 admin.site.register(Trener, TrenerAdmin)
+
+# Регистрация модели Блок Коментарий тренера административной панели
 admin.site.register(CommentsTrener, CommentsTrenerAdmin)
 
+# Регистрация модели Виды олимпийских игр административной панели
 admin.site.register(ViewOlimp, ViewOlimpAdmin)
+
+# Регистрация модели Виды спорта административной панели
 admin.site.register(ViewSports, ViewSportsAdmin)
+
+# Регистрация модели Клубы административной панели
 admin.site.register(Club, ClubAdmin)
+
+# Регистрация модели Медалей административной панели
 admin.site.register(Medal, MedalAdmin)
+
+# Регистрация модели Обратной связи административной панели
 admin.site.register(FeedBack, FeedBackAdmin)
+
+# Регистрация модели Стран административной панели
 admin.site.register(Country, CountryAdmin)

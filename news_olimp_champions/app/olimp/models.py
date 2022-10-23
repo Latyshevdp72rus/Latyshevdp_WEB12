@@ -4,6 +4,7 @@ from django.db import models
 
 
 class Stand(models.Model):
+    """ Класс на странице НОВОСТИ """
     stand_name = models.CharField(
         verbose_name="Заголовок новости",
         max_length=50,
