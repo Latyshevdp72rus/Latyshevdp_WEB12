@@ -43,7 +43,7 @@ class SportsmanFilter(django_filters.FilterSet):
 
 class TrenerFilter(django_filters.FilterSet):
     trener_query = Trener.objects.all()
-    trener_name = django_filters.CharFilter()
+    trener_name = django_filters.ModelChoiceFilter(queryset=Trener.objects.all())
     club_id = django_filters.ModelChoiceFilter(queryset=Club.objects.all())
 
     class Meta:

@@ -1,6 +1,5 @@
 from django import forms
 from app.olimp.models import Stand, Sportsman, Trener, FeedBack, CommentsSportsman, CommentsTrener,CommentsStand
-# from app.olimp.validators import validation_stand
 
 
 class DateTimeInput(forms.DateTimeInput):
