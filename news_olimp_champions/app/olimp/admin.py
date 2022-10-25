@@ -39,7 +39,7 @@ class CommentsStandAdmin(admin.ModelAdmin):
 class SportsmanAdmin(admin.ModelAdmin):
     """Настройка админки модели Спортсмена"""
     list_display = (
-        "id", "sportsman_name","sportsman_birthday", "country_id", "view_sports_id", "sportsman_is_visible")
+        "id", "sportsman_name","sportsman_birthday", "country_id", "view_sports_id","date_created", "sportsman_is_visible")
     list_display_links = ("id", "sportsman_name", "view_sports_id", "sportsman_birthday","country_id",)
     search_fields = ("sportsman_name", "country_id","country_id")
     list_filter = ("sportsman_name", "country_id", "sportsman_is_visible",)

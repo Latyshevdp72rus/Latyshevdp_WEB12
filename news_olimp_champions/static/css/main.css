@@ -160,7 +160,7 @@ header {
     display: flex;
     background: white;
     margin: 5px;
-   /* padding: 10px;*/
+    padding: 20px;
     border: 1px solid #e9e8e8;
 }
 
@@ -177,10 +177,9 @@ h3 {
 .photo_news {
     border: 1px solid #e9e8e8;
     margin: auto;
-    width: 200px;
     height: 250px;
     margin-left: 20px;
-
+    text-align: center;
 }
 
 .items_news {
@@ -279,7 +278,7 @@ nav {
     text-indent: 30px;
     border-bottom: 1px solid #e9e8e8;
     padding: 10px;
-    margin-right: 75px;
+    margin-right: 20px;
 }
 
 .desc_info_sportsman {
@@ -462,6 +461,8 @@ label[for="id_text"] {
     padding: 10px 24px;
     border-radius: 2px;
     /*    margin-bottom: 10px;*/
+    display: flex;
+    justify-content: space-between;
 }
 
 .header_news>a{

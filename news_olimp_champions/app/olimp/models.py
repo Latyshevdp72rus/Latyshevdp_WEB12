@@ -154,6 +154,13 @@ class Sportsman(models.Model):
         blank=False,
         on_delete=models.CASCADE,
     )
+    date_created = models.DateTimeField(
+        verbose_name="Дата добавления",
+        auto_now_add=True,
+        blank=False,
+        null=False,
+
+    )
     sportsman_img = models.ImageField(
         verbose_name="Загрузить фото",
         default="media/default.png",
