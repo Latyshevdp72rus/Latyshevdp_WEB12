@@ -37,18 +37,15 @@
                             <div class="info_sportsman">
                                  {% for sport in sports %}
                                 <strong>
-                                    {{sport}};
+                                    <a href="/news/sportsman/{{ sport.id }}">{{sport.sportsman_name}};  </a>
+<!--                                    {{sport}};-->
                                 </strong>
                             </a>
                                  {% endfor %}
                             </div>
                         </div>
-
-
                     </div>
                 </div>
-
-
                 <!-- Распаковываем комментарии -->
                 {% for comment in comments %}
                 <div class="comments_user">
