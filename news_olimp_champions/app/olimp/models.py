@@ -96,7 +96,7 @@ class CommentsStand(models.Model):
         null = False,
         blank = False,
     )
-    date_created = models.DateField(
+    date_created = models.DateTimeField(
         verbose_name="Дата добавления",
         auto_now_add=True,
         blank=False,

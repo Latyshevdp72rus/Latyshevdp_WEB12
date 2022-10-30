@@ -83,7 +83,7 @@ header {
 }
 
 #navbar li>a:hover {
-    color: red;
+    color: #145e7a;
 
     /* color: #ffffff; */
     text-shadow: 0 -1px 0 rgb(0 0 0 / 25%);
@@ -204,8 +204,8 @@ img.photo {
 }
 
 .right-panel {
-    padding: 10px;
-    width: 500px;
+    padding: 5px;
+    width: 50%;
 }
 
 fieldset {
@@ -374,11 +374,13 @@ input#id_date_event {
     margin-top: 20px;
     text-align: right;
     padding: 10px;
+    width: 100%;
 }
 
 a {
     text-decoration: none;
     color: #657791;
+    font-weight:bold;
 }
 
 form p {
@@ -438,7 +440,7 @@ section {
 }
 
 a:hover {
-    color: red;
+    color: #145e7a;
 }
 
 .comments_user>form p {
@@ -474,4 +476,7 @@ label[for="id_text"] {
 .header_news>a{
     text-decoration: none;
     color:white;
+}
+.header_news>a:hover{
+ color: #145e7a;
 }
