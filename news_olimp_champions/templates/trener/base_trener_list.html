@@ -1,6 +1,7 @@
 {% load static %}
 {% include "../inc/_header.html" %}
 
+
 <div class="wrapper">
     <div class="field">
         <div class="field_news">
@@ -49,10 +50,10 @@
                 {% endif %}
             </div>
         </div>
-
+<!--begin right panel-->
         <div class="right-panel">
             <div class="header_news">ФИЛЬТР:</div>
-            <div style="background: white; padding:15px">
+            <div style="background: white; padding:15px; margin-bottom:5px">
                 <form method="get" class="setup_centr">
                     {{ filter.form.as_p }}
                     <div style="text-align:center;margin:20px auto;">
@@ -65,10 +66,21 @@
                 </form>
               </div>
             </div>
+            <div>
+                 <div class="header_news">ФОТО ПРОШЕДШИХ СОБЫТИЙ!!!</div>
+                    {% load static %}
+                    {% include "../inc/reklama.html" %}
+            </div>
+            <div >
+                 <div class="header_news">СПОРТИВНЫЕ МАГАЗИНЫ:</div>
+                   {% load static %}
+                   {% include "../inc/reklama2.html" %}
+            </div>
+        </div>
+<!--end right panel-->
         </div>
 
     </div>
 </div>
-
 
 {% include "../inc/_footer.html" %}

@@ -11,21 +11,6 @@
 </head>
 
 <body>
-<!--    <div>-->
-<!--        <ul id="slides">-->
-<!--            <li class="slide showing"><img src="{% static  'img/fraz1.png' %}" alt="" class="imgages"></li>-->
-<!--            <li class="slide"><img src="{% static  'img/fraz1.png' %}" alt="" class="imgages"></li>-->
-<!--            <li class="slide"><img src="{% static  'img/fraz2.png' %}" alt="" class="imgages"></li>-->
-<!--            <li class="slide"><img src="{% static  'img/fraz3.png' %}" alt="" class="imgages"></li>-->
-<!--            <li class="slide"><img src="{% static  'img/fraz4.png' %}" alt="" class="imgages"></li>-->
-<!--            <li class="slide"><img src="{% static  'img/fraz5.png' %}" alt="" class="imgages"></li>-->
-<!--            <li class="slide"><img src="{% static  'img/fraz6.png' %}" alt="" class="imgages"></li>-->
-<!--            <li class="slide"><img src="{% static  'img/fraz7.png' %}" alt="" class="imgages"></li>-->
-<!--            <li class="slide"><img src="{% static  'img/fraz8.png' %}" alt="" class="imgages"></li>-->
-<!--            <li class="slide"><img src="{% static  'img/fraz9.png' %}" alt="" class="imgages"></li>-->
-<!--            <li class="slide"><img src="{% static  'img/fraz10.png' %}" alt="" class="imgages"></li>-->
-<!--        </ul>-->
-<!--    </div>-->
     <header>
         <nav>
             <div>
@@ -116,15 +101,5 @@
 
 
 
-    <script>
-        var slides = document.querySelectorAll('#slides .slide');
-        var currentSlide = 0;
-        var slideInterval = setInterval(nextSlide, 5000);
 
-        function nextSlide() {
-            slides[currentSlide].className = 'slide';
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].className = 'slide showing';
-        }
-    </script>
     {% endblock %}
