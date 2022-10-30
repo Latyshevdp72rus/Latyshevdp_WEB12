@@ -28,5 +28,7 @@
 .imgages {
     width:300px;
     height:250px;
+    border: 1px solid #e9e8e8;
+    border-radius: 10px;
 
 }

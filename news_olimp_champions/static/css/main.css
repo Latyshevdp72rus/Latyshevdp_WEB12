@@ -253,6 +253,7 @@ nav {
     background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
     background-repeat: repeat-x;
     border-color: #1f90bb #1f90bb #145e7a;
+    width: 300px;
 }
 
 .btn:hover {
