@@ -8,33 +8,34 @@
             <div class="news">
                 {% for trener in page_obj %}
                 <div class="records_news">
-                    <div class="header_news"><a href="{{ trener.id }}">   {{trener.id}}# Тренер - {{trener.trener_name}}  </a> {{trener.date_created }}</div>
-                <div style="display:flex; padding: 20px;">
-                    <div class="photo_news">
-                        <a href="{{ trener.id }}">
-                            <img src="/media/{{ trener.trener_img }}" alt="{{trener.trener_name}}">
-                        </a>
-                    </div>
-                    <div class="items_news">
-                        <div class="title_info_sportsman">
-                            <div class="desc_info_sportsman">
-                                <strong>ФИО Тренера:  </strong>
+                    <div class="header_news"><a href="{{ trener.id }}"> {{trener.id}}# Тренер - {{trener.trener_name}}
+                        </a> {{trener.date_created }}</div>
+                    <div style="display:flex; padding: 20px;">
+                        <div class="photo_news">
+                            <a href="{{ trener.id }}">
+                                <img src="/media/{{ trener.trener_img }}" alt="{{trener.trener_name}}">
+                            </a>
+                        </div>
+                        <div class="items_news">
+                            <div class="title_info_sportsman">
+                                <div class="desc_info_sportsman">
+                                    <strong>ФИО Тренера: </strong>
+                                </div>
+                                <div>{{trener.trener_name}}</div>
                             </div>
-                            <div>{{trener.trener_name}}</div>
-                        </div>
-                        <div class="title_info_sportsman">
-                            <div class="desc_info_sportsman">
-                                <strong>Наименование клуба:  </strong>
+                            <div class="title_info_sportsman">
+                                <div class="desc_info_sportsman">
+                                    <strong>Наименование клуба: </strong>
+                                </div>
+                                <div>{{trener.club_id}}</div>
                             </div>
-                            <div>{{trener.club_id}}</div>
-                        </div>
-                        <div class="read">
-                            <form action="{{  trener.id }}">
-                                <button type="submit" class="btn">Читать подробнее</button>
-                            </form>
+                            <div class="read">
+                                <form action="{{  trener.id }}">
+                                    <button type="submit" class="btn">Читать подробнее</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                  </div>
                 </div>
                 {% endfor %}
             </div>
@@ -50,7 +51,7 @@
                 {% endif %}
             </div>
         </div>
-<!--begin right panel-->
+        <!--begin right panel-->
         <div class="right-panel">
             <div class="header_news">ФИЛЬТР:</div>
             <div style="background: white; padding:15px; margin-bottom:5px">
@@ -60,27 +61,27 @@
                         <button type="submit" Class="btn">Применить фильтр</button>
                     </div>
                 </form>
-               <div style="text-align:center;margin: auto;">
-                <form action="{% url 'trener' %}">
-                    <button type="submit" class="btn">Сброс</button>
-                </form>
-              </div>
+                <div style="text-align:center;margin: auto;">
+                    <form action="{% url 'trener' %}">
+                        <button type="submit" class="btn">Сброс</button>
+                    </form>
+                </div>
             </div>
             <div>
-                 <div class="header_news">ФОТО ПРОШЕДШИХ СОБЫТИЙ!!!</div>
-                    {% load static %}
-                    {% include "../inc/reklama.html" %}
+                <div class="header_news">ФОТО ПРОШЕДШИХ СОБЫТИЙ!!!</div>
+                {% load static %}
+                {% include "../inc/reklama.html" %}
             </div>
-            <div >
-                 <div class="header_news">СПОРТИВНЫЕ МАГАЗИНЫ:</div>
-                   {% load static %}
-                   {% include "../inc/reklama2.html" %}
+            <div>
+                <div class="header_news">СПОРТИВНЫЕ МАГАЗИНЫ:</div>
+                {% load static %}
+                {% include "../inc/reklama2.html" %}
             </div>
         </div>
-<!--end right panel-->
-        </div>
-
+        <!--end right panel-->
     </div>
+
+</div>
 </div>
 
 {% include "../inc/_footer.html" %}

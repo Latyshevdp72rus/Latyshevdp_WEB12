@@ -35,15 +35,15 @@
                                 <strong>Спортсмены:</strong>
                             </div>
                             <div class="info_sportsman">
-                                 {% for sport in sports %}
-                                    {% if sport %}
-                                        <strong>
-                                            <a href="/news/sportsman/{{ sport.id }}">{{sport.sportsman_name}};  </a>
-                                        </strong>
-                                    {% else %}
-                                          <div>Hello</div>
-                                    {% endif %}
-                                 {% endfor %}
+                                {% for sport in sports %}
+                                {% if sport %}
+                                <strong>
+                                    <a href="/news/sportsman/{{ sport.id }}">{{sport.sportsman_name}}; </a>
+                                </strong>
+                                {% else %}
+                                <div>Hello</div>
+                                {% endif %}
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

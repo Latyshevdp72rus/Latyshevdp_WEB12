@@ -1,12 +1,14 @@
 from django import forms
 from app.olimp.models import Stand, Sportsman, Trener, FeedBack, CommentsSportsman, CommentsTrener,CommentsStand
 
-
 class DateTimeInput(forms.DateTimeInput):
     input_type = 'date'
 
 
 class StandForm(forms.Form):
+    date_event = forms.DateField(
+        input_formats=['%d/%m/%Y %H:%M'],
+    )
     class Meta:
         model = Stand
         fields = ["stand_name", "stand_description", "sportsman_id", "view_olimp_id", "medal_id", "date_event", "stand_img",]

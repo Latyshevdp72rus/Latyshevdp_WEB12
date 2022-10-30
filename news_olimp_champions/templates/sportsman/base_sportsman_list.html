@@ -9,45 +9,46 @@
             <div class="news">
                 {% for sportman in page_obj %}
                 <div class="records_news">
-                    <div class="header_news"><a href="{{ sportman.id }}">   {{sportman.id}}# Спортсмен - {{sportman.sportsman_name}}  </a> {{sportman.date_created }}</div>
-                <div style="display:flex; padding:15px">
-                    <div class="photo_news">
-                        <a href="{{ sportman.id }}">
-                            <img src="/media/{{ sportman.sportsman_img }}" class="photo">
-                        </a>
+                    <div class="header_news"><a href="{{ sportman.id }}"> {{sportman.id}}# Спортсмен -
+                            {{sportman.sportsman_name}} </a> {{sportman.date_created }}</div>
+                    <div style="display:flex; padding:15px">
+                        <div class="photo_news">
+                            <a href="{{ sportman.id }}">
+                                <img src="/media/{{ sportman.sportsman_img }}" class="photo">
+                            </a>
+                        </div>
+                        <div class="items_news">
+                            <div class="title_info_sportsman">
+                                <div class="desc_info_sportsman">
+                                    <strong>День рождения:</strong>
+                                </div>
+                                <div>
+                                    {{sportman.sportsman_birthday}}
+                                </div>
+                            </div>
+                            <div class="title_info_sportsman">
+                                <div class="desc_info_sportsman">
+                                    <strong>Страна:</strong>
+                                </div>
+                                <div style="display:flex">
+                                    <div>{{sportman.country_id}}</div>
+                                </div>
+                            </div>
+                            <div class="title_info_sportsman">
+                                <div class="desc_info_sportsman">
+                                    <strong>Вид спорта:</strong>
+                                </div>
+                                <div>
+                                    {{sportman.view_sports_id.view_sport_name}}
+                                </div>
+                            </div>
+                            <div class="read">
+                                <form action="{{  sportman.id }}">
+                                    <button type="submit" class="btn">Читать подробнее</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="items_news">
-                        <div class="title_info_sportsman">
-                            <div class="desc_info_sportsman">
-                                <strong>День рождения:</strong>
-                            </div>
-                            <div>
-                                {{sportman.sportsman_birthday}}
-                            </div>
-                        </div>
-                        <div class="title_info_sportsman">
-                            <div class="desc_info_sportsman">
-                                <strong>Страна:</strong>
-                            </div>
-                            <div style="display:flex">
-                                <div>{{sportman.country_id}}</div>
-                            </div>
-                        </div>
-                        <div class="title_info_sportsman">
-                            <div class="desc_info_sportsman">
-                                <strong>Вид спорта:</strong>
-                            </div>
-                            <div>
-                                {{sportman.view_sports_id.view_sport_name}}
-                            </div>
-                        </div>
-                        <div class="read">
-                            <form action="{{  sportman.id }}">
-                                <button type="submit" class="btn">Читать подробнее</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
                 </div>
                 {% endfor %}
             </div>
@@ -83,14 +84,14 @@
                 </div>
             </div>
             <div>
-                 <div class="header_news">ФОТО ПРОШЕДШИХ СОБЫТИЙ!!!</div>
-                    {% load static %}
-                    {% include "../inc/reklama.html" %}
+                <div class="header_news">ФОТО ПРОШЕДШИХ СОБЫТИЙ!!!</div>
+                {% load static %}
+                {% include "../inc/reklama.html" %}
             </div>
-            <div >
-                 <div class="header_news">СПОРТИВНЫЕ МАГАЗИНЫ:</div>
-                   {% load static %}
-                   {% include "../inc/reklama2.html" %}
+            <div>
+                <div class="header_news">СПОРТИВНЫЕ МАГАЗИНЫ:</div>
+                {% load static %}
+                {% include "../inc/reklama2.html" %}
             </div>
         </div>
         <!-- Фильтр -->
