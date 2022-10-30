@@ -36,11 +36,13 @@
                             </div>
                             <div class="info_sportsman">
                                  {% for sport in sports %}
-                                <strong>
-                                    <a href="/news/sportsman/{{ sport.id }}">{{sport.sportsman_name}};  </a>
-<!--                                    {{sport}};-->
-                                </strong>
-                            </a>
+                                    {% if sport %}
+                                        <strong>
+                                            <a href="/news/sportsman/{{ sport.id }}">{{sport.sportsman_name}};  </a>
+                                        </strong>
+                                    {% else %}
+                                          <div>Hello</div>
+                                    {% endif %}
                                  {% endfor %}
                             </div>
                         </div>

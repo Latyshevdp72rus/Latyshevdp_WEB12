@@ -12,7 +12,9 @@
                     <div class="header_news"><a href="{{ sportman.id }}">   {{sportman.id}}# Спортсмен - {{sportman.sportsman_name}}  </a> {{sportman.date_created }}</div>
                 <div style="display:flex; padding:15px">
                     <div class="photo_news">
-                        <img src="/media/{{ sportman.sportsman_img }}" class="photo">
+                        <a href="{{ sportman.id }}">
+                            <img src="/media/{{ sportman.sportsman_img }}" class="photo">
+                        </a>
                     </div>
                     <div class="items_news">
                         <div class="title_info_sportsman">
