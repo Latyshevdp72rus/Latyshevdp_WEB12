@@ -46,7 +46,7 @@ class Stand(models.Model):
         null=False,
         blank=False,
     )
-    date_created = models.DateTimeField(
+    date_created = models.DateField(
         verbose_name="Дата добавления",
         auto_now_add=True,
         blank=False,
@@ -96,7 +96,7 @@ class CommentsStand(models.Model):
         null = False,
         blank = False,
     )
-    date_created = models.DateTimeField(
+    date_created = models.DateField(
         verbose_name="Дата добавления",
         auto_now_add=True,
         blank=False,
@@ -159,7 +159,7 @@ class Sportsman(models.Model):
         blank=False,
         on_delete=models.CASCADE,
     )
-    date_created = models.DateTimeField(
+    date_created = models.DateField(
         verbose_name="Дата добавления",
         auto_now_add=True,
         blank=False,
@@ -254,6 +254,12 @@ class Trener(models.Model):
         null=False,
         blank=False,
         on_delete=models.CASCADE,
+    )
+    date_created = models.DateField(
+        verbose_name="Дата добавления",
+        auto_now_add=True,
+        blank=False,
+        null=False,
     )
     trener_img = models.ImageField(
         default="media/default.png",

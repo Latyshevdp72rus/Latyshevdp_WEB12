@@ -7,10 +7,13 @@
             <div class="news">
                 {% for trener in page_obj %}
                 <div class="records_news">
-                    <div class="header_news"><a href="{{ trener.id }}">   {{trener.id}}# Тренер - {{trener.trener_name}}  </a> </div>
+                    <div class="header_news"><a href="{{ trener.id }}">   {{trener.id}}# Тренер - {{trener.trener_name}}  </a> {{trener.date_created }}</div>
                 <div style="display:flex; padding: 20px;">
                     <div class="photo_news">
-                        <img src="/media/{{ trener.trener_img }}" class="photo">
+                        <a href="{{ trener.id }}">
+                            <img src="/media/{{ trener.trener_img }}" alt="{{trener.trener_name}}">
+
+                        </a>
                     </div>
                     <div class="items_news">
                         <div class="title_info_sportsman">

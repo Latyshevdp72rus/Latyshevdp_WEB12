@@ -8,8 +8,8 @@
             <div class="news">
                 {% for stand in page_obj %}
                 <div class="records_news">
-                    <div class="header_news"> <a href="{{ stand.id }}">{{stand.id}}#  {{stand.view_olimp_id}} - {{stand.stand_name}} </a></div>
-                <div style="display:flex; padding: 20px;">
+                    <div class="header_news"> <a href="{{ stand.id }}">{{stand.id}}#  {{stand.view_olimp_id}} - {{stand.stand_name}} </a>{{stand.date_created }}</div>
+                <div style="display:flex; padding: 15px;">
                     <div class="photo_news">
                         <img src="/media/{{ stand.stand_img }}" class="photo">
                     </div>
