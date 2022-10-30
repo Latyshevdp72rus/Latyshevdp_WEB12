@@ -312,7 +312,7 @@ nav {
 .switch_style {
     padding: inherit;
     border: 2px solid #e9e8e8;
-    width: 110px;
+    width: 150px;
     text-align: center;
 }
 
@@ -364,10 +364,11 @@ textarea,
 input[type=email],
 input[type=password],
 input#id_sportsman_birthday,
-input#id_date_event {
+input[type=date]{
     padding: 5px;
-    border: 1px solid #e9e8e8;
+    border: 1px solid #1896cd;
     border-radius: 3px;
+    background-color:#e9e9ed;
 }
 
 .read {

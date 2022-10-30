@@ -11,7 +11,9 @@
                     <div class="header_news"> <a href="{{ stand.id }}">{{stand.id}}#  {{stand.view_olimp_id}} - {{stand.stand_name}} </a>{{stand.date_created }}</div>
                 <div style="display:flex; padding: 15px;">
                     <div class="photo_news">
-                        <img src="/media/{{ stand.stand_img }}" class="photo">
+                        <a href="{{ stand.id }}">
+                            <img src="/media/{{ stand.stand_img }}" class="photo">
+                        </a>
                     </div>
                     <div class="items_news">
                         <div class="title_info_sportsman">
@@ -66,7 +68,6 @@
             <div class="header_news">ФИЛЬТР:</div>
             <div style="background: white; padding:15px">
                 <form method="get" class="setup_centr">
-                    <p><strong style="text-align:center;">Фильтр новостей:</strong></p>
                     {{ filter.form.as_p }}
                     <div style="text-align:center;margin: 20px auto;">
                         <button type="submit" class="btn">Применить фильтр</button>
