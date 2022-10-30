@@ -5,7 +5,7 @@ from app.olimp.models import Stand, Sportsman, ViewOlimp, ViewSports, Trener, Cl
 
 class StandAdmin(admin.ModelAdmin):
     """Настройка админки модели Стэнд(Новости)"""
-    list_display = ("id", "stand_name", "view_olimp_id", "date_event",
+    list_display = ("id", "stand_name", "view_olimp_id", "date_event","date_created",
                     "stand_is_visible")
     list_display_links = ("id", "stand_name", "view_olimp_id", "date_event",)
     search_fields = ("stand_name", "view_olimp_id",)

@@ -10,7 +10,13 @@
                         <img src="/media/{{ stands.stand_img }}" class="photo">
                     </div>
                     <div class="items_news">
-                        <strong><em>{{ stands.stand_name }}</em></strong><br>
+                        <div class="title_info_sportsman">
+                            <div class="desc_info_sportsman">
+                                <strong>Место проведения: </strong>
+                            </div>
+                            <div>{{ stands.stand_name }}</div>
+                        </div>
+                        <strong><em></em></strong><br>
                         <div class="title_info_sportsman">
                             <div class="desc_info_sportsman">
                                 <strong>Вид олимпийских игр: </strong>
@@ -43,6 +49,7 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Распаковываем комментарии -->
                 {% for comment in comments %}
                 <div class="comments_user">
@@ -62,8 +69,10 @@
                         </section>
                     </div>
                 </div>
+
                 {% endfor %}
                 <!-- Распаковываем комментарии -->
+
                 <!-- Проверка на аутентификацию  -->
                 {% if user.is_authenticated %}
                 <div class="comments_user">
@@ -85,6 +94,7 @@
                 <!-- Проверка на аутентификацию  -->
 
             </div>
+
         </div>
     </div>
 </div>

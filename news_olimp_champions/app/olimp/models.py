@@ -46,6 +46,12 @@ class Stand(models.Model):
         null=False,
         blank=False,
     )
+    date_created = models.DateTimeField(
+        verbose_name="Дата добавления",
+        auto_now_add=True,
+        blank=False,
+        null=False,
+    )
     stand_img = models.ImageField(
         verbose_name="Загрузить фото",
         default="media/default.png",
@@ -95,7 +101,6 @@ class CommentsStand(models.Model):
         auto_now_add=True,
         blank=False,
         null=False,
-
     )
     moderation_is_visible = models.BooleanField(
         verbose_name="Скрыть запись",
@@ -159,7 +164,6 @@ class Sportsman(models.Model):
         auto_now_add=True,
         blank=False,
         null=False,
-
     )
     sportsman_img = models.ImageField(
         verbose_name="Загрузить фото",

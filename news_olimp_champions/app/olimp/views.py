@@ -20,7 +20,7 @@ class StandList(FilterView):
     context_object_name = "stands"
     template_name = "stand/stand_list.html"
     paginate_by = settings.OBJECTS_ON_PAGE
-    ordering = ['-id']
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -178,8 +178,10 @@ h3 {
     border: 1px solid #e9e8e8;
     margin: auto;
     height: 250px;
+    margin-top: 10px;
     margin-left: 20px;
     text-align: center;
+    padding:10px;
 }
 
 .items_news {
@@ -273,16 +275,14 @@ nav {
 
 .title_info_sportsman {
     display: flex;
-    flex-wrap: wrap;
-    text-align: justify;
-    text-indent: 30px;
+    /*flex-wrap: wrap;*/
     border-bottom: 1px solid #e9e8e8;
     padding: 10px;
     margin-right: 20px;
 }
 
 .desc_info_sportsman {
-    width: 220px;
+    width: 200px;
 }
 
 .kolco {
@@ -390,6 +390,7 @@ form p {
 
 .info_sportsman {
     margin: auto 0px;
+
 }
 
 .comments_user {
@@ -411,6 +412,7 @@ form p {
     background-repeat: repeat-x;
     border-color: #1f90bb #1f90bb #145e7a;
     color: #fff;
+    border-radius: 5px;
 }
 
 .msg {
@@ -461,6 +463,7 @@ label[for="id_text"] {
     padding: 10px 24px;
     border-radius: 2px;
     /*    margin-bottom: 10px;*/
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
 }
