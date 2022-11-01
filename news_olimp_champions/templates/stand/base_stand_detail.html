@@ -42,9 +42,6 @@
                             <div>{{ stands.date_event }}</div>
                         </div>
                         <div class="title_info_sportsman">
-                            <div class="desc_info_sportsman">
-                                <strong>Описание: </strong>
-                            </div>
                             <div style="white-space: pre-line;">{{stands.stand_description }}</div>
                         </div>
                     </div>
@@ -85,7 +82,7 @@
                     </form>
                 </div>
                 {% else %}
-                <div class="comments_user" style="display:inline-block;text-align:center;">
+                <div class="autoriz">
                     Чтобы оставить комментарии нужно:
                     <a href="{% url 'login' %}">Авторизоваться</a> /
                     <a href="{% url 'register' %}">Зарегистрироваться</a>

@@ -106,7 +106,7 @@ header {
     justify-content: space-between;
     background: #f8f7f7;
     border: 1px solid #e9e8e8;
-    width: 1174px;
+    width: 1147px;
     margin-left: auto;
     margin-right: auto;
     -webkit-box-shadow: 0 2px 4px 0 #dee2e6;
@@ -117,6 +117,7 @@ header {
     width: 1389px;
     height: inherit;
     border-right: 1px solid #e9e8e8;
+    margin-top: 10px;
 }
 
 .form_field {
@@ -144,6 +145,7 @@ header {
     border: 1px solid #e9e8e8;
     -webkit-box-shadow: 0 2px 4px 0 #dee2e6;
     box-shadow: 0 2px 4px 0 #dee2e6;
+
 }
 
 
@@ -159,6 +161,20 @@ header {
     margin: 5px;
     padding: 20px;
     border: 1px solid #e9e8e8;
+    width: 800px;
+    margin: auto;
+}
+
+.autoriz{
+    background: #ffffff;
+    margin: 5px;
+    padding: 20px;
+    border: 1px solid #e9e8e8;
+    display: flex;
+    margin: auto;
+
+    width: 800px;
+    justify-content: center;
 }
 
 h3 {
@@ -195,6 +211,7 @@ img.photo {
 .right-panel {
     padding: 5px;
     width: 50%;
+    margin-top: 10px;
 }
 
 fieldset {
@@ -336,7 +353,7 @@ nav {
 footer {
     display: block;
     background: #f8f7f7;
-    width: 1174px;
+    width: 1147px;
     height: 100px;
     margin: auto;
 }
@@ -391,6 +408,7 @@ form p {
 .comments_user {
     flex: 0 0 800px;
     width: 800px;
+    margin: 10px auto;
 }
 
 .users {
@@ -460,6 +478,8 @@ label[for="id_text"] {
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
+
+
 }
 
 .header_news>a {

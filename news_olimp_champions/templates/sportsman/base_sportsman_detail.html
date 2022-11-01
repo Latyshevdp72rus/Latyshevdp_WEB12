@@ -54,15 +54,12 @@
                             </div>
                             <div class="info_sportsman">
                                 <a href=" /news/trener/{{ sportsman.trener_id.id }}">
-                                    {{ sportsman.trener_id }}
+                                    {{ sportsman.trener_id }};
                                 </a>
                             </div>
                         </div>
                         <!-- Биография -->
                         <div class="title_info_sportsman">
-                            <div class="desc_info_sportsman">
-                                <strong>Биография: </strong>
-                            </div>
                             <div class="info_sportsman">
                                 {{ sportsman.sportsman_biogrpahy }}
                             </div>
@@ -102,7 +99,7 @@
                     </form>
                 </div>
                 {% else %}
-                <div class="comments_user" style="display:inline-block;text-align:center;">
+                <div class="autoriz" >
                     Чтобы оставить комментарии нужно:
                     <a href="{% url 'login' %}">Авторизоваться</a> /
                     <a href="{% url 'register' %}">Зарегистрироваться</a>
