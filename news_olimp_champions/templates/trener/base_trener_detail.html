@@ -32,13 +32,13 @@
                         <!-- Ученики спортсмена -->
                         <div class="title_info_sportsman">
                             <div class="desc_info_sportsman">
-                                <strong>Спортсмены:</strong>
+                                <strong>Спортсмены: </strong>
                             </div>
                             <div class="info_sportsman">
                                 {% for sport in sports %}
                                 {% if sport %}
                                 <strong>
-                                    <a href="/news/sportsman/{{ sport.id }}">{{sport.sportsman_name}}; </a>
+                                    <a href="/news/sportsman/{{ sport.id }}">   {{sport.sportsman_name}}; </a>
                                 </strong>
                                 {% else %}
                                 <div>Hello</div>
@@ -75,8 +75,8 @@
                     <form action="" method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <div class="btn_align">
-                            <button type="submit" class="btn_comments">ДОБАВИТЬ</button>
+                        <div class="btn_align" style="text-align:right">
+                            <button type="submit" class="btn_comments">ДОБАВИТЬ КОММЕНТАРИЙ</button>
                         </div>
                     </form>
                 </div>
