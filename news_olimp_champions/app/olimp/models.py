@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
+
 class Stand(models.Model):
     """ Класс на странице НОВОСТИ """
     stand_name = models.CharField(
@@ -72,6 +73,7 @@ class Stand(models.Model):
     class Meta:
         verbose_name = "СТЕНД"
         verbose_name_plural = "СТЕНД"
+        ordering = ['-id']
 
 
 class CommentsStand(models.Model):
@@ -193,6 +195,7 @@ class Sportsman(models.Model):
     class Meta:
         verbose_name = "СПОРТСМЕНА"
         verbose_name_plural = "СПОРТСМЕНЫ"
+        ordering = ['-id']
 
 
 class CommentsSportsman(models.Model):
@@ -290,7 +293,7 @@ class Trener(models.Model):
     class Meta:
         verbose_name = "ТРЕНЕРА"
         verbose_name_plural = "ТРЕНЕРЫ"
-
+        ordering = ['-id']
 
 class CommentsTrener(models.Model):
     """ Класс коментарий на странице Тренера"""

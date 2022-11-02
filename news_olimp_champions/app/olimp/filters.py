@@ -21,7 +21,9 @@ class StandFilter(django_filters.FilterSet):
 
     class Meta:
         model = Stand
+        ordering = ['sportsman_id']
         fields = ["stand_name", "sportsman_id", "medal_id", "view_olimp_id","date_event"]
+
 
 
 class SportsmanFilter(django_filters.FilterSet):
