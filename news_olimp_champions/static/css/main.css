@@ -1,8 +1,11 @@
 body {
     margin: 0px;
     padding: 0px;
+    background: #f8f7f7;
+/*
     background-image: url("../img/background1.png");
     background-repeat: repeat;
+*/
     font-family: Verdana;
     font-size: 14px;
     color: #657791;
@@ -105,18 +108,22 @@ header {
     display: flex;
     justify-content: space-between;
     background: #f8f7f7;
+/*
     border: 1px solid #e9e8e8;
-    width: 1147px;
+    box-shadow: 0 2px 4px 0 #dee2e6;
+      -webkit-box-shadow: 0 2px 4px 0 #dee2e6;
+*/
+    width: 900px;
     margin-left: auto;
     margin-right: auto;
-    -webkit-box-shadow: 0 2px 4px 0 #dee2e6;
-    box-shadow: 0 2px 4px 0 #dee2e6;
+
+
 }
 
 .field_news {
     width: 1389px;
     height: inherit;
-    border-right: 1px solid #e9e8e8;
+    /*border-right: 1px solid #e9e8e8;*/
     margin-top: 10px;
 }
 
@@ -161,7 +168,8 @@ header {
     margin: 5px;
     padding: 20px;
     border: 1px solid #e9e8e8;
-    width: 800px;
+    /*width: 800px;*/
+    width:100%;
     margin: auto;
 }
 
@@ -297,9 +305,11 @@ nav {
 
 .kolco {
     height: 29px;
+/*
     background: white;
     background-image: url('../img/kolca.png');
     background-repeat: repeat-x;
+*/
 }
 
 .icon_header {
@@ -407,7 +417,7 @@ form p {
 
 .comments_user {
     flex: 0 0 800px;
-    width: 800px;
+    /*width: 800px;*/
     margin: 10px auto;
 }
 
@@ -452,7 +462,8 @@ a:hover {
 }
 
 .comments_user>form p {
-    width: 800px;
+    width: 1100px;
+    width:100%;
 }
 
 label[for="id_text"] {
