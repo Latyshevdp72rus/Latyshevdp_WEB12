@@ -133,3 +133,24 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 OBJECTS_ON_PAGE = 3
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'logfile': {
+            'class': 'logging.FileHandler',
+            'filename': 'server.log',
+        },
+        'console':{
+            'class':'logging.StreamHandler'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'logfile'],
+        },
+    },
+}
+
