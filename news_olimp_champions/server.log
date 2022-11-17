@@ -41,3 +41,7 @@ Watching for file changes with StatReloader
 "GET /news/sportsman/13? HTTP/1.1" 200 11396
 "POST /news/sportsman/13? HTTP/1.1" 302 0
 "GET /news/sportsman/13 HTTP/1.1" 200 12240
+Watching for file changes with StatReloader
+"GET /news/sportsman/13 HTTP/1.1" 200 12240
+"GET /news/ HTTP/1.1" 200 17931
+Watching for file changes with StatReloader
