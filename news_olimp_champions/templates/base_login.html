@@ -1,17 +1,18 @@
 {% load static %}
 {% include "inc/_header.html" %}
 
+
 <div class="wrapper">
     <div class="field">
         <div style="width: 1165px;">
             <form action="" method="post">
                 <fieldset>
                     <div class="switch">
-                        <div class="switch_style switch_bg_b">
-                            <a href="{% url 'login' %}" class="color_switch_w">Авторизоваться</a>
-                        </div>
                         <div class="switch_style switch_bg_w">
-                            <a href="{% url 'register' %}" class="color_switch_b">Регистрация</a>
+                            <a href="{% url 'login' %}" class="color_switch_b">Авторизоваться</a>
+                        </div>
+                        <div class="switch_style switch_bg_b">
+                            <a href="{% url 'register' %}" class="color_switch_w ">Регистрация</a>
                         </div>
                     </div>
                     <h3 style="text-align:center;padding-bottom: 30px;padding-top: 30px;">Вход на сайт</h3>

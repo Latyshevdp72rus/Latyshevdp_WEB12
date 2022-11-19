@@ -7,11 +7,11 @@
             <form action="" method="post">
                 <fieldset>
                     <div class="switch">
-                        <div class="switch_style switch_bg_w">
-                            <a href="{% url 'login' %}" class="color_switch_b">Авторизоваться</a>
+                        <div class="switch_style switch_bg_b ">
+                            <a href="{% url 'login' %}" class=" color_switch_w">Авторизоваться</a>
                         </div>
-                        <div class="switch_style switch_bg_b">
-                            <a href="{% url 'register' %}" class="color_switch_w">Регистрация</a>
+                        <div class="switch_style  switch_bg_w ">
+                            <a href="{% url 'register' %}" class="color_switch_b">Регистрация</a>
                         </div>
                     </div>
                     <h3 style="text-align:center;padding-bottom: 30px;padding-top: 30px;">Регистрация учётной записи
@@ -27,5 +27,5 @@
     </div>
 </div>
 
-
+{% load static %}
 {% include "inc/_footer.html" %}

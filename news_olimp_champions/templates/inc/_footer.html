@@ -2,14 +2,25 @@
 {%block header %}
 
 <footer>
-    <div class="kolco"></div>
-    <div class="conatainer_footer">
-
-    </div>
+        <div class="menu_footer">
+            <div class="menu_items">
+                 <a href="{% url 'trener' %}">НОВОСТИ</a>
+            </div>
+            <div class="menu_items">
+                 <a href="{% url 'trener' %}">СПОРТСМЕНЫ</a>
+            </div>
+            <div class="menu_items">
+                <a href="{% url 'trener' %}">ТРЕНЕРЫ</a>
+            </div>
+             <div class="menu_items">
+                <a href="{% url 'trener' %}">ОБРАТНАЯ СВЯЗЬ</a>
+            </div>
+        </div>
+        <div class="conatainer_footer">
+            © 2022 НОВОСТНОЙ САЙТ «ОЛИМПИЙСКИХ ЧЕМПИОНОВ!»
+        </div>
 </footer>
+
 </body>
-
 </html>
-
-
 {% endblock %}
