@@ -2,25 +2,24 @@
 {%block header %}
 
 <footer>
-        <div class="menu_footer">
-            <div class="menu_items">
-                 <a href="{% url 'trener' %}">НОВОСТИ</a>
-            </div>
-            <div class="menu_items">
-                 <a href="{% url 'trener' %}">СПОРТСМЕНЫ</a>
-            </div>
-            <div class="menu_items">
-                <a href="{% url 'trener' %}">ТРЕНЕРЫ</a>
-            </div>
-             <div class="menu_items">
-                <a href="{% url 'trener' %}">ОБРАТНАЯ СВЯЗЬ</a>
-            </div>
+    <div class="menu_footer">
+        <div class="menu_items">
+            <a href="{% url 'stand_list_view' %}">НОВОСТИ</a>
         </div>
-        <div class="conatainer_footer">
-            © 2022 НОВОСТНОЙ САЙТ «ОЛИМПИЙСКИХ ЧЕМПИОНОВ!»
+        <div class="menu_items">
+            <a href="{% url 'sportsman' %}">СПОРТСМЕНЫ</a>
         </div>
+        <div class="menu_items">
+            <a href="{% url 'trener' %}">ТРЕНЕРЫ</a>
+        </div>
+        <div class="menu_items">
+            <a href="{% url 'feedback' %}">ОБРАТНАЯ СВЯЗЬ</a>
+        </div>
+    </div>
+    <div class="conatainer_footer">
+        © 2022 НОВОСТНОЙ САЙТ «ОЛИМПИЙСКИХ ЧЕМПИОНОВ!»
+    </div>
 </footer>
-
 </body>
 </html>
 {% endblock %}

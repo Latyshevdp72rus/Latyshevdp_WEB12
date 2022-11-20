@@ -3,7 +3,7 @@
 
 <div class="wrapper">
     <div class="field">
-        <div style="width: 1165px;">
+        <div style="width: 1165px; margin-bottom: 10%;">
             <form action="" method="post">
                 <fieldset>
                     <div class="switch">
@@ -14,8 +14,7 @@
                             <a href="{% url 'register' %}" class="color_switch_b">Регистрация</a>
                         </div>
                     </div>
-                    <h3 style="text-align:center;padding-bottom: 30px;padding-top: 30px;">Регистрация учётной записи
-                    </h3>
+                    <h3 style="text-align:center;padding: 30px 0px;">Регистрация учётной записи </h3>
                     {% csrf_token %}
                     {{ form.as_p }}
                     <div class="btn_align">
