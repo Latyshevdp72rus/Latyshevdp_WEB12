@@ -68,7 +68,7 @@
                 </li>
                 {% endif %}
                 <li>
-                    <div style="padding: 5px; color:white; font-weight:bold; margin:auto;">
+                    <div style="color:white; font-weight:bold; margin-top: 10px; ">
                         <div class="icon_header">
                             <img src="{% static  'img/user.png' %}" alt="icon_add">
                             <div>Вы вошли как:<br>{{user.username}}</div>
@@ -86,7 +86,7 @@
                 </li>
                 {% else %}
                 <li>
-                    <a href="{% url 'login' %}">
+                    <a href="{% url 'register' %}">
                         <div class="icon_header">
                             <img src="{% static  'img/enter.png' %}" alt="icon_enter">
                             <div>ВХОД</div>
