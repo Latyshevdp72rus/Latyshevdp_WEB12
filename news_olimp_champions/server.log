@@ -3333,3 +3333,12 @@ Watching for file changes with StatReloader
 "GET /static/img/reklama2/5.png HTTP/1.1" 200 275087
 "GET /static/img/favicon.png HTTP/1.1" 200 613
 "GET /news/ HTTP/1.1" 200 17356
+Watching for file changes with StatReloader
+"GET /news/sportsman/ HTTP/1.1" 200 35552
+"GET /static/js/script.js HTTP/1.1" 304 0
+"GET /media/media/sportsman/22/11/01/Kapino.jpg HTTP/1.1" 200 21062
+"GET /media/media/sportsman/22/11/01/800px-20180920_Fussball_UEFA_Europa_League_RB_Leipzig_-_FC_Salz_3KWSN4g.jpg HTTP/1.1" 200 26124
+"GET /media/media/sportsman/22/11/01/375px-Andre-Hoffmann-08-2019.jpg HTTP/1.1" 200 21047
+"GET /news/ HTTP/1.1" 200 17356
+"GET /static/js/script.js HTTP/1.1" 304 0
+Watching for file changes with StatReloader
