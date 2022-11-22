@@ -3108,3 +3108,160 @@ Not Found: /favicon.ico
 "GET /admin/jsi18n/ HTTP/1.1" 200 15618
 "GET /admin/auth/group/add/ HTTP/1.1" 200 17723
 "GET /admin/jsi18n/ HTTP/1.1" 200 15618
+Watching for file changes with StatReloader
+"GET /news/ HTTP/1.1" 200 18383
+"GET /news/ HTTP/1.1" 200 18383
+- Broken pipe from ('127.0.0.1', 58225)
+- Broken pipe from ('127.0.0.1', 58226)
+"GET /news/ HTTP/1.1" 200 19027
+"GET /news/ HTTP/1.1" 200 19027
+"GET /static/img/favicon.png HTTP/1.1" 200 613
+"GET /news/ HTTP/1.1" 200 17988
+"GET / HTTP/1.1" 301 0
+"GET /news/ HTTP/1.1" 200 18383
+- Broken pipe from ('127.0.0.1', 50795)
+- Broken pipe from ('127.0.0.1', 50794)
+- Broken pipe from ('127.0.0.1', 50789)
+- Broken pipe from ('127.0.0.1', 50796)
+- Broken pipe from ('127.0.0.1', 50793)
+- Broken pipe from ('127.0.0.1', 50799)
+- Broken pipe from ('127.0.0.1', 50797)
+- Broken pipe from ('127.0.0.1', 50798)
+- Broken pipe from ('127.0.0.1', 50800)
+- Broken pipe from ('127.0.0.1', 50801)
+- Broken pipe from ('127.0.0.1', 50802)
+- Broken pipe from ('127.0.0.1', 50803)
+- Broken pipe from ('127.0.0.1', 50804)
+- Broken pipe from ('127.0.0.1', 50805)
+- Broken pipe from ('127.0.0.1', 50806)
+- Broken pipe from ('127.0.0.1', 50808)
+"GET /account/logout/ HTTP/1.1" 302 0
+"GET /news/ HTTP/1.1" 200 17988
+- Broken pipe from ('127.0.0.1', 50820)
+"GET /account/registration/ HTTP/1.1" 200 5314
+"GET /account/login/ HTTP/1.1" 200 4520
+"GET /account/registration/ HTTP/1.1" 200 5314
+"POST /account/registration/ HTTP/1.1" 302 0
+"GET /news/ HTTP/1.1" 200 17988
+"GET /account/registration/ HTTP/1.1" 200 5314
+"GET /account/login/ HTTP/1.1" 200 4520
+"POST /account/login/ HTTP/1.1" 302 0
+"GET /news/ HTTP/1.1" 200 18387
+"GET /admin/ HTTP/1.1" 200 13474
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2563
+"GET /admin/auth/user/ HTTP/1.1" 200 15060
+"GET /admin/jsi18n/ HTTP/1.1" 200 15618
+"GET /admin/auth/user/5/change/ HTTP/1.1" 200 26723
+"GET /admin/jsi18n/ HTTP/1.1" 200 15618
+"POST /admin/auth/user/5/change/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 15285
+"GET /admin/jsi18n/ HTTP/1.1" 200 15618
+"GET /news/ HTTP/1.1" 200 18387
+"GET /account/logout/ HTTP/1.1" 302 0
+"GET /news/ HTTP/1.1" 200 17988
+"GET /account/registration/ HTTP/1.1" 200 5314
+"GET /account/login/ HTTP/1.1" 200 4520
+"POST /account/login/ HTTP/1.1" 302 0
+"GET /news/ HTTP/1.1" 200 18387
+"GET /admin/auth/user/5/change/ HTTP/1.1" 200 26731
+"GET /admin/jsi18n/ HTTP/1.1" 200 15618
+"POST /admin/auth/user/5/change/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 15285
+"GET /admin/jsi18n/ HTTP/1.1" 200 15618
+"GET /news/ HTTP/1.1" 200 19031
+"GET /static/img/add.png HTTP/1.1" 200 1560
+"GET /admin/auth/user/5/change/ HTTP/1.1" 200 26739
+"GET /admin/jsi18n/ HTTP/1.1" 200 15618
+"POST /admin/auth/user/5/change/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 15285
+"GET /admin/jsi18n/ HTTP/1.1" 200 15618
+"GET /news/ HTTP/1.1" 200 18387
+"GET /admin/auth/user/5/change/ HTTP/1.1" 200 26731
+"GET /admin/jsi18n/ HTTP/1.1" 200 15618
+"POST /admin/auth/user/5/change/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 15285
+"GET /admin/jsi18n/ HTTP/1.1" 200 15618
+"GET /news/ HTTP/1.1" 200 18387
+"GET /admin/auth/user/5/change/ HTTP/1.1" 200 26740
+"GET /admin/jsi18n/ HTTP/1.1" 200 15618
+"POST /admin/auth/user/5/change/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 15285
+"GET /admin/jsi18n/ HTTP/1.1" 200 15618
+"GET /news/ HTTP/1.1" 200 19031
+"GET /news/add_stand/ HTTP/1.1" 200 8796
+"GET /news/ HTTP/1.1" 200 19031
+"GET /news/8 HTTP/1.1" 301 0
+"GET /news/8/ HTTP/1.1" 200 8588
+"GET /news/ HTTP/1.1" 200 19031
+"GET /news/8? HTTP/1.1" 301 0
+"GET /news/8/ HTTP/1.1" 200 8588
+Not Found: /favicon.ico
+- Broken pipe from ('127.0.0.1', 50821)
+"GET /news/sportsman/add_sportsman HTTP/1.1" 200 25151
+"GET /news/sportsman/ HTTP/1.1" 200 37227
+- Broken pipe from ('127.0.0.1', 51394)
+"GET /news/sportsman/16? HTTP/1.1" 200 11630
+"GET /news/sportsman/?page=2 HTTP/1.1" 200 37439
+- Broken pipe from ('127.0.0.1', 51378)
+"GET /news/sportsman/?page=3 HTTP/1.1" 200 37423
+- Broken pipe from ('127.0.0.1', 51421)
+- Broken pipe from ('127.0.0.1', 51422)
+"GET /news/sportsman/?page=4 HTTP/1.1" 200 37423
+- Broken pipe from ('127.0.0.1', 51424)
+- Broken pipe from ('127.0.0.1', 51430)
+"GET /news/sportsman/?page=5 HTTP/1.1" 200 37519
+- Broken pipe from ('127.0.0.1', 51433)
+"GET /news/sportsman/5? HTTP/1.1" 200 10967
+"GET /news/trener/add_trener HTTP/1.1" 200 5906
+Forbidden (Permission denied): /news/trener/add_trener
+Traceback (most recent call last):
+  File "C:\Latyshevdp_WEB12\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Latyshevdp_WEB12\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Latyshevdp_WEB12\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Latyshevdp_WEB12\lib\site-packages\django\contrib\auth\mixins.py", line 72, in dispatch
+    return self.handle_no_permission()
+  File "C:\Latyshevdp_WEB12\lib\site-packages\django\contrib\auth\mixins.py", line 48, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+"GET /news/trener/add_trener HTTP/1.1" 403 135
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2563
+"GET /news/ HTTP/1.1" 200 17988
+"GET /account/registration/ HTTP/1.1" 200 5314
+"GET /account/login/ HTTP/1.1" 200 4520
+"POST /account/login/ HTTP/1.1" 302 0
+Not Found: /account/invalid/
+"GET /account/invalid/ HTTP/1.1" 404 3007
+"GET / HTTP/1.1" 301 0
+"GET /news/ HTTP/1.1" 200 17988
+"GET /account/registration/ HTTP/1.1" 200 5314
+"GET /account/login/ HTTP/1.1" 200 4520
+"POST /account/login/ HTTP/1.1" 302 0
+"GET /news/ HTTP/1.1" 200 19031
+"GET /static/img/add.png HTTP/1.1" 200 1560
+"GET /static/img/user.png HTTP/1.1" 200 1477
+"GET /static/img/exit.png HTTP/1.1" 200 1789
+"GET /news/trener/add_trener HTTP/1.1" 200 5906
+"GET /news/trener/ HTTP/1.1" 200 14702
+"GET /news/trener/ HTTP/1.1" 200 14702
+"GET /news/trener/14? HTTP/1.1" 200 7425
+"GET /news/sportsman/ HTTP/1.1" 200 37227
+"GET /news/trener/add_trener HTTP/1.1" 200 5906
+"GET /news/ HTTP/1.1" 200 19031
+"GET /news/feedback/ HTTP/1.1" 200 5511
+"GET /account/logout/ HTTP/1.1" 302 0
+"GET /news/ HTTP/1.1" 200 17988
+"GET /news/feedback/ HTTP/1.1" 200 4468
+"GET /news/sportsman/ HTTP/1.1" 200 36184
+"GET /news/sportsman/?page=6 HTTP/1.1" 200 36266
+"GET /media/media/sportsman/22/10/30/50057.jpg HTTP/1.1" 200 8925
+"GET /media/media/sportsman/22/09/26/muhin_200_qCGcGSf.jpg HTTP/1.1" 200 5925
+"GET /media/media/sportsman/22/10/30/2019-10-11-413_26981-1_729647.png HTTP/1.1" 200 122350
+"GET /news/sportsman/3 HTTP/1.1" 200 9175
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2563
+Watching for file changes with StatReloader
