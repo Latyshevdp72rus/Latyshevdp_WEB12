@@ -9,6 +9,7 @@ body {
     color: #657791;
     font-family: Verdana;
     font-size: 12px;
+    width: 100%;
 }
 
 #navbar {
@@ -18,7 +19,9 @@ body {
 
 header {
     display: flex;
-    justify-content: space-around;
+   /* justify-content: space-around;
+*/
+    justify-content: center;
     align-items: center;
     width: 100%;
     background-image: linear-gradient(to bottom, #23a1d1, #007dc6);
@@ -103,16 +106,17 @@ header {
 
 .field {
     display: flex;
-    justify-content: space-between;
+ 
+    justify-content: space-around;
     align-content: flex-start;
     background: #f8f7f7;
-    width: 1100px;
+    width: 1120px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .field_news {
-    width: 1100px;
+   /* width: 1100px;*/
     height: inherit;
     margin-top: 10px;
 }
@@ -141,7 +145,7 @@ header {
     border: 1px solid #e9e8e8;
     -webkit-box-shadow: 0 2px 4px 0 #dee2e6;
     box-shadow: 0 2px 4px 0 #dee2e6;
-
+    width: 770px;
 }
 
 .records_news2 {
@@ -156,7 +160,8 @@ header {
     margin: 5px;
     padding: 20px;
     border: 1px solid #e9e8e8;
-    width: 100%;
+   /* width: 80%;*/
+   width:1000px;
     margin: auto;
 }
 
@@ -191,7 +196,7 @@ h3 {
 
 img.photo {
     width: 200px;
-    height: 250px;
+   /* height: 250px;*/
 }
 
 .pagin {
@@ -202,7 +207,8 @@ img.photo {
 
 .right-panel {
     padding: 5px;
-    width: 50%;
+   /* width: 50%;*/
+    width: 400px;
     margin-top: 10px;
 }
 
@@ -282,12 +288,12 @@ nav {
 .title_info_sportsman {
     display: flex;
     border-bottom: 1px solid #e9e8e8;
-    padding: 10px;
-    margin-right: 20px;
+    padding: 5px;
+   /* margin-right: 20px;*/
 }
 
 .desc_info_sportsman {
-    width: 160px;
+    width: 200px;
 }
 
 .icon_header {
@@ -401,7 +407,7 @@ form p {
 }
 
 .users {
-    width: inherit
+   /* width: inherit*/
 }
 
 .user {
@@ -432,8 +438,10 @@ section {
 }
 
 .wrapper {
-    margin: auto;
-    width: 1100px;
+   /* margin: auto;
+    width: 1100px;*/
+  margin: auto; 
+  width: 90%;
 
 }
 
